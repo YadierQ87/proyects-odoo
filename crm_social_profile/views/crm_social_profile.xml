@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- View form Inherited base.view_partner_form -->
+    <record id="crm_social_profile_inherited_form" model="ir.ui.view">
+        <field name="name">crm.social.profile.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="inside">
+                <group col="2">
+                    <field name="profile_status" invisible="True"/>
+                    <field name="status_html" widget="html" attrs="{'invisible': [('profile_status','=','False')]}"/>
+                </group>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Facebook Account" >
+                    <group col="2">
+                        <field name="facebook_account" widget="url"/>
+                    </group>
+                </page>
+                <page string="Linkedin Account" >
+                    <group col="2">
+                        <field name="linkedin_account" widget="url"/>
+                    </group>
+                </page>
+                <page string="Twitter Account" >
+                    <group col="2">
+                        <field name="twitter_account" widget="url"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- record for filter linkedin -->
+    <record id="view_social_linkedin_inherited_filter" model="ir.ui.view">
+        <field name="name">crm.social.linkedin.filter</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="priority" eval="15"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="linkedin_account"/>
+                <filter string="Profile Incomplete" name="profile_incomplete"
+                        domain="[('profile_status', '=', False)]"
+                        help="Show all customers with profile incomplete"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
