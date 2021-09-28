@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="customer_crm_index">
+        <t t-call="website.layout">
+            <section class="s_company_team mt32" data-name="My Customers">
+                <div class="container">
+                    <h1 style="text-align: center;" class="o_default_snippet_text">List of my customers</h1>
+                    <div class="row s_nb_column_fixed">
+                        <div class="col-lg-12 pt16 pb16">
+                            <form class="mt8 float-right" role="search" t-attf-action="/crm/customers/" method="get">
+                                <t t-call="website.website_search_box"/>
+                            </form>
+                        </div>
+                        <t t-set="customers" t-value="values['customers']"/>
+                        <t t-foreach="customers" t-as="customer">
+                            <div class="col-lg-12 pt16 pb16">
+                                <div class="row s_col_no_resize s_col_no_bgcolor">
+                                    <div class="col-lg-4 ">
+                                        <img t-att-src="'data:image/png;base64,%s' % to_text(customer.image_1920)"
+                                             alt="Customer"
+                                             style="height: 120px;width:120px;"
+                                             class="img-fluid rounded-circle d-block mx-auto shadow"
+                                        />
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <h4 class="o_default_snippet_text">
+                                            <span t-esc="customer.name"/>,<span t-esc="customer.function"/>
+                                        </h4>
+                                        <span t-esc="customer.company_type"/>
+                                        <table class="table table-hover table-striped table-bordered">
+                                            <tbody >
+                                                <tr style="text-align:center;">
+                                                    <th width="50%">Contact</th>
+                                                    <th width="50%">Social</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="fa fa-phone"/>
+                                                        <t t-if="customer.phone">
+                                                            <span t-if="customer.phone" t-esc="customer.phone"/>
+                                                        </t>
+                                                        <span t-else="">-Not set-</span>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fa fa-linkedin-square o_linkedin"/>
+                                                        <t t-if="customer.linkedin_account">
+                                                            <span t-esc="customer.linkedin_account"/>
+                                                        </t>
+                                                        <span t-else="">-Not set-</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="fa fa-mobile"/>
+                                                        <t t-if="customer.mobile">
+                                                            <span t-esc="customer.mobile"/>
+                                                        </t>
+                                                        <span t-else="">-Not set-</span>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fa fa-facebook-square o_facebook"/>
+                                                        <t t-if="customer.facebook_account">
+                                                            <span  t-esc="customer.facebook_account"/>
+                                                        </t>
+                                                        <span t-else="">-Not set-</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <i class="fa fa-envelope"/>
+                                                        <t t-if="customer.email">
+                                                            <span t-esc="customer.email"/>
+                                                        </t>
+                                                        <span t-else="">-Not set-</span>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fa fa-twitter-square o_twitter"/>
+                                                        <t t-if="customer.twitter_account">
+                                                            <span t-esc="customer.twitter_account"/>
+                                                        </t>
+                                                        <span t-else="">-Not set-</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </section>
+        </t>
+    </template>
+
+    <record id="customers_page" model="website.page">
+        <field name="name">Customers List</field>
+        <field name="website_published">True</field>
+        <field name="url">/crm/customers/</field>
+        <field name="view_id" ref="customer_crm_index"/>
+    </record>
+
+    <record id="customers_page_link" model="website.menu">
+        <field name="name">Customers</field>
+        <field name="page_id" ref="customers_page"/>
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="sequence" type="int">99</field>
+    </record>
+
+
+</odoo>

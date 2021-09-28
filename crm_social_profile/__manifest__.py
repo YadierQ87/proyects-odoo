@@ -9,9 +9,10 @@
     "website": "https://solprob.nat.cu",
     "application": False,
     "installable": True,
-    "depends": ["base","crm"],
+    "depends": ["base","crm","website"],
     "data": [
         "views/crm_social_profile.xml",
+        "views/crm_customer_template.xml",
     ],
     "demo": [],
 }
