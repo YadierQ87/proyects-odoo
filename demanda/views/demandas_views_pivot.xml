@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <!-- Demandas de Solicitudes Logisticas Vista Pivote -->
+        <record id='demanda_producto_vestuario_logistica_view_pivot' model='ir.ui.view'>
+            <field name="name">demanda.producto.vestuario.logistica.pivot</field>
+            <field name="model">demanda.producto.vestuario.logistica</field>
+            <field name="arch" type="xml">
+                <pivot string="Piezas de Vestuario">
+                    <field name="talla_nacional" type="col" />
+                    <field name="name" type="row"/>
+                    <field name="create_date" interval="year" />
+                </pivot>
+            </field>
+        </record>
+
+        <record id='demanda_producto_vestuario_logistica_view_graph' model='ir.ui.view'>
+            <field name="name">demanda.producto.vestuario.logistica.graph</field>
+            <field name="model">demanda.producto.vestuario.logistica</field>
+            <field name="arch" type="xml">
+                <graph string="Piezas de Vestuario">
+                    <field name="name"/>
+                    <field name="tipo_modulo_solicitud"/>
+                    <field name="create_date" interval="year"/>
+                     <field name="talla_nacional" type="measure"/>
+                    <field name="talla_especial" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+    </data>
+</odoo>

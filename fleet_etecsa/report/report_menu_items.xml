@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report string="Anexo Unico de Combustible"
+            id="action_report_anexo_unico"
+            model="fleet.etecsa.anexo.unico"
+            report_type="qweb-pdf"
+            name="fleet_etecsa.report_anexo_unico_combustible"
+            file="fleet_etecsa.action_report_anexo_unico"
+            attachment_use="True"
+            print_report_name="'Anexo Unico de Combustible - %s ' % object.create_date"
+        />
+
+        <report string="Anexo 5 Liquidacion de Combustible"
+            id="action_report_anexo_liquidacion"
+            model="fleet.etecsa.anexo.liquidacion"
+            report_type="qweb-pdf"
+            name="fleet_etecsa.report_anexo_liquidacion_combustible"
+            file="fleet_etecsa.action_report_anexo_liquidacion"
+            attachment_use="True"
+            print_report_name="'Anexo 5 Liquidacion de Combustible - %s ' % object.create_date"
+        />
+    </data>
+</odoo>

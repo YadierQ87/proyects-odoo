@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Nombres de examen ACTION [agend.name.lab.exam] -->
+        <record id="agend_name_lab_exam_act_window" model="ir.actions.act_window">
+            <field name="name">Nombres de examen</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">agend.name.lab.exam</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Crear Nombres del examen.
+                </p>
+            </field>
+        </record>
+        <!-- Category de examen ACTION [agend.cat.lab.exam] -->
+        <record id="agend_category_lab_exam_act_window" model="ir.actions.act_window">
+            <field name="name">Categoría de examen</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">agend.cat.lab.exam</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Crear Categoría del examen.
+                </p>
+            </field>
+        </record>
+        <!-- Tipo de examen ACTION [agend.type.lab.exam] -->
+        <record id="agend_type_lab_exam_act_window" model="ir.actions.act_window">
+            <field name="name">Tipo del examen</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">agend.type.lab.exam</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Crear Tipo del examen.
+                </p>
+            </field>
+        </record>
+
+        <record id="agend_lab_test_param_view_tree" model="ir.ui.view">
+            <field name="name">agend_lab_test_param_view_tree</field>
+            <field name="model">agend.lab.test.param</field>
+            <field name="arch" type="xml">
+                <tree string="Parametros">
+                    <field name="name"/>
+                    <field name="param_uom"/>
+                    <field name="ref_value"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Parametros de Examen ACTION [agend.lab.test.param] -->
+        <record id="agend_lab_test_param_act_window" model="ir.actions.act_window">
+            <field name="name">Parámetro de la prueba</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">agend.lab.test.param</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Crear Parámetro de la prueba.
+                </p>
+            </field>
+        </record>
+        <!-- Grupo de Pruebas ACTION [agend.medical.lab.exam] -->
+        <record id="agend_medical_lab_exam_view_tree" model="ir.ui.view">
+            <field name="name">agend_medical_lab_exam_view_tree</field>
+            <field name="model">agend.medical.lab.exam</field>
+            <field name="arch" type="xml">
+                <tree string="Plantilla Grupo de Pruebas">
+                    <field name="name"/>
+                    <field name="exam_id"/>
+                    <field name="param_uom"/>
+                    <field name="param_ref_value"/>
+                    <field name="category_id"/>
+                </tree>
+            </field>
+        </record>
+        <!-- # Plantillas de Grupo de Pruebas -->
+        <record id="agend_medical_lab_exam_act_window" model="ir.actions.act_window">
+            <field name="name">Grupo de Pruebas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">agend.medical.lab.exam</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Crear Grupo de Pruebas.
+                </p>
+            </field>
+        </record>
+
+
+        <!-- SETTING MENU-ITEM [] -->
+        <menuitem name="Nomencladores" id="agend_laboratory_settings_menu"
+                  parent="order_exams_lab_menu"
+                  action="agend_name_lab_exam_act_window"/>
+        <!-- Nombres de examen MENU-ITEM [agend.name.lab.exam] -->
+        <menuitem name="Examen" id="agend_lab_name_sett_menu"
+                  parent="agend_laboratory_settings_menu"
+                  action="agend_name_lab_exam_act_window"/>
+        <!-- Category de examen MENU-ITEM [agend.cat.lab.exam] -->
+        <menuitem name="Categorías" id="agend_lab_category_sett_menu"
+                  parent="agend_laboratory_settings_menu"
+                  action="agend_category_lab_exam_act_window"/>
+        <!-- Category de examen MENU-ITEM [agend.cat.lab.exam] -->
+        <menuitem name="Tipo" id="agend_lab_type_sett_menu"
+                  parent="agend_laboratory_settings_menu"
+                  action="agend_type_lab_exam_act_window"/>
+        <!-- Parametro de Prueba MENU-ITEM [agend.lab.test.param] -->
+        <menuitem name="Parametros de Prueba" id="agend_lab_params_sett_menu"
+                  parent="agend_laboratory_settings_menu"
+                  action="agend_lab_test_param_act_window"/>
+        <!-- Examen de Laboratorio MENU-ITEM [agend.medical.lab.exam] -->
+        <menuitem name="Plantillas de Grupo de Pruebas" id="agend_lab_exams_sett_menu"
+                  parent="agend_laboratory_settings_menu"
+                  action="agend_medical_lab_exam_act_window"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+ <!-- Pre loaded images -->
+        <record id="agendmedic_lab.laboratory_report_header" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">laboratory_report_header.png</field>
+            <field name="res_model">ir.ui.view</field>
+            <field name="type">url</field>
+            <field name="url">/agendmedic_lab/static/src/img/header-lab.png</field>
+        </record>
+
+        <record id="agendmedic_lab.laboratory_report_footer" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">laboratory_report_footer.png</field>
+            <field name="res_model">ir.ui.view</field>
+            <field name="type">url</field>
+            <field name="url">/agendmedic_lab/static/src/img/footer-lab.png</field>
+        </record>
+
+        <record id="agendmedic_lab.laboratory_report_lateral" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">report_lateral.jpg</field>
+            <field name="res_model">ir.ui.view</field>
+            <field name="type">url</field>
+            <field name="url">/agendmedic_lab/static/src/img/lateral-lab.jpg</field>
+        </record>
+
+    </data>
+</odoo>

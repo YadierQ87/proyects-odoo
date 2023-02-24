@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_order_exams_laboratory">
+            <!-- web.basic_layout -->
+            <t t-call="web.report_layout">
+                <t t-foreach="docs" t-as="o">
+                    <!-- agendmedic_lab.lab_personal_layout_report  -->
+                    <!-- web.external_layout -->
+                    <t t-call="agendmedic_lab.laboratory_layout_report">
+                        <style>
+                            body{
+                            font-family: "Lato" !important;
+                            font-weight:700;
+                            background-color:#dfe3e2 !important;
+                            font-size: 1em;
+                            text-align: left;
+                            }
+                            li {
+                            list-style: none;
+                            }
+                            div.o_background_header img{
+                            position: relative;	width: 100%;
+                            margin-left: auto;
+                            margin-right: auto;	display: block;
+                            }
+                            address{
+                            display:none;  visibility:hidden;
+                            }
+                            .table {
+                            color: #212529;  font-size: 1rem;  font-weight: 400;
+                            line-height: 1.5; width: 100%;
+                            }
+                            .text-center{
+                            text-align: center !important;
+                            }
+                            .text-left{
+                            text-align: left !important;
+                            }
+                            @media print {
+                            div.footnotes {
+                            page-break-after: always;   color:#f7f7f7;
+                            }
+                            }
+                            div.footnotes {
+                            page-break-after: always;  color:#f7f7f7;
+                            }
+                            .table th, .table td {
+                            padding: 5px; vertical-align: top;
+                            }
+                            .col-5{
+                            width: 50%; float:left;      position:relative;
+                            }
+                            .patient-row {
+                            height: 140px;  clear: both;  width: 100%;
+                            border: #004226 solid 4px;
+                            border-radius:9px; padding-top: 12px;
+                            margin-top: 10px;
+                            }
+                            .page{
+                            background-color:#dfe3e2 !important;
+                            border-left: #004226 solid 16px;
+                            }
+                            .lateral_report_bg{
+                            margin-top:135px;
+                            z-index:100;
+                            }
+                            span{
+                            color: #666 !important;
+                            font-weight:400 !important;
+                            }
+                            b{
+                            font-weight:bold !important;
+                            }
+                            .o_in_iframe .o_background_header {
+                            min-width: 0;
+                            background: #dfe3e2;
+                            }
+                        </style>
+                        <t t-set="company" t-value="o.order_company"/>
+                        <!-- section examenes -->
+                        <t t-if="len(o.result_lines_ids)>0">
+                            <!-- recorriendo los resultados -->
+                            <t t-set="exam_type" t-value="blank"/>
+                            <t t-foreach="o.result_lines_ids" t-as="result">
+                                <t t-if="result.exam_id.exam_id != exam_type">
+                                    <t t-set="category" t-value="blank"/>
+                                    <div class="page">
+                                        <t t-set="exam_type" t-value="result.exam_id.exam_id"/>
+                                        <div class="row">
+                                            <div t-attf-class="col-1">
+                                                <img t-if="o.order_company.lateral_report_bg"
+                                                     t-attf-class="lateral_report_bg"
+                                                     t-att-src="image_data_uri(o.order_company.lateral_report_bg)"/>
+                                            </div>
+                                            <div t-attf-class="col-11">
+                                                <table class="table"  style="width:95%; margin-left:15px; margin-right:15px">
+                                                    <tr>
+                                                        <td colspan="4">
+                                                            <div class="patient-row" style="">
+                                                                <div class="col-5 col-md-5" >
+                                                                    <ul class="patient-name">
+                                                                        <li><b>PACIENTE:</b> <span t-esc="o.patient_id.name"/></li>
+                                                                        <li><b>EDAD:</b> <span t-esc="o.patient_id.t_age"/></li>
+                                                                        <li><b>MEDICO:</b> <span t-esc="o.doctor_id.name"/></li>
+                                                                        <li><b>FECHA INGRESO:</b> <span t-esc="o.create_date"
+                                                                                                        t-options='{"widget": "date","format": "dd-MM-yyyy"}'/> </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-md-5 col-5">
+                                                                    <ul class="patient-name">
+                                                                        <li><b>CI:</b> <span t-esc="o.patient_id.vat"/></li>
+                                                                        <li><b>SEXO:</b> <span t-esc="o.patient_id.t_sex"/></li>
+                                                                        <li><b>ORDEN:</b> <span t-esc="o.name"/></li>
+                                                                        <li>
+                                                                            <b>FECHA REPORTE:</b>
+                                                                            <span t-esc="o.create_date"
+                                                                                  t-options='{"widget": "date","format": "dd-MM-yyyy"}'/>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr  style="padding-top:60px">
+                                                        <td colspan="4">
+                                                            <div class="text-center">
+                                                                <b><h5 t-esc="exam_type.name"/></b>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <t t-foreach="o.result_lines_ids" t-as="result_jet">
+                                                        <t t-if="result_jet.exam_id.exam_id == result.exam_id.exam_id">
+                                                            <t t-if="result_jet.exam_id.category_id != category">
+                                                                <t t-set="category" t-value="result_jet.exam_id.category_id"/>
+                                                                <tr class="mb-2 mt-2">
+                                                                    <td colspan="3">
+                                                                        <div class="text-left"><h6 t-esc="category.name"/></div>
+                                                                    </td>
+                                                                    <td> <b>VALOR REFERENCIAL</b> </td>
+                                                                </tr>
+                                                            </t>
+                                                            <tr class="text-left"  style="padding-left:40px">
+                                                                <td> <span t-esc="result_jet.name"/> </td>
+                                                                <td> <span t-esc="result_jet.param_value"/> </td>
+                                                                <td> <span t-esc="result_jet.exam_uom"/> </td>
+                                                                <td> <span t-field="result_jet.exam_ref_value"/> </td>
+                                                            </tr>
+                                                        </t>
+                                                    </t>
+                                                    <tr>
+                                                        <td colspan="4">
+                                                            <img t-if="o.order_company.footer_report_bg"
+                                                                 t-attf-class="footer_report_bg"
+                                                                 t-att-src="image_data_uri(o.order_company.footer_report_bg)"/>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="footnotes">
+                                        ...
+                                    </div>
+                                </t>
+                            </t>
+                            <!-- END of recorriendo los resultados -->
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="report_print_tags_order_lab">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <style>
+                        body{
+                        font-family: "Arial" !important;
+                        font-size: 11px !important;
+                        }
+                        ul {
+                        padding: 0px 0px 0px 2px;
+                        }
+                        li {
+                        list-style: none;
+                        }
+                        .box-barcode{
+                        border: 1px solid #c1bfbf !important;
+                        padding-left: 2px;
+                        border-radius: 4px;
+                        padding-top: 2px;
+                        width:240px;
+                        height:120px;
+                        }
+                    </style>
+                    <div class="page">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 col-4">
+                                    <div class="box-barcode">
+                                        <ul>
+                                            <li>
+                                                <div style="width:50%; float:left;">
+                                                    <span t-esc="res_company.name"/>
+                                                </div>
+                                                <div style="width:50%; float:right;">
+                                                    <font style="text-align:right;">CI: <span t-esc="o.patient_id.vat"/></font>
+                                                </div>
+                                            </li>
+                                            <li>P:<span t-esc="o.patient_id.name"/></li>
+                                            <li>E: <span t-esc="o.patient_id.t_age"/>  <span t-esc="o.patient_id.t_sex"/> <span t-esc="o.patient_id.t_birthday"/> </li>
+                                            <li>
+                                                <font>Orden: <span t-field="o.name"/></font>
+                                            </li>
+                                            <li style="margin-top: 4px;">
+                                                <img t-if="o.name" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 150)" style="width:100%;height:45px;"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <template id="laboratory_layout_report">
+            <div t-attf-class="o_company_#{company.id}_layout header"
+                 style="background: #dfe3e2 !important;"
+                 t-att-style="report_header_style">
+                <div class=""  style="background: #dfe3e2 !important;border-left: #004226 solid 16px;">
+                    <img t-if="o.order_company.header_report_bg"
+                         t-att-src="image_data_uri(o.order_company.header_report_bg)"
+                         style="margin-left: auto;
+                         	margin-right: auto;	display: block;"
+                         alt="Logo"/>
+                    <div class="clearfix mb8"/>
+                </div>
+            </div>
+
+            <div t-attf-class="o_company_#{company.id}_layout article " t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <div class="clearfix mt-5"/>
+                <t t-raw="0"/>
+            </div>
+
+            <div t-attf-class="o_company_#{company.id}_layout footer"
+                 style="">
+            </div>
+        </template>
+
+        <!-- For blank empty layout without images -->
+        <template id="clean_report_order_exams_laboratory">
+            <!-- web.basic_layout -->
+            <t t-call="web.report_layout">
+                <t t-foreach="docs" t-as="o">
+                    <!-- agendmedic_lab.lab_personal_layout_report  -->
+                    <!-- web.external_layout -->
+                    <t t-call="agendmedic_lab.laboratory_layout_blank_report">
+                        <style>
+                            body{
+                            font-family: "Lato" !important;
+                            font-weight:700;
+                            font-size: 1em;
+                            text-align: left;
+                            }
+                            li {
+                            list-style: none;
+                            }
+                            address{
+                            display:none;  visibility:hidden;
+                            }
+                            .table {
+                            color: #212529;  font-size: 1rem;  font-weight: 400;
+                            line-height: 1.5; width: 100%;
+                            }
+                            .text-center{
+                            text-align: center !important;
+                            }
+                            .text-left{
+                            text-align: left !important;
+                            }
+                            @media print {
+                            div.footnotes {
+                            page-break-after: always;   color:#f7f7f7;
+                            }
+                            }
+                            div.footnotes {
+                            page-break-after: always;  color:#f7f7f7;
+                            }
+                            .table th, .table td {
+                            padding: 5px; vertical-align: top;
+                            }
+                            .col-5{
+                            width: 50%; float:left;      position:relative;
+                            }
+                            .patient-row {
+                            height: 140px;  clear: both;  width: 100%;
+                            border: #004226 solid 4px;
+                            border-radius:9px; padding-top: 12px;
+                            margin-top: 10px;
+                            }
+                            span{
+                            color: #666 !important;
+                            font-weight:400 !important;
+                            }
+                            b{
+                            font-weight:bold !important;
+                            }
+                        </style>
+                        <t t-set="company" t-value="o.order_company"/>
+                        <!-- section examenes -->
+                        <t t-if="len(o.result_lines_ids)>0">
+                            <!-- recorriendo los resultados -->
+                            <t t-set="exam_type" t-value="blank"/>
+                            <t t-foreach="o.result_lines_ids" t-as="result">
+                                <t t-if="result.exam_id.exam_id != exam_type">
+                                    <t t-set="category" t-value="blank"/>
+                                    <div class="page">
+                                        <t t-set="exam_type" t-value="result.exam_id.exam_id"/>
+                                        <div class="row">
+                                            <div t-attf-class="col-1"/>
+                                            <div t-attf-class="col-11">
+                                                <table class="table"  style="width:95%; margin-left:15px; margin-right:15px">
+                                                    <tr>
+                                                        <td colspan="4">
+                                                            <div class="patient-row" style="">
+                                                                <div class="col-5 col-md-5" >
+                                                                    <ul class="patient-name">
+                                                                        <li><b>PACIENTE:</b> <span t-esc="o.patient_id.name"/></li>
+                                                                        <li><b>EDAD:</b> <span t-esc="o.patient_id.t_age"/></li>
+                                                                        <li><b>MEDICO:</b> <span t-esc="o.doctor_id.name"/></li>
+                                                                        <li><b>FECHA INGRESO:</b> <span t-esc="o.create_date"
+                                                                                                        t-options='{"widget": "date","format": "dd-MM-yyyy"}'/> </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="col-md-5 col-5">
+                                                                    <ul class="patient-name">
+                                                                        <li><b>CI:</b> <span t-esc="o.patient_id.vat"/></li>
+                                                                        <li><b>SEXO:</b> <span t-esc="o.patient_id.t_sex"/></li>
+                                                                        <li><b>ORDEN:</b> <span t-esc="o.name"/></li>
+                                                                        <li>
+                                                                            <b>FECHA REPORTE:</b>
+                                                                            <span t-esc="o.create_date"
+                                                                                  t-options='{"widget": "date","format": "dd-MM-yyyy"}'/>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr  style="padding-top:60px">
+                                                        <td colspan="4">
+                                                            <div class="text-center">
+                                                                <b><h5 t-esc="exam_type.name"/></b>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <t t-foreach="o.result_lines_ids" t-as="result_jet">
+                                                        <t t-if="result_jet.exam_id.exam_id == result.exam_id.exam_id">
+                                                            <t t-if="result_jet.exam_id.category_id != category">
+                                                                <t t-set="category" t-value="result_jet.exam_id.category_id"/>
+                                                                <tr class="mb-2 mt-2">
+                                                                    <td colspan="3">
+                                                                        <div class="text-left"><h6 t-esc="category.name"/></div>
+                                                                    </td>
+                                                                    <td> <b>VALOR REFERENCIAL</b> </td>
+                                                                </tr>
+                                                            </t>
+                                                            <tr class="text-left"  style="padding-left:40px">
+                                                                <td> <span t-esc="result_jet.name"/> </td>
+                                                                <td> <span t-esc="result_jet.param_value"/> </td>
+                                                                <td> <span t-esc="result_jet.exam_uom"/> </td>
+                                                                <td> <span t-field="result_jet.exam_ref_value"/> </td>
+                                                            </tr>
+                                                        </t>
+                                                    </t>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="footnotes">
+                                        ...
+                                    </div>
+                                </t>
+                            </t>
+                            <!-- END of recorriendo los resultados -->
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="laboratory_layout_blank_report">
+            <div t-attf-class="o_company_#{company.id}_layout header"
+                 t-att-style="report_header_style">
+            </div>
+
+            <div t-attf-class="o_company_#{company.id}_layout article "
+                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <div class="clearfix mt-5"/>
+                <t t-raw="0"/>
+            </div>
+
+            <div t-attf-class="o_company_#{company.id}_layout footer"
+                 style="">
+            </div>
+        </template>
+
+
+    </data>
+</odoo>

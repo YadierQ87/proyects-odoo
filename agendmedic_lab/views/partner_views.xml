@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="medic_lab_exams_partner" model="ir.ui.view">
+            <field name="name">agend.medic.lab.exams.partner</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object"
+                            name="return_action_view_orders"
+                            icon="fa-flask">
+                        <field string="Ordenes Laboratorio" name="order_count" widget="statinfo"/>
+                    </button>
+                </div>
+                <xpath expr="//notebook" position="before">
+                    <group col="4">
+                        <field name="t_birthday"/>
+                        <field name="t_sex"/>
+                        <field name="t_age"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="order_exams_for_partner_act_window" model="ir.actions.act_window">
+            <field name="name">Orden Examenes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">order.exams.lab</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('patient_id', '=', active_id)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Crear nueva Orden Examen.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

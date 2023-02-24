@@ -1,0 +1,255 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* document_control
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20230123\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-26 22:34+0000\n"
+"PO-Revision-Date: 2023-01-26 22:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: document_control
+#: model:ir.actions.act_window,name:document_control.res_partner_act_window_add_template
+msgid "Apply document template"
+msgstr "Asignar Plantilla de Documentos"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_line_control_template__block_sale
+msgid "Block for sale"
+msgstr "Bloquear para Ventas"
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__document_control__status__cancel
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: document_control
+#: model:ir.ui.menu,name:document_control.categories
+msgid "Categories"
+msgstr "Categorias"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__category_id
+#: model:ir.model.fields,field_description:document_control.field_document_control_template__category_id
+msgid "Category"
+msgstr "Categoría"
+
+#. module: document_control
+#: model:ir.model,name:document_control.model_document_control_category
+msgid "Category for document control"
+msgstr "Categoría para el control de documentos"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__document_control__status__confirm
+msgid "Confirm"
+msgstr "Confirmado"
+
+#. module: document_control
+#: model:ir.model,name:document_control.model_res_partner
+#: model:ir.model.fields,field_description:document_control.field_document_control__partner_id
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__create_uid
+#: model:ir.model.fields,field_description:document_control.field_document_control_category__create_uid
+#: model:ir.model.fields,field_description:document_control.field_document_control_template__create_uid
+#: model:ir.model.fields,field_description:document_control.field_line_control_template__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__create_date
+#: model:ir.model.fields,field_description:document_control.field_document_control_category__create_date
+#: model:ir.model.fields,field_description:document_control.field_document_control_template__create_date
+#: model:ir.model.fields,field_description:document_control.field_line_control_template__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__description
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_view_form
+msgid "Description"
+msgstr "Descripcion"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__display_name
+#: model:ir.model.fields,field_description:document_control.field_document_control_category__display_name
+#: model:ir.model.fields,field_description:document_control.field_document_control_template__display_name
+#: model:ir.model.fields,field_description:document_control.field_line_control_template__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: document_control
+#: model:ir.actions.act_window,name:document_control.document_categories_action_window
+msgid "Document Category"
+msgstr "Categoría"
+
+#. module: document_control
+#: model:ir.actions.act_window,name:document_control.documents_control_action_window
+#: model:ir.model,name:document_control.model_document_control
+#: model:ir.ui.menu,name:document_control.menu_root
+msgid "Document Control"
+msgstr "Documento"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control_template__control_line_ids
+#: model:ir.model.fields,field_description:document_control.field_res_partner__docs_count
+#: model:ir.model.fields,field_description:document_control.field_res_partner__document_ids
+#: model:ir.model.fields,field_description:document_control.field_res_users__docs_count
+#: model:ir.model.fields,field_description:document_control.field_res_users__document_ids
+#: model:ir.ui.menu,name:document_control.document
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_partner_inherit_form
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_template_view_form
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: document_control
+#: model:ir.ui.menu,name:document_control.template
+msgid "Documents Template"
+msgstr "Plantilla de Documentos"
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__document_control__status__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__expiration_date
+msgid "Expiration date"
+msgstr "Fecha de vencimiento"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__expiration_type
+msgid "Expiration type"
+msgstr "Tipo de vencimiento"
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__document_control__status__expired
+msgid "Expired"
+msgstr "Expirado"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__file
+msgid "File"
+msgstr "Archivo"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__id
+#: model:ir.model.fields,field_description:document_control.field_document_control_category__id
+#: model:ir.model.fields,field_description:document_control.field_document_control_template__id
+#: model:ir.model.fields,field_description:document_control.field_line_control_template__id
+msgid "ID"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control____last_update
+#: model:ir.model.fields,field_description:document_control.field_document_control_category____last_update
+#: model:ir.model.fields,field_description:document_control.field_document_control_template____last_update
+#: model:ir.model.fields,field_description:document_control.field_line_control_template____last_update
+msgid "Last Modified on"
+msgstr "Ultimo cambio"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__write_uid
+#: model:ir.model.fields,field_description:document_control.field_document_control_category__write_uid
+#: model:ir.model.fields,field_description:document_control.field_document_control_template__write_uid
+#: model:ir.model.fields,field_description:document_control.field_line_control_template__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualizacion por"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__write_date
+#: model:ir.model.fields,field_description:document_control.field_document_control_category__write_date
+#: model:ir.model.fields,field_description:document_control.field_document_control_template__write_date
+#: model:ir.model.fields,field_description:document_control.field_line_control_template__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualizacion en"
+
+#. module: document_control
+#: model:ir.model,name:document_control.model_line_control_template
+msgid "Lines for document control in template"
+msgstr "Líneas para control de documentos en plantilla"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__name
+#: model:ir.model.fields,field_description:document_control.field_document_control_category__name
+#: model:ir.model.fields,field_description:document_control.field_document_control_template__name
+#: model:ir.model.fields,field_description:document_control.field_line_control_template__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__reference
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: document_control
+#: model:ir.model,name:document_control.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: document_control
+#: model:ir.ui.menu,name:document_control.setting
+msgid "Setting"
+msgstr "Configuraciones"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__status
+msgid "Status"
+msgstr "Estado"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_line_control_template__template_id
+#: model:ir.model.fields,field_description:document_control.field_res_partner__template_id
+#: model:ir.model.fields,field_description:document_control.field_res_users__template_id
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_template_view_form
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: document_control
+#: model:ir.model,name:document_control.model_document_control_template
+msgid "Template for document control"
+msgstr "Plantilla para control de documentos"
+
+#. module: document_control
+#: model:ir.actions.act_window,name:document_control.document_templates_action_window
+msgid "Templates"
+msgstr "Plantillas"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_view_form
+msgid "_form"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_view_tree
+msgid "_tree"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__document_control__expiration_type__date
+msgid "date"
+msgstr "Fecha"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_template_view_tree
+msgid "document_control_template_tree"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__document_control__expiration_type__other
+msgid "other"
+msgstr "Otro"

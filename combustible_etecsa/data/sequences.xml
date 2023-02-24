@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--sequency documentos-->
+        <record id="sequence_demanda_combustible_dem" model="ir.sequence">
+            <field name="name">DEMANDA</field>
+            <field name="code">comb.etecsa.demanda.combustible.die</field>
+            <field name="prefix">DEM-</field>
+            <field name="active">TRUE</field>
+            <field name="padding">4</field>
+        </record>
+
+        <record id="sequence_demanda_combustible_departamento" model="ir.sequence">
+            <field name="name">DEMANDA x Dpeto</field>
+            <field name="code">comb.etecsa.demanda.combustible.depto</field>
+            <field name="prefix">DEM-DEPTO-</field>
+            <field name="active">TRUE</field>
+            <field name="padding">4</field>
+        </record>
+
+        <record id="sequence_distribucion_etecsa_consec" model="ir.sequence">
+            <field name="name">DISTRIBUCIÓN</field>
+            <field name="code">comb.etecsa.distribucion.combustible.consec</field>
+            <field name="prefix">DISTCOMB-</field>
+            <field name="suffix">/%(range_year)s</field>
+            <field name="active">TRUE</field>
+            <field name="padding">4</field>
+        </record>
+
+    </data>
+</odoo>
+
+

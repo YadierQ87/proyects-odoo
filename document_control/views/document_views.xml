@@ -1,0 +1,147 @@
+<odoo>
+    <data>
+
+        <!-- Form / Tree and Action for document.control.template -->
+        <record id="document_control_view_form" model="ir.ui.view">
+            <field name="name">document_control_view_form</field>
+            <field name="model">document.control</field>
+            <field name="arch" type="xml">
+                <form string="_form">
+                    <header>
+                        <field name="status" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
+                    <sheet>
+                        <group col="4">
+                            <field name="reference" readonly="1"/>
+                            <field name="name"/>
+                            <field name="partner_id"/>
+                            <field name="expiration_type"/>
+                        </group>
+                        <group col="4">
+                            <field name="category_id"/>
+                            <field name="expiration_date"/>
+                            <field name="file"/>
+                            <field name="create_date" widget="date" readonly="1"/>
+                            <field name="create_uid" readonly="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="document_control_view_tree" model="ir.ui.view">
+            <field name="name">document_control_view_tree</field>
+            <field name="model">document.control</field>
+            <field name="arch" type="xml">
+                <tree string="_tree">
+                    <field name="reference"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="category_id"/>
+                    <field name="expiration_date"/>
+                    <field name="file"/>
+                    <field name="status"/>
+                    <field name="create_date"/>
+                    <field name="company_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="documents_control_action_window" model="ir.actions.act_window">
+            <field name="name">Document Control</field>
+            <field name="res_model">document.control</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="personal_documents_control_action_window" model="ir.actions.act_window">
+            <field name="name">Document Control</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">document.control</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('partner_id', '=', active_id)]</field>
+            <field name="context">
+                {'search_default_partner_id': active_id, 'default_partner_id': active_id}
+            </field>
+        </record>
+
+        <!-- Action for document.control.category -->
+        <record id="document_categories_action_window" model="ir.actions.act_window">
+            <field name="name">Document Category</field>
+            <field name="res_model">document.control.category</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Form / Tree and Action for document.control.template -->
+        <record id="document_control_template_view_form" model="ir.ui.view">
+            <field name="name">_view_form</field>
+            <field name="model">document.control.template</field>
+            <field name="arch" type="xml">
+                <form string="Template">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="category_id"/>
+                            <field name="create_date"/>
+                            <field name="create_uid"/>
+                        </group>
+                        <group col="4" string="Documents">
+                            <field name="control_line_ids" colspan="4" modifiers="{}"
+                                   options="{'no_open': True, 'no_create': True}"
+                                   id="control_line_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="block_sale" widget="boolean_toggle"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="document_control_template_view_tree" model="ir.ui.view">
+            <field name="name">document_control_template_view_tree</field>
+            <field name="model">document.control.template</field>
+            <field name="arch" type="xml">
+                <tree string="document_control_template_tree">
+                    <field name="name"/>
+                    <field name="category_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="document_templates_action_window" model="ir.actions.act_window">
+            <field name="name">Templates</field>
+            <field name="res_model">document.control.template</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- Menu items -->
+        <menuitem name="Document Control"
+                  id="document_control.menu_root"
+                  web_icon="document_control,static/description/icon.png"/>
+
+        <menuitem name="Documents" id="document_control.document"
+                  parent="document_control.menu_root"
+                  action="document_control.documents_control_action_window"
+        />
+        <menuitem name="Setting" id="document_control.setting"
+                  parent="document_control.menu_root"/>
+
+        <menuitem name="Categories" id="document_control.categories"
+                  parent="document_control.setting"
+                  action="document_control.document_categories_action_window"/>
+        <menuitem name="Documents Template" id="document_control.template"
+                  parent="document_control.setting"
+                  action="document_control.document_templates_action_window"/>
+    </data>
+</odoo>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Ing. Yadier Abel de Quesada yadierq87@gmail.com -->
+<odoo>
+    <data noupdate="1">
+        <!-- sequence solicitud de pago -->
+        <record id="sequence_solicitud_pago_cup" model="ir.sequence">
+            <field name="name">sequence demanda vestuario de Depto </field>
+            <field name="code">sequence.demanda.vestuario.depto</field>
+            <field name="active">TRUE</field>
+            <field name="suffix">/DEPTO/%(range_year)s</field>
+            <field name="preffix">DV/</field>
+            <field name="padding">4</field>
+        </record>
+
+        <!-- sequence instrumentos de pago cup -->
+        <record id="sequence_instrumento_pago_cup" model="ir.sequence">
+            <field name="name">sequence demanda vestuario de Division</field>
+            <field name="code">sequence.demanda.vestuario.division</field>
+            <field name="suffix">/DIV/%(range_year)s</field>
+            <field name="preffix">DV/</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>
+
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_preference_telefono" model="res.preference.contact">
+            <field name="name">Teléfono</field>
+        </record>
+        <record id="res_preference_correo" model="res.preference.contact">
+            <field name="name">Correo</field>
+        </record>
+        <record id="res_preference_telegram" model="res.preference.contact">
+            <field name="name">Telegram</field>
+        </record>
+        <record id="res_preference_linkedin" model="res.preference.contact">
+            <field name="name">Linkedin</field>
+        </record>
+        <record id="res_preference_zoom" model="res.preference.contact">
+            <field name="name">Zoom</field>
+        </record>
+    </data>
+
+    <data>
+        <!-- field register fields for crm.lead -->
+        <function model="ir.model.fields" name="formbuilder_whitelist">
+            <value>crm.lead</value>
+            <value eval="[
+                'contact_name',
+                'description',
+                'email_from',
+                'name',
+                'partner_name',
+                'phone',
+                'title',
+                'lastname',
+                'company_name',
+                'type_contact',
+            ]"/>
+        </function>
+    </data>
+
+</odoo>

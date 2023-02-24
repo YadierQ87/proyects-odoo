@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="invoice_report_consumption">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <style>
+                            table.table{
+                                font-size:12px !important;
+                            }
+                        </style>
+                        <div class="page">
+                            <h6 style="text-transform:uppercase;">
+                                COMPROBANTE DE COBRO DE ALICUOTA MES
+                                <t t-if="o.month_report">
+                                   <span t-field="o.month_report"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-field="o.month_before"/>
+                                </t>
+                                | CONDOMINIO : <span t-esc="o.env.user.company_id.name"/>
+                            </h6>
+                            <ul>
+                                <li>FECHA: <span t-esc="o.create_date"/></li>
+                                <li>DEPARTAMENTO <span t-esc="o.property_id.name"/> | <span t-field="o.partner_id"/> </li>
+                                <li>CONSUMO CORRESPONDIENTE AL MES DE:
+                                    <t t-if="o.month_report">
+                                       <span t-field="o.month_report"/>
+                                    </t>
+                                    <t t-else="">
+                                       <span t-field="o.month"/>
+                                    </t>
+                                </li>
+                                <li>ESTADO DE LA ALICUOTA: <span t-field="o.payment_state"/></li>
+                            </ul>
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>RUBRO</th>
+                                        <th>LECTURA ANTERIOR</th>
+                                        <th>LECTURA ACTUAL</th>
+                                        <th>CONSUMO</th>
+                                        <th>VALOR</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.invoice_line_ids" t-as="line">
+                                        <tr>
+                                            <td><span t-esc="line.name"/></td>
+                                            <td><span t-esc="line.previous_consumption"/></td>
+                                            <td><span t-esc="line.actual_consumption"/></td>
+                                            <td><span t-esc="line.consumption"/></td>
+                                            <td><span t-esc="line.price_subtotal"/></td>
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td><b>DESGLOSE DE PAGO</b></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>IMPORTE</td>
+                                        <td><span t-esc="o.amount_total"
+                                                  t-options='{"widget": "float", "precision": 2}'/></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-danger">PENDIENTE</td>
+                                        <t t-set="pending_payments"
+                                               t-value="(o.partner_id.payment_amount_due) - (o.amount_residual)" />
+                                        <td> <span t-esc="pending_payments"
+                                                   t-options='{"widget": "float", "precision": 2}'/></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td><b>TOTAL A PAGAR</b></td>
+                                        <td>-</td>
+                                        <td>
+                                            <span t-esc="o.partner_id.payment_amount_due"
+                                                  t-options='{"widget": "float", "precision": 2}'/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

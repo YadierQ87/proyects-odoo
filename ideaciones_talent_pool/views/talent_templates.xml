@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- template for forms colaborador -->
+    <template id="template_colaborador_forms_input">
+        <section class="row" id="user-info">
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="name">Nombre(s) *</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input  id="name"
+                        name="name"
+                        class="form-control check_keys_input"
+                        type="text"
+                        t-att-value="partner.name"
+                        field-type="letter"
+                        validator-type="validate_alphanumeric_with_spaces"
+                        placeholder="Ej:Juan A."
+                        required="required"
+                />
+                <div
+                        class="js_errzone alert alert-danger"
+                        style="display:none;"
+                        role="alert"
+                />
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="name">Apellidos *</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="lastname"
+                        name="lastname"
+                        class="form-control check_keys_input"
+                        type="text"
+                        field-type="letter"
+                        t-att-value="partner.lastname"
+                        validator-type="validate_alphanumeric_with_spaces"
+                        placeholder="Ej:Pereira Mora"
+                />
+                <div
+                        class="js_errzone alert alert-danger"
+                        style="display:none;"
+                        role="alert"
+                />
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="username">Nombre de usuario *</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input  id="username"
+                        name="username"
+                        class="form-control check_keys_input"
+                        field-type="alphanumeric"
+                        t-att-value="user.login"
+                        type="text"
+                        placeholder="Ej: usuario87"
+                        required="required"/>
+            </div>
+
+
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="input_name">Fecha de Nacimiento</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <div class="input-group"
+                     id="datepicker2677309827292661"
+                     data-target-input="nearest">
+                    <t t-if="partner.birthday">
+                        <t t-set='datetime_birthday'>
+                            <t
+                                    t-options='{"widget": "date"}'
+                                    t-esc="partner.birthday"
+                            />
+                        </t>
+                        <input
+                                type="text"
+                                class="form-control datetimepicker-input  s_website_form_input"
+                                name="birthday"
+                                min="1900-01-01"
+                                data-date-format="DD/MM/YYYY"
+                                data-date=""
+                                t-att-value="datetime_birthday.strip()"
+                                placeholder=""
+                                id="date_timepicker_end"
+                        />
+
+                    </t>
+                    <t t-else="">
+                        <input
+                                type="text"
+                                class="form-control datetimepicker-input s_website_form_input"
+                                name="birthday"
+                                min="1900-01-01"
+                                data-date-format="DD/MM/YYYY"
+                                data-date=""
+                                placeholder="DD/MM/YYYY"
+                                id="date_timepicker_end1"
+                        />
+                    </t>
+                </div>
+            </div>
+
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="sex">Sexo</label>
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-4">
+                <select id="sex"
+                        name="sex"
+                        class="form-control s_website_form_input">
+                    <option value="">
+                        Seleccione
+                    </option>
+                    <option value="femenino"
+                            t-att-selected="'selected' if partner.sex == 'femenino' else None" >
+                        Femenino
+                    </option>
+                    <option value="masculino"
+                            t-att-selected="'selected' if partner.sex == 'masculino' else None" >
+                        Masculino
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="passport">Pasaporte</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="passport"
+                        name="passport"
+                        class="form-control check_keys_input"
+                        size="8"
+                        t-att-value="partner.passport"
+                        field-type="alphanumeric"
+                        validator-type="validate_alphanumeric_with_spaces"
+                        type="text"
+                        placeholder="Ej: KHY67188"
+                />
+                <div
+                        class="js_errzone alert alert-danger"
+                        style="display:none;"
+                        role="alert"
+                />
+            </div>
+
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="ci_number">CI *</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="ci_number"
+                        name="ci_number"
+                        class="form-control check_keys_input"
+                        t-att-value="partner.ci_number"
+                        validator-type="validate_ci"
+                        field-type="numeric"
+                        max="11"
+                        type="text"
+                        placeholder="Ej: 80051600148"
+                        required="required"
+                />
+                <div
+                        class="js_errzone alert alert-danger"
+                        style="display:none;"
+                        role="alert"
+                />
+            </div>
+
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="input_name">Foto de perfil</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <div class="input-group">
+                    <input type="file" name="profile_pic" id="upload"
+                           accept=".jpg, .jpeg, .png"/>
+                </div>
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="country">Provincia</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <select class="form-control s_website_form_input"
+                        name="province"
+                        id="province">
+                    <option value="-">Seleccione</option>
+                    <option  t-att-selected="'selected' if partner.province == 'La Habana' else None" >
+                        La Habana
+                    </option>
+                    <option  t-att-selected="'selected' if partner.province == 'Isla de la Juventud' else None">
+                        Isla de la Juventud
+                    </option>
+                    <option t-att-selected="'selected' if partner.province == 'Pinar del Río' else None">
+                        Pinar del Río
+                    </option>
+                    <option t-att-selected="'selected' if partner.province == 'Artemisa' else None" >
+                        Artemisa
+                    </option>
+                    <option t-att-selected="'selected' if partner.province == 'Mayabeque' else None">
+                        Mayabeque
+                    </option>
+                    <option t-att-selected="'selected' if partner.province == 'Matanzas' else None" >
+                        Matanzas
+                    </option>
+                    <option t-att-selected="'selected' if partner.province == 'Cienfuegos' else None">
+                        Cienfuegos
+                    </option>
+                    <option t-att-selected="'selected' if partner.province == 'Ciego de Ávila' else None">
+                        Ciego de Ávila
+                    </option>
+                    <option t-att-selected="'selected' if partner.province == 'Camagüey' else None" >
+                        Camagüey
+                    </option>
+                    <option t-att-selected="'selected' if partner.province == 'Las Tunas' else None" >
+                        Las Tunas
+                    </option>
+                    <option t-att-selected="'selected' if partner.province == 'Holguín' else None" >
+                        Holguín
+                    </option>
+                    <option t-att-selected="'selected' if partner.province == 'Guantánamo' else None">
+                        Guantánamo
+                    </option>
+                    <option t-att-selected="'selected' if partner.province == 'Granma' else None" >
+                        Granma
+                    </option>
+                    <option t-att-selected="'selected' if partner.province == 'Santiago de Cuba' else None">
+                        Santiago de Cuba
+                    </option>
+                </select>
+            </div>
+        </section>
+        <section class="row" data-name="social-network" id="social-network">
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="email">Correo electrónico *</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="email"
+                        name="email"
+                        class="form-control"
+                        t-att-value="partner.email"
+                        validator-type="validate_email"
+                        field-type="email"
+                        type="email"
+                        placeholder="Ej: micorreo@dominio.ministerio"
+                        required="required"
+                />
+                <div
+                        class="js_errzone alert alert-danger"
+                        style="display:none;"
+                        role="alert"
+                />
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="phone">Teléfono:</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="phone"
+                        name="phone"
+                        class="form-control"
+                        t-att-value="partner.phone"
+                        validator-type="validate_phone"
+                        field-type="phone"
+                        type="text"
+                        placeholder="784350435"
+                />
+                <div
+                        class="js_errzone alert alert-danger"
+                        style="display:none;"
+                        role="alert"
+                />
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="mobile">Móvil*:</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="mobile"
+                        name="mobile"
+                        class="form-control"
+                        t-att-value="partner.mobile"
+                        validator-type="validate_phone"
+                        field-type="phone"
+                        type="text"
+                        placeholder="+53767675"
+                        required="required"
+                />
+                <div
+                        class="js_errzone alert alert-danger"
+                        style="display:none;"
+                        role="alert"
+                />
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="whatsapp">Whatsapp:</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="whatsapp"
+                        name="whatsapp"
+                        class="form-control"
+                        t-att-value="partner.whatsapp"
+                        validator-type="validate_phone"
+                        field-type="phone"
+                        type="text"
+                        placeholder="+538899974"
+                />
+                <div
+                        class="js_errzone alert alert-danger"
+                        style="display:none;"
+                        role="alert"
+                />
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="facebook">Facebook:</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="facebook"
+                        name="facebook"
+                        class="form-control"
+                        t-att-value="partner.facebook"
+                        validator-type="validate_facebook"
+                        field-type="website"
+                        type="text"
+                        placeholder="www.facebook/profile"
+                />
+                <div
+                        class="js_errzone alert alert-danger"
+                        style="display:none;"
+                        role="alert"
+                />
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="orcid">Orcid:</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="orcid"
+                        name="orcid"
+                        class="form-control"
+                        t-att-value="partner.orcid"
+                        validator-type="validate_orcid"
+                        type="text"
+                        field-type="website"
+                        placeholder="www.orcid/profile"
+                />
+                <div
+                        class="js_errzone alert alert-danger"
+                        style="display:none;"
+                        role="alert"
+                />
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="linkedin">Linkedin</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="linkedin"
+                        name="linkedin"
+                        class="form-control"
+                        t-att-value="partner.linkedin"
+                        validator-type="validate_linkedin"
+                        field-type="website"
+                        type="text"
+                        placeholder="www.linkedin/profile"
+                />
+                <div
+                        class="js_errzone alert alert-danger"
+                        style="display:none;"
+                        role="alert"
+                />
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="website_own">Sitio web</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="website_own"
+                        name="website_own"
+                        class="form-control"
+                        t-att-value="partner.website_own"
+                        validator-type="validate_url"
+                        field-type="website"
+                        type="text"
+                        placeholder="www.profile.domain.cu"
+                />
+                <div
+                        class="js_errzone alert alert-danger"
+                        style="display:none;"
+                        role="alert"
+                />
+            </div>
+        </section>
+        <section class="row">
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="name">Título/Especialidad</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="speciality"
+                        type="text"
+                        name="speciality"
+                        t-att-value="partner.speciality"
+                        field-type="letter"
+                        class="form-control s_website_form_input"
+                        placeholder="Ej: Lic. en Ciencias"
+                />
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="name">Status laboral</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <select class="form-control s_website_form_input"
+                        id="status_work"
+                        name="status_work">
+                    <option value="">Seleccione</option>
+                    <option t-att-selected="'selected' if partner.status_work == 'Freelance' else None">
+                        Freelance
+                    </option>
+                    <option t-att-selected="'selected' if partner.status_work == 'MIPYME' else None" >
+                        MIPYME
+                    </option>
+                    <option t-att-selected="'selected' if partner.status_work == 'TCP' else None" >
+                        TCP
+                    </option>
+                    <option t-att-selected="'selected' if partner.status_work == 'Trabajador estatal' else None">
+                        Trabajador estatal
+                    </option>
+                    <option t-att-selected="'selected' if partner.status_work == 'Otro' else None">
+                        Otro
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="name">Empresa/Institución</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="institution"
+                        name="institution"
+                        type="text"
+                        field-type="alphanumeric"
+                        t-att-value="partner.institution"
+                        class="form-control s_website_form_input"
+                        placeholder="Empresa"
+                />
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="name">Puesto Actual</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="job_name"
+                        name="job_name"
+                        type="text"
+                        field-type="alphanumeric"
+                        t-att-value="partner.job_name"
+                        class="form-control s_website_form_input"
+                        placeholder="Esp. Principal"
+                />
+            </div>
+
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="name">Organismo al que
+                    pertenece
+                </label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input
+                        id="ministery"
+                        name="ministery"
+                        type="text"
+                        field-type="alphanumeric"
+                        t-att-value="partner.ministery"
+                        class="form-control s_website_form_input"
+                />
+            </div>
+        </section>
+    </template>
+    <!-- template for summary CV -->
+    <template id="template_summary_cv">
+        <t t-call="website.layout">
+            <div class="oe_structure oe_empty"/>
+            <div id="wrap" class="o_portal_wrap">
+                <div class="container mb64 mt48">
+                    <section class="row">
+                        <div class="col-md-12">
+                            <form class="update_cv" action="/update/curriculum" method="post">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <input type="hidden" name="partner_id" t-att-value="partner.id"/>
+                                <section class="row">
+                                    <div class="form-group s_website_form_field col-md-10">
+                                        <label for="name">Resumen CV</label>
+                                        <textarea
+                                                id="summary_cv"
+                                                name="summary_cv"
+                                                size="1300"
+                                                placeholder="Escriba Hasta 200 palabras o 1300 caracteres contando los espacios"
+                                                class="form-control s_website_form_input"
+                                        >
+                                            <t t-if="partner.summary_cv" t-esc="partner.summary_cv.strip()"/>
+                                        </textarea>
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary float-right mb32 ">
+                                        Guardar resumen CV
+                                        <span class="fa fa-long-arrow-right"/>
+                                    </button>
+                                </section>
+                            </form>
+                            <!-- sections for lines of experiences -->
+                            <div class="row">
+                                <div id="ideaciones_skills" class="form-group col-md-10  pt-4 pb-4">
+                                    <a
+                                            class="o_wtalent_js_add_skill mr-1 border btn btn-primary font-weight-normal"
+                                            aria-label="Adicionar Competencia"
+                                            href="#"
+                                    >
+                                        <span>
+                                            <i class="fa fa-plus"/>
+                                            COMPETENCIA
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="form-group text-right s_website_form_field col-md-4">
+                                    <label for="name"/>
+                                </div>
+
+                                <div id="ideaciones_experiences" class="form-group col-md-10  pt-4 pb-4">
+                                    <a
+                                            class="o_wtalent_js_add_experience mr-1 border btn btn-primary font-weight-normal"
+                                            role="button"
+                                            t-att-category-type="experiencia"
+                                            aria-label="EXPERIENCIA"
+                                            href="#"
+                                    >
+                                        <span>
+                                            <i class="fa fa-plus"/>
+                                            EXPERIENCIA PROFESIONAL
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="form-group text-right s_website_form_field col-md-4">
+                                    <label for="name"/>
+                                </div>
+
+                                <div class="form-group col-md-10  pt-4 pb-4">
+                                    <table class="table table-hover ">
+                                        <h6>FORMACIÓN ACADÉMICA</h6>
+                                        <thead>
+                                            <tr class="">
+                                                <td>Nombre</td>
+                                                <td>Tipo</td>
+                                                <td>Especialidad</td>
+                                                <td/>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <a
+                                            class="o_wtalent_js_add_experience mr-1 border btn btn-warning font-weight-normal"
+                                            role="button"
+                                            t-att-category-type="formacion"
+                                            aria-label="FORMACIÓN ACADÉMICA"
+                                            href="#"
+                                    >
+                                        <span>
+                                            <i class="fa fa-plus"/>
+                                            FORMACIÓN ACADÉMICA
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="form-group text-right s_website_form_field col-md-4">
+                                    <label for="name"/>
+                                </div>
+
+                                <div class="form-group col-md-10 s_website_form_field  pt-4 pb-4">
+                                    <table class="table table-hover ">
+                                        <h6>PUBLICACIONES</h6>
+                                        <thead>
+                                            <tr class="">
+                                                <td>Título</td>
+                                                <td>Año</td>
+                                                <td>Detalle</td>
+                                                <td/>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <a
+                                            class="o_wtalent_js_add_experience mr-1 border btn btn-primary font-weight-normal"
+                                            role="button"
+                                            t-att-category-type="publicacion"
+                                            aria-label="PUBLICACIÓN"
+                                            href="#"
+                                    >
+                                        <span>
+                                            <i class="fa fa-plus"/>
+                                            PUBLICACIÓN
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="form-group text-right s_website_form_field col-md-4">
+                                    <label for="name"/>
+                                </div>
+                                <div class="form-group col-md-10 s_website_form_field  pt-4 pb-4">
+                                    <table class="table table-hover ">
+                                        <h6>EVENTOS</h6>
+                                        <thead>
+                                            <tr class="">
+                                                <td>Título</td>
+                                                <td>Año</td>
+                                                <td>Detalle</td>
+                                                <td/>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <a
+                                            class="o_wtalent_js_add_experience mr-1 border btn btn-primary font-weight-normal"
+                                            role="button"
+                                            t-att-category-type="eventos"
+                                            aria-label="EVENTOS"
+                                            href="#"
+                                    >
+                                        <span>
+                                            <i class="fa fa-plus"/>EVENTO
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="form-group text-right s_website_form_field col-md-4">
+                                    <label for="name"/>
+                                </div>
+                                <div class="form-group col-md-10 s_website_form_field  pt-4 pb-4">
+                                    <table class="table table-hover ">
+                                        <h6>PROYECTOS</h6>
+                                        <thead>
+                                            <tr class="">
+                                                <td>Título</td>
+                                                <td>Año</td>
+                                                <td>Especialidad</td>
+                                                <td/>
+                                            </tr>
+                                        </thead>
+
+                                    </table>
+                                    <a
+                                            class="o_wtalent_js_add_experience mr-1 border btn btn-primary font-weight-normal"
+                                            role="button"
+                                            t-att-category-type="proyectos"
+                                            aria-label="PROYECTOS"
+                                            href="#"
+                                    >
+                                        <span>
+                                            <i class="fa fa-plus"/>PROYECTO
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="form-group text-right s_website_form_field col-md-4">
+                                    <label for="name"/>
+                                </div>
+                                <div class="form-group col-md-10 s_website_form_field  pt-4 pb-4">
+                                    <table class="table table-hover ">
+                                        <h6>CURSOS</h6>
+                                        <thead>
+                                            <tr class="">
+                                                <td>Título</td>
+                                                <td>Año</td>
+                                                <td>Especialidad</td>
+                                                <td/>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <a
+                                            class="o_wtalent_js_add_experience mr-1 border btn btn-primary font-weight-normal"
+                                            role="button"
+                                            t-att-category-type="international"
+                                            aria-label="CURSOS"
+                                            href="#"
+                                    >
+                                        <span>
+                                            <i class="fa fa-plus"/>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="form-group text-right s_website_form_field col-md-4">
+                                    <label for="name"/>
+                                </div>
+                                <div class="form-group col-md-10 s_website_form_field  pt-4 pb-4">
+                                    <table class="table table-hover ">
+                                        <h6>CERTIFICACIONES</h6>
+                                        <thead>
+                                            <tr class="">
+                                                <td>Título</td>
+                                                <td>Año</td>
+                                                <td>Especialidad</td>
+                                                <td/>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <a
+                                            class="o_wtalent_js_add_experience mr-1 border btn btn-primary font-weight-normal"
+                                            role="button"
+                                            t-att-category-type="consultoria"
+                                            aria-label="CERTIFICADO"
+                                            href="#"
+                                    >
+                                        <span>
+                                            <i class="fa fa-plus"/>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

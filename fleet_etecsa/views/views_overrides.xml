@@ -1,0 +1,176 @@
+<odoo>
+    <data>
+
+        <!--sobreescribir vista fleet.vehicle.log.fuel -->
+        <record id='fleet_etecsa_inherit_view_tree' model='ir.ui.view'>
+            <field name="name">fleet.vehicle.etecsa.tree</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='model_id']" position="after">
+                    <field name="jefe"/>
+                    <field name="location"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="fleet_vehicle_etecsa_log_fuel_form" model="ir.ui.view">
+            <field name="name">fleet_vehicle_etecsa_log_fuel_form</field>
+            <field name="model">fleet.vehicle.log.fuel</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_log_fuel_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount']" position="after">
+                    <field name="combustible_en_tanque" />
+                </xpath>
+                <!-- find field description and add the field
+                     idea_ids after it -->
+                <xpath expr="//field[@name='notes']" position="before">
+                    <group col="2" string="Referencia Tarjeta" modifiers="{}">
+                        <field name="tarjeta_id" />
+                        <field name="tipo_combustible_ref" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+
+        <!--sobreescribir vista fleet.vehicle Form   -->
+        <record id="fleet_vehicle_etecsa_form" model="ir.ui.view">
+            <field name="name">fleet_vehicle_etecsa_form</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_button_box']" position="inside">
+                    <button name="return_action_comb_open" type="object" class="oe_stat_button" icon="fa-newspaper-o"
+                            context="{'xml_id':'anexo_unico_combustible_all'}" help="Reporte Anexo Unico">
+                        <field name="anexo_unico_count" widget="statinfo" string="Anexo Unico Comb."/>
+                    </button>
+                    <button name="return_action_comb_open" type="object" class="oe_stat_button" icon="fa-pencil-square-o"
+                            context="{'xml_id':'anexo_5_liquidacion_combustible_action_all'}" help="Anexo 5 de Liquidacion">
+                        <field name="anexo_liquidacion_count" widget="statinfo" string="Anexo 5 Liq."/>
+                    </button>
+                </xpath>
+                <!-- find field description and add the field
+                     idea_ids after it -->
+                <xpath expr="//sheet" position="inside">
+                    <group col="4" string="Informacion de Referencia" modifiers="{}">
+                            <field name="chofer_nombre"/>
+                            <field name="jefe"/>
+                            <!--field name="asignado_a" /-->
+                            <field name="actividad"/>
+                            <field name="tipo_auto"/>
+                            <field name="fecha_dia_tecnica"/>
+                            <field name="observacion_dia_tecnica"/>
+                            <field name="foto_tecnica"/>
+                        <!--group>
+                            <field name="lic_circulacion_id" />
+                            <field name="carnet_somaton_id" />
+                        </group-->
+                    </group>
+                    <!--group col="2"  string="Entrega y Consumo de Combustible" modifiers="{}">
+                        <field name="asign_fuel_ids" readonly="True"/>
+                        <field name="anexo_unico_ids" readonly="True" />
+                        <field name="anexo_liquidacion_ids" readonly="True" />
+                    </group-->
+                </xpath>
+
+                <xpath expr="//field[@name='seats']" position="before">
+                    <field name="odometro_funcionando" />
+                    <field name="estado_chapisteria" />
+                    <field name="estado_general" />
+                    <field name="tipo_ring" />
+                    <field name="clasificacion_ring"/>
+                    <field name="anno_fabricacion"/>
+                </xpath>
+
+                 <xpath expr="//field[@name='fuel_type']" position="before">
+                    <field name="vin" />
+                    <field name="no_serie" />
+                    <field name="no_inventario" />
+                    <field name="no_motor" />
+                    <field name="no_circulacion"/>
+                    <field name="codigo"/>
+                 </xpath>
+
+
+                <!-- quitar campos del vehiculo-->
+
+                <xpath expr="//field[@name='car_value']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='company_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='residual_value']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='vin_sn']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='model_year']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='transmission']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='co2']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='horsepower']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                 <xpath expr="//field[@name='horsepower_tax']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                 <xpath expr="//field[@name='power']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                 <xpath expr="//field[@name='seats']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                 <xpath expr="//field[@name='doors']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+
+            </field>
+        </record>
+
+
+        <!-- sobreecribir vista departamento para asignarle centro de costo MLC y centro Costo MN-->
+        <record id="fleet_etecsa_department_form" model="ir.ui.view">
+            <field name="name">fleet_etecsa_hr_view_department_form</field>
+            <field name="model">hr.department</field>
+            <field name="inherit_id" ref="hr.view_department_form"/>
+            <field name="arch" type="xml">
+                <!-- find field description and add the field
+                     idea_ids after it -->
+                <xpath expr="//field[@name='company_id']" position="before">
+                    <field name="centro_costo_mlc" />
+                    <field name="centro_costo_mn" />
+                </xpath>
+            </field>
+        </record>
+
+
+
+
+
+
+
+
+
+
+    </data>
+</odoo>

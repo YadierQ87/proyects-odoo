@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="before">
+                    <group string="Otra Info" col="4">
+                        <field name="name" />
+                        <field name="lastname" />
+                        <field name="type_partner" />
+                        <field name="work_email" />
+                        <field name="birthday" />
+                    </group>
+                    <group string="Ideaciones Cliente" col="4"
+                           attrs="{'invisible':[('type_partner','=','colaborador')]}">
+                        <field name="type_contact" />
+                        <field name="job_title" />
+                        <field name="interested"  />
+                        <field name="new_pref_contacts"  />
+                    </group>
+                    <group col="2">
+                        <field name="pref_contact_ids" widget="many2many_checkboxes" row="6" />
+                    </group>
+                    <group string="Ideaciones Colaborador" col="4"
+                           attrs="{'invisible':[('type_partner','=','cliente')]}">
+                        <field name="passport" />
+                        <field name="province" />
+                        <field name="ci_number" />
+                        <field name="sex" />
+                        <field name="speciality" />
+                        <field name="status_work" />
+                        <field name="job_name" />
+                        <field name="institution" />
+                        <field name="ministery" />
+                        <field name="summary_cv" />
+                    </group>
+                    <group string="Social Links" col="4">
+                        <field name="whatsapp" />
+                        <field name="facebook" />
+                        <field name="orcid" />
+                        <field name="linkedin" />
+                        <field name="website_own" />
+                    </group>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Summary CV" attrs="{'invisible':[('type_partner','=','cliente')]}">
+                        <group string="CV and Experiences" col="4">
+                            <field name="competences_ids" />
+                            <field name="acknowledge_ids" />
+                            <field name="experience_ids" />
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+

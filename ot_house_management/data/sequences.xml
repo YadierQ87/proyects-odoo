@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Sequences for payment lines -->
+        <record id="seq_house_payment_line" model="ir.sequence">
+            <field name="name">Payment Line</field>
+            <field name="code">house.contract.payment.lines</field>
+            <field name="padding">0000</field>
+            <field name="number_next">0001</field>
+            <field name="number_increment">1</field>
+            <field name="prefix">PL-</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,135 @@
+<odoo>
+  <data>
+
+      <record id="fleet_etecsa_asignacion_combustible_list_view" model="ir.ui.view">
+          <field name="name">Asignacion de Combustible</field>
+          <field name="model">fleet.etecsa.vehicle.asign.fuel</field>
+          <field name="priority">1</field>
+          <field name="arch" type="xml">
+              <tree string="Asignacion">
+                  <field name="id" />
+                  <field name="fecha_asignacion" />
+                  <field name="mes_curso" />
+                  <field name="cantidad_litros" />
+              </tree>
+          </field>
+      </record>
+
+      <record id="fleet_etecsa_tarjetas_combustible_list_view" model="ir.ui.view">
+          <field name="name">Tarjetas de Combustible</field>
+          <field name="model">fleet.etecsa.tarjeta.combustible</field>
+          <field name="priority">1</field>
+          <field name="arch" type="xml">
+              <tree string="Tarjeta">
+                  <field name="id" />
+                  <field name="name" />
+                  <field name="responsable_id" />
+                  <field name="department_id" />
+              </tree>
+          </field>
+      </record>
+
+
+      <record id="fleet_etecsa_anexo_unico_list_view" model="ir.ui.view">
+          <field name="name">Anexo Unico</field>
+          <field name="model">fleet.etecsa.anexo.unico</field>
+          <field name="priority">1</field>
+          <field name="arch" type="xml">
+              <tree string="Anexo Unico">
+                  <field name="id" />
+                  <field name="chapa" />
+                  <field name="create_date" />
+                  <field name="comb_total_consumido" />
+                  <field name="km_inicial" />
+                  <field name="km_final" />
+                  <field name="percent_plan_real" />
+              </tree>
+          </field>
+      </record>
+
+      <record id="fleet_etecsa_anexo_liquidacion_list_view" model="ir.ui.view">
+          <field name="name">Anexo 5 Liquidacion</field>
+          <field name="model">fleet.etecsa.anexo.liquidacion</field>
+          <field name="priority">1</field>
+          <field name="arch" type="xml">
+              <tree string="Anexo 5 Liquidacion">
+                  <field name="id" />
+                  <field name="vehicle_id" />
+                  <field name="create_date" />
+                  <field name="depto_propietario" />
+                  <field name="centro_costo" />
+                  <field name="tarjeta_id" />
+                  <field name="saldo_ini_importe" />
+                  <field name="saldo_final_importe" />
+              </tree>
+          </field>
+      </record>
+
+
+      <record id="fleet_etecsa_tickets_flota_list_view" model="ir.ui.view">
+          <field name="name">Ticket Vehiculo</field>
+          <field name="model">fleet.etecsa.ticket</field>
+          <field name="priority">1</field>
+          <field name="arch" type="xml">
+              <tree string="Ticket Vehiculo">
+                  <field name="id" />
+                  <field name="name" />
+                  <field name="vehicle_id" />
+                  <field name="asignado_a"/>
+                  <field name="categorie_id" />
+                  <field name="create_date"/>
+                  <field name="fecha_cierre_ticket"/>
+              </tree>
+          </field>
+      </record>
+	  
+	  <record id="fleet_etecsa_atvds_tickets_flota_list_view" model="ir.ui.view">
+          <field name="name">Actvds Ticket Vehiculo</field>
+          <field name="model">fleet.etecsa.actvds.ticket</field>
+          <field name="priority">1</field>
+          <field name="arch" type="xml">
+              <tree string="Ticket Vehiculo">
+                  <field name="id" />
+                  <field name="name" />
+                  <field name="asignado_a" />
+                  <field name="date_start" />
+                  <field name="date_end" />
+              </tree>
+          </field>
+      </record>
+
+
+      <record id="fleet_etecsa_choferes_list_view" model="ir.ui.view">
+          <field name="name">Chofer Vehiculo</field>
+          <field name="model">fleet.etecsa.chofer</field>
+          <field name="priority">1</field>
+          <field name="arch" type="xml">
+              <tree string="Chofer Vehiculo">
+                  <field name="id" />
+                  <field name="name" />
+                  <field name="employee_id" />
+                  <field name="categoria_licencia"  widget="many2many_tags"/>
+              </tree>
+          </field>
+      </record>
+
+      <record id="fleet_etecsa_calculo_cdt_list_view" model="ir.ui.view">
+          <field name="name">Calculo CDT</field>
+          <field name="model">fleet.etecsa.calculo.cdt</field>
+          <field name="priority">1</field>
+          <field name="arch" type="xml">
+              <tree string="Calculo CDT Diario">
+                  <field name="id" />
+                  <field name="name" />
+                  <field name="total_vehiculos" />
+                  <field name="entry_date" />
+                  <field name="vehiculos_operando" />
+                  <field name="vehiculos_paralizados" />
+                  <field name="resultado_cdt" />
+              </tree>
+          </field>
+      </record>
+
+
+  </data>
+</odoo>

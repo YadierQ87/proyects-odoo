@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Profile  portal_my_home inherit_id="portal.portal_layout"-->
+    <template id="new_profile" inherit_id="portal.portal_layout">
+        <xpath expr="//div[@class='o_portal_wrap']" position="replace" priority="10">
+            <div id="wrap" class="o_portal_wrap">
+                <div class="container mb64">
+                    <t t-if="my_details">
+                        <div class="row justify-content-between mt-4">
+                            <div t-attf-class="col-12 col-md-12 col-lg-12">
+                                <t t-raw="0"/>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-else="" class="d-none">
+                        <t t-raw="0"/>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="ideaciones_my_profile"  inherit_id="portal.portal_my_home">
+        <xpath expr="//div[@class='o_portal_my_home']" position="before" priority="10">
+            <!-- panel de alert para mensajes del controller -->
+            <p class="alert alert-danger alert-dismissible fade show" t-if="error" role="alert">
+                <t t-esc="error"/>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="fa fa-close"/>
+                </button>
+            </p>
+            <div class="alert alert-success alert-dismissible fade show" t-if="sms_welcome == '0'" role="alert">
+                <t t-set="partner" t-value="user_id.partner_id"/>
+                <t t-if="partner.type_partner == 'colaborador'">
+                    <strong>¡Bienvenido <span t-esc="partner.name"/></strong>
+                    <p>Nos emociona que seas uno de nosotros.</p>
+                    <p>En breve te contactaremos para que podamos conocernos mejor.</p>
+                </t>
+                <t t-if="partner.type_partner == 'cliente'">
+                    <strong>¡Gracias, <span t-esc="partner.name"/>, por confiar en nosotros!</strong>
+                    <p>Ya estamos organizándonos en función de su interés.</p>
+                    <p>En las próximas horas le contactaremos para organizar una reunión exploratoria.</p>
+                </t>
+                <t t-else="">
+                    <p> Gracias por su registro.</p>
+                </t>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="fa fa-close"/>
+                </button>
+            </div>
+            <!-- oldest o_portal_my_home dashboard profile for both type of contacts -->
+            <section class="s_three_columns pb32  pt16 bg-forms"
+                     data-vcss="001" data-snippet="s_three_columns" data-name="Columns" style="">
+                <div class="container-fluid">
+                    <div class="row d-flex align-items-stretch">
+                        <div class="s_col_no_bgcolor pt16 pb16 col-md-12">
+                            <div class="card bg-white h-100">
+                                <div class="card-body">
+                                    <!-- section para clientes -->
+                                    <t t-set="partner" t-value="user_id.partner_id"/>
+                                    <form action="/update/partner"
+                                          enctype="multipart/form-data"
+                                          class="o_mark_required login-form" data-mark="*"
+                                          data-editable-form="true"
+                                          data-model_name="res.partner"
+                                          data-success-mode="redirect"
+                                          data-success-page="/thanks/msg"
+                                          method="post">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <input type="hidden" name="partner_id" t-att-value="partner.id"/>
+
+                                        <section class="row pb32" >
+                                            <div class="col-md-6">
+                                                <span/>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="o_default_snippet_text text-right">Progreso del perfil</span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-striped" role="progressbar"
+                                                         aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
+                                                         style="width: 80%; min-width: 3%">
+                                                        <span class="s_progress_bar_text o_default_snippet_text">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <t t-if="user_id.partner_id.type_partner in ('cliente','internal')">
+                                            <t t-call="ideaciones_talent_pool.template_cliente_forms_input">
+                                                <t t-set="user" t-value="user_id"/>
+                                                <t t-set="partner" t-value="user_id.partner_id"/>
+                                            </t>
+                                        </t>
+                                        <t t-if="user_id.partner_id.type_partner == 'colaborador'">
+                                            <t t-call="ideaciones_talent_pool.template_colaborador_forms_input">
+                                                <t t-set="user" t-value="user_id"/>
+                                                <t t-set="partner" t-value="user_id.partner_id"/>
+                                            </t>
+                                        </t>
+                                         <div class="form-group text-right s_website_form_field col-md-12">
+                                            <span id="s_website_form_result" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group text-right s_website_form_field col-md-4">
+                                            <span/>
+                                        </div>
+
+                                        <button type="button"
+                                                id="continue-button"
+                                                class="btn btn-primary float-right mb32 ">
+                                            Guardar  <span class="fa fa-save" />
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </xpath>
+
+    </template>
+</odoo>

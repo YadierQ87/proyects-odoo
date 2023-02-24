@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_partner_ot_alipayments_form" model="ir.ui.view">
+            <field name="name">res.partner.ot.alipayments.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="before">
+                    <group col="4">
+                        <field name="is_client"/>
+                        <field name="property_id" />
+                        <field name="ali_payment" />
+                        <field name="last_month_invoiced" />
+                        <field name="condominium_id" />
+                        <field name="company_id" invisible="1" />
+                    </group>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Servicios a Facturar" name="services_quotation" >
+                        <field name="services_ids"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="ot_alipayments_tenants_act_window" model="ir.actions.act_window">
+            <field name="name">Propietarios/Inquilinos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form,activity</field>
+            <field name="search_view_id" ref="base.view_res_partner_filter"/>
+            <field name="domain">
+                [('is_client', '=', True)]
+            </field>
+        </record>
+
+    </data>
+</odoo>

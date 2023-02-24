@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="tipo_equipo_example" model="serclinic.cod.tipo.equipos">
+            <field name="name">Equipo de Radiografia</field>
+        </record>
+        <record id="local_medico_example" model="serclinic.locales.medicos">
+            <field name="name">Local Medico sala uno</field>
+        </record>
+        <record id="provincia_habana" model="serclinic.provincia">
+            <field name="id">1</field>
+            <field name="name">La Habana</field>
+            <field name="country_id">51</field>
+        </record>
+        <record id="municipio_habana" model="serclinic.municipality">
+            <field name="name">Playa</field>
+            <field name="province_id">1</field>
+        </record>
+        <record id="tipo_de_estudio" model="serclinic.study.type">
+            <field name="name">Estudio del Corazon</field>
+            <field name="description">Estudio del Corazon</field>
+        </record>
+    </data>
+</odoo>

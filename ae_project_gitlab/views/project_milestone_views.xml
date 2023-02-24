@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="gitlab_milestone_form_view" model="ir.ui.view">
+            <field name="name">project.milestone.form</field>
+            <field name="model">project.milestone</field>
+            <field name="arch" type="xml">
+                <form string="ModelTitle">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="example_title"/>
+                            <h1>
+                                <field name="example_title" placeholder="Title"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="create_date"/>
+                            </group>
+                            <group>
+                                <field name="example_field"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="gitlab_milestone_tree_view" model="ir.ui.view">
+            <field name="name">project.milestone.tree</field>
+            <field name="model">project.milestone</field>
+            <field name="arch" type="xml">
+                <tree string="ModelTitle">
+                    <field name="create_date"/>
+                    <field name="example_field"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="gitlab_milestone_act_window" model="ir.actions.act_window">
+            <field name="name">ModelTitle</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">project.milestone</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new ModelTitle.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="ModelTitle"
+                  id="gitlab_milestone_menu"
+                  parent="your_root_menu"
+                  action="gitlab_milestone_act_window"/>
+
+    </data>
+</odoo>

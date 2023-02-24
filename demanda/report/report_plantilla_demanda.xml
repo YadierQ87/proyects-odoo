@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="qweb_report_plantilla_demanda">
+            <t t-call="web.basic_layout">
+                <style>
+                    .table > tbody > tr > td{                        padding: 4px;                    }
+                    .oe-avatar{                     margin-right: 40px;                    }
+                </style>
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="">
+                            <table class="table table-bordered table-striped">
+                                <tr class="success">
+                                    <td colspan="4">
+                                        <strong class="text-center">
+                                            <img class="oe-avatar" t-att-src="image_data_uri(res_company.logo)" height="50px" />
+                                            <span t-field="o.name"/>
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="1" >Nombre y Apellidos del Trabajador:  </td>
+                                    <td colspan="3" >  </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" >Vicepresidencia, Dirección Central o Territorial:  </td>
+                                    <td colspan="3" >  </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" >No Solictud:  </td>
+                                    <td colspan="3" >   </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" >Fecha:  </td>
+                                    <td colspan="3" >  </td>
+                                </tr>
+                            </table>
+                            <span t-field="o.vista_previa"/>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

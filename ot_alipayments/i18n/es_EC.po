@@ -1,0 +1,406 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ot_alipayments
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20221209\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-16 18:11+0000\n"
+"PO-Revision-Date: 2022-12-16 18:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ot_alipayments
+#: model:product.product,name:ot_alipayments.product_mtto_admin
+#: model:product.template,name:ot_alipayments.product_mtto_admin_product_template
+msgid "Administracion"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_property_building__ali_payment
+#: model:ir.model.fields,field_description:ot_alipayments.field_res_partner__ali_payment
+#: model:ir.model.fields,field_description:ot_alipayments.field_res_users__ali_payment
+#: model:product.product,name:ot_alipayments.product_alicuota
+#: model:product.template,name:ot_alipayments.product_alicuota_product_template
+msgid "Alicuota"
+msgstr ""
+
+#. module: ot_alipayments
+#: model_terms:ir.ui.view,arch_db:ot_alipayments.ot_alipayments_account_move_search_view
+msgid "Alicuotas"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:ir.ui.menu,name:ot_alipayments.alipayments_menu
+msgid "Alipayments"
+msgstr "Alicuota"
+
+#. module: ot_alipayments
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__account_move__month__4
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__res_partner__last_month_invoiced__4
+msgid "April"
+msgstr "Abril"
+
+#. module: ot_alipayments
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__account_move__month__8
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__res_partner__last_month_invoiced__8
+msgid "August"
+msgstr "Agosto"
+
+#. module: ot_alipayments
+#: model:ir.ui.menu,name:ot_alipayments.balance_alipayment_menu
+msgid "Balance"
+msgstr "Balance"
+
+#. module: ot_alipayments
+#: model:product.product,name:ot_alipayments.product_balance
+#: model:product.template,name:ot_alipayments.product_balance_product_template
+msgid "Balance Check"
+msgstr "Chequeo de Balance"
+
+#. module: ot_alipayments
+#: model:ir.actions.act_window,name:ot_alipayments.property_act_window
+#: model_terms:ir.ui.view,arch_db:ot_alipayments.property_form_view
+#: model_terms:ir.ui.view,arch_db:ot_alipayments.property_tree_view
+msgid "Building"
+msgstr "Edificio"
+
+#. module: ot_alipayments
+#: model:ir.ui.menu,name:ot_alipayments.building_alipayment_menu
+msgid "Buildings"
+msgstr "Edificios"
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_property_building__company_id
+#: model:ir.model.fields,field_description:ot_alipayments.field_res_partner__condominium_id
+#: model:ir.model.fields,field_description:ot_alipayments.field_res_users__condominium_id
+msgid "Condominio"
+msgstr "Condominio"
+
+#. module: ot_alipayments
+#: model:ir.model,name:ot_alipayments.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: ot_alipayments
+#: model:ir.actions.server,name:ot_alipayments.ir_cron_auto_create_invoice_alipayments_ir_actions_server
+#: model:ir.cron,cron_name:ot_alipayments.ir_cron_auto_create_invoice_alipayments
+#: model:ir.cron,name:ot_alipayments.ir_cron_auto_create_invoice_alipayments
+msgid "Crear Facturas del mes para las Alicuotas en Condominios"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_property_building__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_property_building__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: ot_alipayments
+#: model:ir.ui.menu,name:ot_alipayments.invoices_alipayment_menu
+msgid "Dashboard Invoices"
+msgstr "Tablero de Facturas"
+
+#. module: ot_alipayments
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__account_move__month__12
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__res_partner__last_month_invoiced__12
+msgid "December"
+msgstr "Diciembre"
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_account_bank_statement_line__property_id
+#: model:ir.model.fields,field_description:ot_alipayments.field_account_move__property_id
+#: model:ir.model.fields,field_description:ot_alipayments.field_account_payment__property_id
+#: model:ir.model.fields,field_description:ot_alipayments.field_res_partner__property_id
+#: model:ir.model.fields,field_description:ot_alipayments.field_res_users__property_id
+msgid "Depto/Apartamento"
+msgstr "Departamento"
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_property_building__description
+msgid "Description"
+msgstr "Descripcion"
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_property_building__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: ot_alipayments
+#: model:product.product,name:ot_alipayments.product_electrico
+#: model:product.template,name:ot_alipayments.product_electrico_product_template
+msgid "Empresa Electrica"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_res_partner__is_client
+#: model:ir.model.fields,field_description:ot_alipayments.field_res_users__is_client
+msgid "Es propietario"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:product.product,name:ot_alipayments.product_agua
+#: model:product.template,name:ot_alipayments.product_agua_product_template
+msgid "Etapa - agua"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:ir.actions.act_window,name:ot_alipayments.ot_alipayments_accounts_act_window
+msgid "Facturas Alicuotas"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__account_move__month__2
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__res_partner__last_month_invoiced__2
+msgid "February"
+msgstr "Febrero"
+
+#. module: ot_alipayments
+#: model_terms:ir.ui.view,arch_db:ot_alipayments.ot_alipayments_account_move_search_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: ot_alipayments
+#: model:product.product,name:ot_alipayments.product_guardia
+#: model:product.template,name:ot_alipayments.product_guardia_product_template
+msgid "Guardias"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_property_building__id
+msgid "ID"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:product.product,name:ot_alipayments.product_limpieza
+#: model:product.template,name:ot_alipayments.product_limpieza_product_template
+msgid "Insumos de limpieza"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:product.product,name:ot_alipayments.product_oficina
+#: model:product.template,name:ot_alipayments.product_oficina_product_template
+msgid "Insumos de oficina"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:product.product,name:ot_alipayments.product_internet_cam
+#: model:product.template,name:ot_alipayments.product_internet_cam_product_template
+msgid "Internet camaras"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_account_bank_statement_line__is_alipayment
+#: model:ir.model.fields,field_description:ot_alipayments.field_account_move__is_alipayment
+#: model:ir.model.fields,field_description:ot_alipayments.field_account_payment__is_alipayment
+msgid "Is Alipayment"
+msgstr "Es alicuota"
+
+#. module: ot_alipayments
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__account_move__month__1
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__res_partner__last_month_invoiced__1
+msgid "January"
+msgstr "Enero"
+
+#. module: ot_alipayments
+#: model:ir.model,name:ot_alipayments.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: ot_alipayments
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__account_move__month__7
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__res_partner__last_month_invoiced__7
+msgid "July"
+msgstr "Julio"
+
+#. module: ot_alipayments
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__account_move__month__6
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__res_partner__last_month_invoiced__6
+msgid "June"
+msgstr "Junio"
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_property_building____last_update
+msgid "Last Modified on"
+msgstr "Ultima modificacion en"
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_property_building__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualizacion por"
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_property_building__write_date
+msgid "Last Updated on"
+msgstr "Ultima modificacion en"
+
+#. module: ot_alipayments
+#: model:product.product,name:ot_alipayments.product_mtto_ascensor
+#: model:product.template,name:ot_alipayments.product_mtto_ascensor_product_template
+msgid "Mantenimiento de ascensor"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:product.product,name:ot_alipayments.product_mtto_cisterna
+#: model:product.template,name:ot_alipayments.product_mtto_cisterna_product_template
+msgid "Mantenimiento de cisterna"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:product.product,name:ot_alipayments.product_mtto_edificio
+#: model:product.template,name:ot_alipayments.product_mtto_edificio_product_template
+msgid "Mantenimiento de edificio"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:product.product,name:ot_alipayments.product_mtto_jardin
+#: model:product.template,name:ot_alipayments.product_mtto_jardin_product_template
+msgid "Mantenimiento de jardines"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__account_move__month__3
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__res_partner__last_month_invoiced__3
+msgid "March"
+msgstr "Marzo"
+
+#. module: ot_alipayments
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__account_move__month__5
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__res_partner__last_month_invoiced__5
+msgid "May"
+msgstr "Mayo"
+
+#. module: ot_alipayments
+#: model_terms:ir.ui.view,arch_db:ot_alipayments.ot_alipayments_account_move_search_view
+msgid "Mes Factura"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_account_bank_statement_line__month
+#: model:ir.model.fields,field_description:ot_alipayments.field_account_move__month
+#: model:ir.model.fields,field_description:ot_alipayments.field_account_payment__month
+msgid "Month of invoice"
+msgstr "Mes de Factura"
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_property_building__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: ot_alipayments
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__account_move__month__11
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__res_partner__last_month_invoiced__11
+msgid "November"
+msgstr "Noviembre"
+
+#. module: ot_alipayments
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__account_move__month__10
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__res_partner__last_month_invoiced__10
+msgid "October"
+msgstr "Octubre"
+
+#. module: ot_alipayments
+#: model:ir.model.constraint,message:ot_alipayments.constraint_account_move_alipayment_uniq
+msgid "Only one Alipayment for month and property is allowed!"
+msgstr "¡Solo se permite un pago de Alicuotas por mes y propiedad!"
+
+#. module: ot_alipayments
+#: model:ir.model,name:ot_alipayments.model_property_building
+msgid "Property building"
+msgstr "Edificio"
+
+#. module: ot_alipayments
+#: model:ir.actions.act_window,name:ot_alipayments.ot_alipayments_tenants_act_window
+msgid "Propietarios/Inquilinos"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:product.product,name:ot_alipayments.product_seguro
+#: model:product.template,name:ot_alipayments.product_seguro_product_template
+msgid "Seguro Edificio"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__account_move__month__9
+#: model:ir.model.fields.selection,name:ot_alipayments.selection__res_partner__last_month_invoiced__9
+msgid "September"
+msgstr "Septiembre"
+
+#. module: ot_alipayments
+#: model_terms:ir.ui.view,arch_db:ot_alipayments.view_partner_ot_alipayments_form
+msgid "Servicios a Facturar"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_res_partner__services_ids
+#: model:ir.model.fields,field_description:ot_alipayments.field_res_users__services_ids
+msgid "Servicios del Condominio"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:ir.ui.menu,name:ot_alipayments.settings_alipayment_menu
+msgid "Settings"
+msgstr "Configuraciones"
+
+#. module: ot_alipayments
+#: model:ir.ui.menu,name:ot_alipayments.patients_menu
+msgid "Tenants"
+msgstr "Inquilinos"
+
+#. module: ot_alipayments
+#: model_terms:ir.actions.act_window,help:ot_alipayments.property_act_window
+msgid "There is no examples click here to add new Building."
+msgstr "No hay ejemplos, haga clic aquí para agregar un nuevo edificio."
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_res_partner__last_month_invoiced
+#: model:ir.model.fields,field_description:ot_alipayments.field_res_users__last_month_invoiced
+msgid "Ultimo mes facturado"
+msgstr ""
+
+#. module: ot_alipayments
+#: model:product.product,uom_name:ot_alipayments.product_agua
+#: model:product.product,uom_name:ot_alipayments.product_alicuota
+#: model:product.product,uom_name:ot_alipayments.product_balance
+#: model:product.product,uom_name:ot_alipayments.product_electrico
+#: model:product.product,uom_name:ot_alipayments.product_guardia
+#: model:product.product,uom_name:ot_alipayments.product_internet_cam
+#: model:product.product,uom_name:ot_alipayments.product_limpieza
+#: model:product.product,uom_name:ot_alipayments.product_mtto_admin
+#: model:product.product,uom_name:ot_alipayments.product_mtto_ascensor
+#: model:product.product,uom_name:ot_alipayments.product_mtto_cisterna
+#: model:product.product,uom_name:ot_alipayments.product_mtto_edificio
+#: model:product.product,uom_name:ot_alipayments.product_mtto_jardin
+#: model:product.product,uom_name:ot_alipayments.product_oficina
+#: model:product.product,uom_name:ot_alipayments.product_seguro
+#: model:product.template,uom_name:ot_alipayments.product_agua_product_template
+#: model:product.template,uom_name:ot_alipayments.product_alicuota_product_template
+#: model:product.template,uom_name:ot_alipayments.product_balance_product_template
+#: model:product.template,uom_name:ot_alipayments.product_electrico_product_template
+#: model:product.template,uom_name:ot_alipayments.product_guardia_product_template
+#: model:product.template,uom_name:ot_alipayments.product_internet_cam_product_template
+#: model:product.template,uom_name:ot_alipayments.product_limpieza_product_template
+#: model:product.template,uom_name:ot_alipayments.product_mtto_admin_product_template
+#: model:product.template,uom_name:ot_alipayments.product_mtto_ascensor_product_template
+#: model:product.template,uom_name:ot_alipayments.product_mtto_cisterna_product_template
+#: model:product.template,uom_name:ot_alipayments.product_mtto_edificio_product_template
+#: model:product.template,uom_name:ot_alipayments.product_mtto_jardin_product_template
+#: model:product.template,uom_name:ot_alipayments.product_oficina_product_template
+#: model:product.template,uom_name:ot_alipayments.product_seguro_product_template
+msgid "Units"
+msgstr "Unidades"
+
+#. module: ot_alipayments
+#: model:ir.model.fields,field_description:ot_alipayments.field_account_bank_statement_line__year
+#: model:ir.model.fields,field_description:ot_alipayments.field_account_move__year
+#: model:ir.model.fields,field_description:ot_alipayments.field_account_payment__year
+msgid "Year"
+msgstr "Año"

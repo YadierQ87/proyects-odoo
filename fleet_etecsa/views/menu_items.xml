@@ -1,0 +1,16 @@
+<odoo>
+  <data>        
+        <menuitem id="menu_tickets_fleet" name="Tickets" parent="fleet.menu_root" sequence="10"/>
+		<!--menuitem id="menu_combustible" name="Combustible" parent="fleet.menu_root" sequence="20"/-->
+        <!--menuitem id="menu_choferes_acc" name="Choferes" parent="fleet.menu_root" sequence="30" action="chofer_etecsa_action_all"/-->
+		
+        <menuitem id="menu_tickets_acc" name="Tickets" parent="fleet_etecsa.menu_tickets_fleet" sequence="2" action="tickets_flota_action_all"/>
+		<!--menuitem id="menu_calculo_cdt" name="Calculo Diario CDT" parent="fleet.menu_fleet_reporting" sequence="5" action="calculo_cdt_action_all"/>        
+        <menuitem id="menu_acciones_tickets" name="Acciones sobre tickets" parent="fleet_etecsa.menu_tickets_fleet" sequence="2" action="acciones_tickets_action_all">
+        <menuitem id="menu_tarjetas" name="Tarjetas de Combustible" parent="fleet_etecsa.menu_combustible" sequence="2" action="tarjeta_combustible_action_all"/>
+        <menuitem id="menu_asignaciones" name="Asignacion de Combustible" parent="fleet_etecsa.menu_combustible" sequence="3" action="asignacion_combustible_action_all"/>
+        <menuitem id="menu_anexo_unico" name="Anexo Unico Reporte" parent="fleet_etecsa.menu_combustible" sequence="4" action="anexo_unico_combustible_all"/>
+        <menuitem id="menu_anexo_liquidacion" name="Anexo 5 de Liquidacion" parent="fleet_etecsa.menu_combustible" sequence="5" action="anexo_5_liquidacion_combustible_action_all"/-->
+
+  </data>
+</odoo>

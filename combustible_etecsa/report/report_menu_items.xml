@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report string="Distribucion de Combustible"
+                id="action_report_distribucion_combustible"
+                report_type="qweb-html"
+                model="comb.etecsa.distribucion"
+                name="combustible_etecsa.report_asignacion_combustible_direccion"
+                file="combustible_etecsa.action_report_carga_combustible"
+                attachment_use="True"
+                print_report_name="'Anexo 1 Carga de Combustible - %s ' % object.name"
+        />
+    </data>
+</odoo>
+
+

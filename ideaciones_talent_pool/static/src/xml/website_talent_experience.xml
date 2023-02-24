@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+
+    <t t-name="website.talent.experience.add">
+        <div class="form-group">
+            <form>
+                <h4 t-if="widget.category_type">
+                    <t t-esc="widget.category_type"/>
+                </h4>
+                <div class="form-group">
+                    <label>Título</label>
+                    <input type="text"
+                           name="name" id="name"
+                           t-attf-value="{{(widget.mode == 'update') ? widget.name : ''}}"
+                           class="form-control s_website_form_input" placeholder="Ej: Título"/>
+                </div>
+                <div class="form-group">
+                    <label for="experience_type" class="col-form-label" t-if="widget.category_type">
+                        <span>Seleccione <t t-esc="widget.category_type"/> </span>
+                    </label>
+                    <label for="experience_type" class="col-form-label" t-else="">
+                        <span>Seleccione Categoría <t t-esc="widget.category_id"/> </span>
+                    </label>
+                    <t t-if="widget.mode == 'update'">
+                        <select name="category_id" class="form-control s_website_form_input">
+                            <option t-att-value="widget.category_id">
+                                <t t-esc="widget.def_category[widget.category_id]"/>
+                            </option>
+                        </select>
+                    </t>
+                    <t t-else="">
+                        <select name="category_id" class="form-control s_website_form_input">
+                            <t t-foreach="widget.def_category or []" t-as="category">
+                                <t t-if="widget.def_category[category].indexOf(widget.category_type) !== -1 ">
+                                    <option t-att-value="category">
+                                        <t t-esc="widget.def_category[category]"/>
+                                    </option>
+                                </t>
+                                <t t-if="widget.mode == 'update'">
+                                    <t t-if="category == widget.category_id">
+                                        <option t-att-value="category" selected="selected">
+                                            <t t-esc="widget.def_category[category]"/>
+                                        </option>
+                                    </t>
+                                        <t t-else="">
+                                        <option t-att-value="category">
+                                            <t t-esc="widget.def_category[category]"/>
+                                        </option>
+                                    </t>
+                                </t>
+                            </t>
+                        </select>
+                    </t>
+                </div>
+                <div class="form-group container">
+                    <div class="row">
+                        <label class="col-md-6"> Período</label>
+                        <label class="col-md-6"> Hasta: </label>
+                        <input name="period" type="date"
+                               t-attf-value="{{(widget.mode == 'update') ? widget.period : ''}}"
+                               class="col-md-5 form-control datetimepicker-input  js_es_datepicker"
+                               data-date-format="DD/MM/YYYY"
+                               data-date=""
+                               id="datepicker_exp_start"
+                               placeholder="Fecha Inicio"/>
+                        <label class="col-md-1"> - </label>
+                        <input name="period_end" type="date"
+                               t-attf-value="{{(widget.mode == 'update') ? widget.period : ''}}"
+                               class="col-md-5 form-control datetimepicker-input  js_es_datepicker"
+                               data-date-format="DD/MM/YYYY"
+                               data-date=""
+                               id="datepicker_exp_end"
+                               placeholder="Fecha Fin"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Cargo/Rol</label>
+                    <input id="role_function" name="role_function" type="text"
+                           t-attf-value="{{(widget.mode == 'update') ? widget.role_function : ''}}"
+                           class="form-control s_website_form_input" placeholder="Jefe de Dpto"/>
+                </div>
+                <div class="form-group">
+                     <label>Ubicación/Lugar</label>
+                    <input id="institution" name="institution" type="text"
+                           t-attf-value="{{(widget.mode == 'update') ? widget.institution : ''}}"
+                           class="form-control s_website_form_input" placeholder="Universidad, País"/>
+                </div>
+                <div class="form-group">
+                     <label>País</label>
+                    <select name="country_id" class="form-control s_website_form_input">
+                        <t t-foreach="widget.def_country or []" t-as="country">
+                            <t t-if="country == 51 and (widget.mode != 'update')">
+                                <option t-att-value="country" selected="selected">
+                                    <t t-esc="widget.def_country[country]"/>
+                                </option>
+                            </t>
+                            <t t-else="">
+                                <t t-if="country == widget.country_id">
+                                    <option t-att-value="country" selected="selected">
+                                        <t t-esc="widget.def_country[country]"/>
+                                    </option>
+                                </t>
+                                <t t-else="">
+                                    <option t-att-value="country">
+                                        <t t-esc="widget.def_country[country]"/>
+                                    </option>
+                                </t>
+                            </t>
+                        </t>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Especialidad</label>
+                    <input id="specialty_id" name="specialty_id" type="text"
+                           class="form-control s_website_form_input"
+                           t-attf-value="{{(widget.mode == 'update') ? widget.specialty_id : ''}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label>Duración[solo postgrados]</label>
+                    <input id="duration" name="duration" type="text"
+                           t-attf-value="{{(widget.mode == 'update') ? widget.duration : ''}}"
+                           class="form-control s_website_form_input" placeholder="120 horas"/>
+                </div>
+                <div class="form-group">
+                    <label>Créditos[solo postgrados]</label>
+                    <input id="qty_credits" name="qty_credits" type="text"
+                           t-attf-value="{{(widget.mode == 'update') ? widget.qty_credits : ''}}"
+                           class="form-control s_website_form_input" placeholder="30 creditos"/>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Descripción</label>
+                    <textarea id="description" name="description" type="text"
+                              t-attf-value="{{(widget.mode == 'update') ? widget.description : ''}}"
+                              class="form-control s_website_form_input" placeholder="Experiencia en..."/>
+                </div>
+            </form>
+        </div>
+    </t>
+
+    <t t-name="add_experience_to_cv">
+        <table class="table table-hover ">
+            <h6>EXPERIENCIA PROFESIONAL</h6>
+            <thead>
+                <tr class="">
+                    <td>Tipo de Experiencia</td>
+                    <td>Título</td>
+                    <td>Período</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </t>
+
+    <t t-name="experience_row">
+         <tr t-att-name-id="widget.experience_id">
+            <td>
+                <span t-esc="widget.category_id"/>
+            </td>
+             <td>
+                <span t-esc="widget.name"/>
+            </td>
+             <td>
+                <span t-esc="widget.period"/>
+            </td>
+             <td>
+                <a class="btn btn-default">
+                    <i class="fa fa-edit update-experience"/>
+                </a>
+                 <a class="btn btn-default">
+                    <i class="fa fa-trash delete-experience"/>
+                </a>
+            </td>
+        </tr>
+    </t>
+
+</templates>

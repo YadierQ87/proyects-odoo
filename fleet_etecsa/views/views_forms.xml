@@ -1,0 +1,488 @@
+<odoo>
+    <data>
+
+        <!-- Area de Economia Tarjetas y Asignacion de Combustible -->
+        <record id="tarjeta_combustible_action_all" model="ir.actions.act_window">
+            <field name="name">Tarjetas de Combustible </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fleet.etecsa.tarjeta.combustible</field>
+            <field name="view_mode">kanban,form,tree</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="tarjeta_combustible_form" model="ir.ui.view">
+            <field name="name">Tarjetas de Combustible</field>
+            <field name="model">fleet.etecsa.tarjeta.combustible</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet string=" Tarjeta de Combustible" modifiers="{}">
+                        <div class="oe_button_box" name="button_box">
+                            <button name="return_action_to_open" type="object" class="oe_stat_button" icon="fa-flask"
+                                    context="{'xml_id':'asignacion_combustible_action_all'}" help="Asignaciones de combustible">
+                                <field name="asign_fuel_ids" widget="statinfo" string="Combustibles"/>
+                            </button>
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                            </button>
+                        </div>
+                        <group col="2" string="Informacion Tarjeta">
+                            <group>
+                                <field name="name"/>
+                                <field name="pin"/>
+                                <field name="tipo_combustible"/>
+                            </group>
+                            <group>
+                                <field name="department_id"/>
+                                <field name="responsable_id" />
+                                <field name="vehicle_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="asignacion_combustible_action_all" model="ir.actions.act_window">
+            <field name="name">Asignación de Combustible </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fleet.etecsa.vehicle.asign.fuel</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{"search_default_groupby_vehicle" : True}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Registrar nuevas asignaciones de combustible a las tarjetas
+                </p><p>
+                Una tarjeta puede tener varias asignaciones de combustible.
+            </p>
+            </field>
+        </record>
+
+
+        <record id="asignacion_combustible_form" model="ir.ui.view">
+            <field name="name">Asignación de Combustible</field>
+            <field name="model">fleet.etecsa.vehicle.asign.fuel</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet string=" Asignación de Combustible" modifiers="{}">
+                        <group col="2" string="Detalles Asignación">
+                            <group>
+
+                                <field name="fecha_asignacion" />
+                                <field name="mes_curso" />
+                                <field name="cantidad_litros" />
+                                <field name="vehicle_id" />
+                                <field name="tarjeta_id" />
+                            </group>
+                            <group>
+                                <field name="centro_costo"/>
+                                <field name="observaciones" />
+                                <field name="notificar_por_sms" widget="phone" placeholder="Numero de Telf"/>
+                                <field name="notificar_por_email" widget="email" placeholder="Correo Electronico"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="anexo_unico_combustible_all" model="ir.actions.act_window">
+            <field name="name">Anexo Unico de Combustible </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fleet.etecsa.anexo.unico</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="anexo_unico_combustible_form" model="ir.ui.view">
+            <field name="name">Anexo Unico de Combustible</field>
+            <field name="model">fleet.etecsa.anexo.unico</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet string=" Anexo Unico de Combustible" modifiers="{}">
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                            </button>
+                        </div>
+                        <group col="2" string="Documentacion">
+                            <group>
+                                <field name="vehicle_id" />
+                                <field name="entidad" />
+                                <field name="oace" />
+                                <field name="habilitado_por" />
+                            </group>
+                            <group>
+                                <field name="km_inicial" />
+                                <field name="km_prox_mtto"/>
+                                <field name="comb_estimado_tanq" />
+                                <field name="indice_consumo" />
+                            </group>
+                        </group>
+                        <group col="1">
+                            <field name='servicio_combustible_id'>
+                                <tree string='List' editable='bottom'>
+                                    <field name='vehicle_id' context="{'default_vehicle_id': parent.vehicle_id}" value="{'default_vehicle_id'}"/>
+                                    <field name='date' />
+                                    <field name='tarjeta_id' />
+                                    <field name='odometer'/>
+                                    <field name='liter' />
+                                    <field name="combustible_en_tanque" />
+                                    <field name="purchaser_id" />
+                                </tree>
+                                <form string='Servicio Combustible'>
+                                    <group>
+                                        <field name='vehicle_id' context="{'default_vehicle_id': parent.vehicle_id}" value="{'default_vehicle_id'}"/>
+                                        <field name='date' />
+                                        <field name='tarjeta_id' />
+                                        <field name='odometer'/>
+                                        <field name='liter' />
+                                        <field name="combustible_en_tanque" />
+                                        <field name="purchaser_id" />
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+                        <group col="3" string="Detalles Finales">
+                            <group>
+                                <field name="km_final" />
+                                <field name="tipo_mtto" />
+                            </group>
+                            <group>
+                                <field name="comb_tanque" />
+                                <field name="km_real_mtto" />
+                            </group>
+                            <group>
+                                <field name="km_total_recorrido" />
+                                <field name="variacion" />
+                            </group>
+                            <group>
+                                 <field name="comb_total_consumido" />
+                                <field name="comb_total_serviciado" />
+                            </group>
+                            <group>
+                                <field name="plan_comb" />
+                            </group>
+                            <group>
+                                <field name="percent_plan_real"/>
+                            </group>
+                        </group>
+                        <group col="1">
+                            <field name="observaciones" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- kanban view for fleet.vehicle.log.fuel-->
+        <record id="anexo_5_liquidacion_combustible_action_all" model="ir.actions.act_window">
+            <field name="name">Anexo 5 Liquidacion de Combustible </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fleet.etecsa.anexo.liquidacion</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="anexo_5_liquidacion_combustible_form" model="ir.ui.view">
+            <field name="name">Anexo 5 Liquidacion de Combustible</field>
+            <field name="model">fleet.etecsa.anexo.liquidacion</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet string=" Anexo 5 Liquidacion de Combustible" modifiers="{}">
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                            </button>
+                        </div>
+                        <group col="2" string="Detalles generales">
+                            <group>
+                                <field name="organismo" />
+                                <field name="entidad" />
+                                <field name="depto_propietario" />
+                                <field name="centro_costo" />
+                                <field name="tarjeta_id"/>
+                            </group>
+                            <group>
+                                <field name="tipo_elemento" />
+                                <field name="vehicle_id" />
+                                <field name="tool_id" />
+                                <field name="tipo_combustible"/>
+                            </group>
+                        </group>
+                        <group col="2" string="Operaciones">
+                            <table class="table table-striped table-bordered" >
+                                <tr class="info">
+                                    <td colspan="2"> -   </td>
+                                    <td > Importe  </td>
+                                    <td>Moneda  </td>
+                                    <td>  Cantidad en Lts  </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="2"> Saldo  inicial de la tarjeta (7):  </td>
+                                    <td  ><field name="saldo_ini_importe" widget="monetary"/> </td>
+                                    <td  ><field name="saldo_ini_moneda" /> </td>
+                                    <td  ><field name="saldo_ini_cantdlts" /> </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="2">Combustible  consumido de la tarjeta (8):
+                                    </td>
+                                    <td><field name="comb_consumido_importe" widget="monetary"/></td>
+                                     <td  ><field name="comb_consumido_moneda" /> </td>
+                                    <td  ><field name="comb_consumido_cantdlts" /> </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="2">Saldo  final de la tarjeta (9):  </td>
+                                    <td  ><field name="saldo_final_importe" widget="monetary"/> </td>
+                                    <td  ><field name="saldo_final_moneda" /> </td>
+                                    <td  ><field name="saldo_final_cantdlts" /> </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="2">Cantidad  de Comprobantes (10):  </td>
+                                    <td  ><field name="cantd_comprobantes"/>  </td>
+                                    <td> -   </td>
+                                    <td> -   </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="2">  Desglose  del consumo de la tarjeta (11):  </td>
+                                    <td  ><field name="desglose" placeholder="Cantd de litros separados por coma"/>  </td>
+                                    <td> -   </td>
+                                    <td> -   </td>
+                                </tr>
+                                <tr class="bg-primary">
+                                    <td colspan="5" class="bg-primary" >    </td>
+                                </tr>
+                                <tr class="info">
+                                    <td colspan="2"> -  </td>
+                                    <td>Importe  </td>
+                                    <td>Moneda  </td>
+                                    <td >Cantidad en Lts  </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="2">Gastos de la Operación:  </td>
+                                    <td  ><field name="gastos_oper_importe" widget="monetary"/> </td>
+                                    <td  ><field name="gastos_oper_moneda" /> </td>
+                                    <td  ><field name="gastos_oper_cantdlts" /> </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="2">Gastos por eventos del Seguro:  </td>
+                                    <td  ><field name="gastos_eventos_importe" widget="monetary"/> </td>
+                                    <td  ><field name="gastos_eventos_moneda" /> </td>
+                                    <td  ><field name="gastos_eventos_cantdlts" /> </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="2">Gastos de Inversiones:  </td>
+                                    <td  ><field name="gastos_inversiones_importe" widget="monetary"/> </td>
+                                    <td  ><field name="gastos_inversiones_moneda" /> </td>
+                                    <td  ><field name="gastos_inversiones_cantdlts" /> </td>
+                                </tr>
+                            </table>
+                        </group>
+                        <group col="2" string="Consumo">
+                            <group>
+                                <field name="no_elem_pep" />
+                                <field name="importe_elem_pep"/>
+                                <field name="const_montaje" />
+                            </group>
+                            <group>
+                                <field name="project" />
+                                <field name="otros_gastos" />
+                                <field name="no_orden_trabajo" />
+                            </group>
+                        </group>
+                        <group col="2" string="Responsabilidades">
+                            <group>
+                                <field name="nombre_elabora_modelo" />
+                                <field name="nombre_jefe_aprueba" />
+                                <field name="nombre_quien_liquida" />
+                            </group>
+                            <group>
+                                <field name="fecha_liquidacion_caja" />
+                                <field name="nombre_cajero_recibe_liq" />
+                                <field name="nombre_contador_registra_liq" />
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="tickets_flota_action_all" model="ir.actions.act_window">
+            <field name="name">Tickets de vehiculos </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fleet.etecsa.ticket</field>
+            <field name="view_mode">kanban,form,tree,graph,calendar</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="tickets_flota_form" model="ir.ui.view">
+            <field name="name">Tíckets de vehículos</field>
+            <field name="model">fleet.etecsa.ticket</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <header>
+                        <field name="state" widget="statusbar" attrs="{'readonly':True}"/>
+                    </header>
+                    <sheet string=" Tíckets de vehículos" modifiers="{}">
+						<div class="oe_button_box" name="button_box" attrs="{'readonly': [('state', '!=', 'draft')]}" >
+                            <button string="Aceptar Ticket" class="oe_stat_button text-alpha" icon="fa-ticket"
+                                    type="object" name="do_assign" groups="fleet_etecsa.fleet_ticket_tecnico_transporte" /><!-- Pasa al estado open -->
+							<button string="Marcar como Pendiente" class="oe_stat_button text-warning" icon="fa-calendar-times-o"
+                                    type="object" name="do_pendent" groups="fleet_etecsa.fleet_ticket_tecnico_transporte" /><!-- Pasa al estado pendent -->
+							<button string="Cancelar Solicitud" class="oe_stat_button text-danger" icon="fa-times-circle"
+                                    type="object" name="do_cancel" groups="fleet_etecsa.fleet_ticket_tecnico_transporte" /><!-- Pasa al estado cancel -->
+							<button string="Resuelto" class="oe_stat_button text-success" icon="fa-check-circle"
+                                    type="object" name="do_solve" groups="fleet_etecsa.fleet_ticket_tecnico_transporte" /><!-- Pasa al estado done -->
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive"
+                                    groups="fleet_etecsa.fleet_ticket_tecnico_transporte" >
+                                <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                            </button>
+                        </div>
+						<div class="oe_button_box" name="button_box">
+							
+						</div>
+                        <group col="4" string="Registro Operación Chofer" attrs="{'readonly': [('state', '!=', 'draft')]}">
+							<field name="vehicle_id" />	
+							<field name="solicitado_por" />
+                            <field name="description" />
+							<field name="chofer_id" />
+                            <field name="fecha_reportado"/>
+                            <field name="area_id" />                            
+                        </group>
+                        <group col="4" string="Detalles Operación Técnico Transporte" attrs="{'invisible': [('state', '=', 'draft')]}">
+								<field name="asignado_a" attrs="{'required': [('state', '!=', 'draft')]}"
+                                domain="[('groups_id','=',88)]"
+                                />
+								<field name="name" />                                                              
+								<field name="categorie_id" />
+								<field name="problems_id" widget="many2many_tags"/> 
+								<field name="fecha_aceptado" />
+								<field name="fecha_cierre_ticket" attrs="{'invisible': [('state', '!=', 'done')]}"/>
+								<field name="tipo_respuesta" />
+								<field name="motivo_pendiente" attrs="{'invisible': [('state', '!=', 'pendent')],'required':[('state', '=', 'pendent')]}" />
+								<field name="actvds_id"  colspan="4" /> 		
+                        </group>
+                        <group col="4" string="Proveedores y Contratos" attrs="{'invisible': [('tipo_respuesta', '!=', 'terceros')]}">
+                                <field name="proveedor_id" attrs="{'required': [('tipo_respuesta', '==', 'terceros')]}"/>
+								<field name="doc_contrato" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="chofer_etecsa_action_all" model="ir.actions.act_window">
+            <field name="name">Chofer de vehiculos </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fleet.etecsa.chofer</field>
+            <field name="view_mode">kanban,form,tree</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="chofer_etecsa_form" model="ir.ui.view">
+            <field name="name">Chofer de vehiculos</field>
+            <field name="model">fleet.etecsa.chofer</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet string=" Chofer de vehículos" modifiers="{}">
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                            </button>
+                        </div>
+                        <group col="2" string="Datos del Chofer y la Licencia">
+                            <group>
+                                <field name="employee_id" />
+                                <field name="name" />
+                                <field name="categoria_licencia" widget="many2many_tags"/>
+                            </group>
+                            <group>
+                                <field name="fecha_expedida_licencia" />
+                                <field name="fecha_vencimiento_licencia" />
+                                <field name="foto_licencia" widget="image" class="oe_avatar" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="calculo_cdt_action_all" model="ir.actions.act_window">
+            <field name="name">Calculo del CDT </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fleet.etecsa.calculo.cdt</field>
+            <field name="view_mode">kanban,form,tree,graph</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <!-- vista grafico cdt -->
+        <record id="view_graph_cdt_task" model="ir.ui.view">
+            <field name="name">view_graph_todo_task</field>
+            <field name="model">fleet.etecsa.calculo.cdt</field>
+            <field name="arch" type="xml">
+                <graph type="bar">
+                    <field name="total_vehiculos" type="col" />
+                    <field name="entry_date" interval="day" />
+                    <field name="resultado_cdt" type="measure" />
+                </graph>
+            </field>
+        </record>
+
+        <record id="calculo_cdt_etecsa_form" model="ir.ui.view">
+            <field name="name">Calculo del CDT</field>
+            <field name="model">fleet.etecsa.calculo.cdt</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet string="Calculo CDT" modifiers="{}">
+                        <group col="2" string="Calculo CDT Diario">
+                            <group>
+                                <field name="name" />
+                                <field name="total_vehiculos" />
+                                <field name="entry_date" />
+                            </group>
+                            <group>
+                                <field name="vehiculos_operando" />
+                                <field name="vehiculos_paralizados" />
+                                <field name="resultado_cdt"  />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+    </data>
+</odoo>

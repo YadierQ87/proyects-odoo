@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="order_lab_account_move_form" model="ir.ui.view">
+            <field name="name">medical.record.account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <!-- Add your fields or attributes here -->
+                    <field name="order_lab_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="medical_invoice_action_quotations" model="ir.actions.act_window">
+            <field name="name">Invoice</field>
+            <field name="res_model">account.move</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('order_lab_id', '=', active_id)]</field>
+            <field name="context">{'search_default_order_lab_id': active_id, 'default_order_lab_id': active_id}</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<odoo>
+  <data>
+      <!-- Nomencladores del Administrador -->
+      <!-- actions for locales_action_all serclinic.paciente-->
+      <record id="locales_action_all" model="ir.actions.act_window">
+          <field name="name">Pacientes Clinica </field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">res.partner</field>
+          <field name="view_mode">kanban,form,tree</field>
+      </record>
+      <!-- actions for locales_action_all serclinic.paciente-->
+      <record id="locales_action_all" model="ir.actions.act_window">
+          <field name="name">Locales </field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">serclinic.local.medical.equipment</field>
+          <field name="view_mode">kanban,form,tree</field>
+      </record>
+      <!-- actions for equipos_action_all  serclinic.equipos.medicina -->
+      <record id="equipos_action_all" model="ir.actions.act_window">
+          <field name="name">Equipos Médicos </field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">serclinic.medical.equipment</field>
+          <field name="view_mode">kanban,form,tree</field>
+      </record>
+      <!-- actions for tipos de estudio n_all  study.type -->
+      <record id="study_types_action_all" model="ir.actions.act_window">
+          <field name="name">Tipos de Estudio Médico</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">serclinic.medical.study.type</field>
+          <field name="view_mode">kanban,form,tree</field>
+      </record>
+  </data>
+</odoo>

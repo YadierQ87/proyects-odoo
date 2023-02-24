@@ -1,0 +1,1640 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ideaciones_talent_pool
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-15 16:00+0000\n"
+"PO-Revision-Date: 2022-01-15 16:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__institution
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__institution
+msgid " Institución a la que pertenece"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__ministery
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__ministery
+msgid " Ministerio al que pertenece"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "+53767675"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "+538899974"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid "-Seleccione-"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "120 horas"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "30 creditos"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "784350435"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.thanks_page_for_talent
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.thanks_page_for_talent_ir_ui_view
+msgid ""
+"<b>\n"
+"                                            <font style=\"font-size: 24px;\" class=\"text-o-color-3\">Ya está todo</font>\n"
+"                                            <font style=\"font-size: 24px;\" class=\"text-o-color-1\">listo</font>\n"
+"                                        </b>\n"
+"                                        <br/>\n"
+"                                        <font style=\"\" class=\"text-o-color-5\">en breve nos pondremos en contacto con\n"
+"                                            usted\n"
+"                                        </font>"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.thanks_page_for_talent
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.thanks_page_for_talent_ir_ui_view
+msgid ""
+"<i class=\"fa fa-home\"/>\n"
+"                                    Volver a la página principal"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.ideaciones_my_profile
+msgid "<i class=\"fa fa-lock\"/>Seguridad"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.ideaciones_my_profile
+msgid ""
+"<span class=\"s_progress_bar_text o_default_snippet_text\">50%\n"
+"                                                    Completado\n"
+"                                                </span>"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "<span>2021</span>"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "<span>Doctorado en Ciencias</span>"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "<span>Doctorado</span>"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "<span>HTML para principiantes</span>"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "<span>Informática</span>"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "<span>Libro de texto para programadores</span>"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__crm_lead__job_title__académico
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__job_title__académico
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Académico"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model,name:ideaciones_talent_pool.model_res_partner_acknowledgments
+msgid "Acknowledgments"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/js/talent_add_skill.js:0
+#, python-format
+msgid "Actualizar Competencia"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/js/talent_add_experience.js:0
+#, python-format
+msgid "Actualizar Experiencia"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/js/talent_add_experience.js:0
+#: code:addons/ideaciones_talent_pool/static/src/js/talent_add_skill.js:0
+#, python-format
+msgid "Add"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Adicionar Competencia"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Adicionar Eventos"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Adicionar Experiencia"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Adicionar Experiencia CONSULTORÍAS"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Adicionar Experiencia Internacional"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Adicionar Proyecto"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Adicionar Publicacion"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Adicionar formación"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__crm_lead__job_title__administrativo
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__job_title__administrativo
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Administrativo"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__lastname
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__lastname
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__lastname
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Apellidos"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Artemisa"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/js/talent_add_skill.js:0
+#, python-format
+msgid "Añadir Competencia"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/js/talent_add_experience.js:0
+#, python-format
+msgid "Añadir Experiencia"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Año"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__ci_number
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__ci_number
+msgid "CI"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "CI*"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_skill.xml:0
+#, python-format
+msgid "COMPETENCIAS"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.ideaciones_my_profile
+msgid ""
+"CURRICULUM\n"
+"                                                            Y EXPERIENCIAS\n"
+"                                                            <i class=\"fa fa-check-circle item-link-circle\"/>"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.res_partner_form_inherit
+msgid "CV and Experiences"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Camagüey"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/js/talent_add_experience.js:0
+#, python-format
+msgid "Cancelar"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.crm_lead_talent_form_inherit
+msgid "Candidatos"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "Cargo/Rol"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.ideaciones_my_profile
+msgid "Casi terminamos"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__category_id
+msgid "Category"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__teaching_category
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__teaching_category
+msgid "Categoría Docente"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__researcher_category
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__researcher_category
+msgid "Categoría Investigador"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Choose file to upload"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid ""
+"Ciego de\n"
+"                            Ávila"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Cienfuegos"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.ideaciones_my_profile
+msgid "Close"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Codiseño de instituciones educativas"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Codiseño de proyectos de innovación educativa"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Codiseño de sistemas digitales"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_team_member__hr_partner_id
+msgid "Colaborator"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_project_project__team_partner_ids
+msgid "Colaborator in Team"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.ideaciones_my_profile
+msgid "Compartir"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_skill.xml:0
+#, python-format
+msgid "Competencia"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_skill.xml:0
+#, python-format
+msgid "Competencias"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid ""
+"Confirmar Cambios\n"
+"                <span class=\"fa fa-long-arrow-right\"/>"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model,name:ideaciones_talent_pool.model_res_partner
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.ideaciones_my_profile
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.register_as_talent
+msgid "Continuar"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__preferences__correo
+msgid "Correo"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__work_email
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__work_email
+msgid "Correo Institucional"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Correo electrónico*:"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Correo(institucional):"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__cost_invoice
+msgid "Cost Invoice"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_line_invoice_crm_lead__cost_value
+msgid "Cost value"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__country_id
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__country_id
+msgid "Country"
+msgstr "País"
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.crm_lead_talent_form_inherit
+msgid "Crear como Proyecto"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_team_member__create_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_cv_experience_category__create_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_line_invoice_crm_lead__create_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_acknowledgments__create_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_competences__create_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__create_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_skill__create_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_specialty__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_team_member__create_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_cv_experience_category__create_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_line_invoice_crm_lead__create_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_acknowledgments__create_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_competences__create_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__create_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_skill__create_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_specialty__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__qty_credits
+msgid "Credits"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "Créditos[solo postgrados]"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.register_as_talent
+msgid "Currículum y experiencias"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "DD/MM/YYYY"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__period
+msgid "Date-Period or Year"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__crm_lead__job_title__decisor_político
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__job_title__decisor_político
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Decisor político"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.ideaciones_talent_pool_project_form_inherit
+msgid "Desarrolladores"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "Descripción"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_line_invoice_crm_lead__name
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_acknowledgments__description
+msgid "Description"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__description
+msgid "Details or description"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Detalle"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/js/talent_add_skill.js:0
+#, python-format
+msgid "Discard"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Diseño de programas educativos"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Diseño y desarrollo de plataformas"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Diseños curriculares"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_team_member__display_name
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_cv_experience_category__display_name
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_line_invoice_crm_lead__display_name
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_project_project__display_name
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__display_name
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_acknowledgments__display_name
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_competences__display_name
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__display_name
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_skill__display_name
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_specialty__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "Duración[solo postgrados]"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__duration
+msgid "Duration"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "ESTANCIAS INTERNACIONALES DE TRABAJO"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "EVENTOS"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "EXPERIENCIA EN CONSULTORÍAS"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "EXPERIENCIAS"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__editorial
+msgid "Editorial"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Ej: 80051600148"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Ej: Juan A."
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Ej: KHY67188"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid "Ej: Lic. en Ciencias"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Ej: Pereira Mora"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Ej: micorreo@dominio.ministerio"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Ej: usuario87"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid "Empresa"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid "Empresa/Institución"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Escriba Hasta 200 palabras o 1300 caracteres contando los espacios"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid "Esp. Principal"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_skill.xml:0
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+#, python-format
+msgid "Especialidad"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__status_work
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__status_work
+msgid "Estado laboral actual"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "Ex: Titulo"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model,name:ideaciones_talent_pool.model_cv_experience_category
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_cv_experience_category__name
+msgid "Experience category"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model,name:ideaciones_talent_pool.model_res_partner_experience_line
+msgid "Experiences for partner"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "Experiencia en..."
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "FORMACIÓN ACADÉMICA"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Facebook:"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "Fecha Inicio - Fecha Fin"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Fecha de Nacimiento"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__birthday
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__birthday
+msgid "Fecha de nacimiento"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Femenino"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__welcome
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__welcome
+msgid "First Login"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid "Freelance"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__crm_lead__type_contact__gobierno
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__type_contact__gobierno
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Gobierno"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Granma"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_skill.xml:0
+#, python-format
+msgid "Grupo de Competencias"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Guantánamo"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Holguín"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__id
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_team_member__id
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_cv_experience_category__id
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_line_invoice_crm_lead__id
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_project_project__id
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__id
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_acknowledgments__id
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_competences__id
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__id
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_skill__id
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_specialty__id
+msgid "ID"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.ideaciones_my_profile
+msgid ""
+"INFORMACIÓN\n"
+"                                                            PROFESIONAL <i class=\"fa fa-check-circle item-link-circle\"/>"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.ideaciones_my_profile
+msgid ""
+"INFORMACIÓN DE CONTACTO\n"
+"                                                            <i class=\"fa fa-check-circle item-link-circle\"/>"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.res_partner_form_inherit
+msgid "Ideaciones Cliente"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.res_partner_form_inherit
+msgid "Ideaciones Colaborador"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Implementación de soluciones digitales"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.register_as_talent
+msgid "Información de contacto"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.register_as_talent
+msgid "Información profesional"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__crm_lead__type_contact__instituciones_educativas
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__type_contact__instituciones_educativas
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Instituciones educativas"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__interested
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__interested
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__interested
+msgid "Interés principal"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.crm_lead_talent_form_inherit
+msgid "Invoice Lines"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__is_project
+msgid "Is project"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Isla de la Juventud"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "Jefe de Dpto"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__job_title
+msgid "Job Title"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "La Habana"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Las Tunas"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_team_member____last_update
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_cv_experience_category____last_update
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_line_invoice_crm_lead____last_update
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_project_project____last_update
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner____last_update
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_acknowledgments____last_update
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_competences____last_update
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line____last_update
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_skill____last_update
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_specialty____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_team_member__write_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_cv_experience_category__write_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_line_invoice_crm_lead__write_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_acknowledgments__write_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_competences__write_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__write_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_skill__write_uid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_specialty__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_team_member__write_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_cv_experience_category__write_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_line_invoice_crm_lead__write_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_acknowledgments__write_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_competences__write_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__write_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_skill__write_date
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_specialty__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model,name:ideaciones_talent_pool.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunidad"
+
+#. module: ideaciones_talent_pool
+#: model:ir.model,name:ideaciones_talent_pool.model_line_invoice_crm_lead
+msgid "Line Invoice for Lead"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model,name:ideaciones_talent_pool.model_res_partner_competences
+msgid "Lines of Competences"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__acknowledge_ids
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__acknowledge_ids
+msgid "Lines of acknowledgments"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__competences_ids
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__competences_ids
+msgid "Lines of competences"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__pre_invoice_line_ids
+msgid "Lines of pre-invoice"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__preferences__linkedin
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Linkedin"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__experience_ids
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__experience_ids
+msgid "List of Experiences"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid "MIPYME"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Masculino"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Matanzas"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Mayabeque"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__preferences
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__pref_contact_ids
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__preferences
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__pref_contact_ids
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__preferences
+msgid "Medios de comunicación preferido"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Móvil*:"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_acknowledgments__name
+msgid "Name"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__name
+msgid "Name or Title"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__new_pref_contacts
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__new_pref_contacts
+msgid "New Pref Contacts"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Nickname"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Nombre"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__company_name
+msgid "Nombre Empresa"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Nombre de usuario*"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.ideaciones_my_profile
+msgid "Nombre del Usuario"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Nombre y Apellidos*:"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Nombre(s)"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__notes
+msgid "Notes"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__crm_lead__type_contact__ong
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__type_contact__ong
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "ONG"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__observation
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__observation
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__observations
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__observation
+msgid "Observations"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_line_invoice_crm_lead__crm_lead_id
+msgid "Opportunity"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Orcid:"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid ""
+"Organismo al que\n"
+"                        pertenece"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__crm_lead__type_contact__organismo_multilateral
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__type_contact__organismo_multilateral
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Organismo multilateral"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__institution
+msgid "Organization or Institution"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.res_partner_form_inherit
+msgid "Otra Info"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__crm_lead__type_contact__otras_instituciones
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__type_contact__otras_instituciones
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Otras Instituciones"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__crm_lead__job_title__otro
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid "Otro"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__job_title__otros
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Otros"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "PROYECTOS"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "PUBLICACIONES"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_acknowledgments__partner_id
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_competences__partner_id
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__passport
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__passport
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Pasaporte"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "País"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Países"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "Período"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid ""
+"Pinar del\n"
+"                            Río"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_team_member__points
+msgid "Points"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.crm_lead_talent_form_inherit
+msgid "Pre Invoice"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Producción de recursos educativos"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model,name:ideaciones_talent_pool.model_res_partner_skill
+msgid "Professional Skills"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model,name:ideaciones_talent_pool.model_res_partner_specialty
+msgid "Professional specialities"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model,name:ideaciones_talent_pool.model_project_project
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.ideaciones_talent_pool_project_form_inherit
+msgid "Project Members"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__project_type
+msgid "Project Type"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__province
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__province
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Provincia"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid "Puesto Actual"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__job_name
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__job_name
+msgid "Puesto de trabajo actual"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.register_as_talent
+msgid "Registro Cooperante"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:website.menu,name:ideaciones_talent_pool.register_page_link
+msgid "Regístrese"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__type_contact
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__type_contact
+msgid "Representante de"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Representante de:"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Resumen CV"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__summary_cv
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__summary_cv
+msgid "Resumen del CV"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__role_function
+msgid "Role or function"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid ""
+"Santiago\n"
+"                            de Cuba"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Seleccione"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Seleccione medio preferido de contacto:"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__sex
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__sex
+msgid "Sex"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Sexo"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Sitio web"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__website_own
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__website_own
+msgid "Sitio web personal"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_skill__name
+msgid "Skill"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_competences__skills_ids
+msgid "Skills"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__partner_skill_ids
+msgid "Skills needed"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.res_partner_form_inherit
+msgid "Social Links"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_competences__specialty
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__specialty_id
+msgid "Specialty"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_specialty__name
+msgid "Specialty name"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__specialty_ids
+msgid "Specialty needed"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid "Status laboral"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Su email*"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Su país:"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.crm_lead_talent_form_inherit
+msgid "Sugerir Candidatos"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.res_partner_form_inherit
+msgid "Summary CV"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid "TCP"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.crm_lead_talent_form_inherit
+msgid "Team Members"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__team_members_ids
+msgid "Team members"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__preferences__telefono
+msgid "Telefono"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__preferences__telegram
+msgid "Telegram"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Teléfono de contacto*"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Teléfono:"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model,name:ideaciones_talent_pool.model_crm_team_member
+msgid "The member for a team in crm"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+msgid "Tipo"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__job_title
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__job_title
+msgid "Tipo de Administrativo"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__type_partner
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__type_partner
+msgid "Tipo de Contacto"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "Tipo de Experiencia"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__title_contact
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__title_contact
+msgid "Titulo"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__speciality
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__speciality
+msgid "Titulo/Especialidad"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid "Trabajador estatal"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__type
+msgid "Type"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__type_contact
+msgid "Type Contact"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_crm_lead__title_contact
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_summary_cv
+#, python-format
+msgid "Título"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_professional_info
+msgid "Título/Especialidad:"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__url_website
+msgid "URL / DOI"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "Ubicación/Lugar"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__crm_lead__type_contact__universidad
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__type_contact__universidad
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Universidad"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/xml/website_talent_experience.xml:0
+#, python-format
+msgid "Universidad, Cuba"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#. openerp-web
+#: code:addons/ideaciones_talent_pool/static/src/js/talent_add_experience.js:0
+#: code:addons/ideaciones_talent_pool/static/src/js/talent_add_skill.js:0
+#, python-format
+msgid "Update"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_acknowledgments__user_ids
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_competences__user_ids
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner_experience_line__user_ids
+msgid "Users"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Usuario*"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.register_as_talent
+msgid "Volver"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__preferences__whatsapp
+msgid "Whatsapp"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "Whatsapp:"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__preferences__zoom
+msgid "Zoom"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__type_partner__cliente
+msgid "cliente"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__type_partner__colaborador
+msgid "colaborador"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "email@com.ex"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__facebook
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__facebook
+msgid "facebook"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__sex__femenino
+msgid "femenino"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__type_partner__internal
+msgid "internal"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__linkedin
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__linkedin
+msgid "linkedin"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__sex__masculino
+msgid "masculino"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__orcid
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__orcid
+msgid "orcid"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields.selection,name:ideaciones_talent_pool.selection__res_partner__sex__other
+msgid "otro"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_partner__whatsapp
+#: model:ir.model.fields,field_description:ideaciones_talent_pool.field_res_users__whatsapp
+msgid "whatsapp"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "www.facebook/profile"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "www.linkedin/profile"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "www.orcid/profile"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_informacion_personal
+msgid "www.profile.domain.cu"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "¿Cómo desea ser llamado?:"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "¿Qué lo describe mejor?"
+msgstr ""
+
+#. module: ideaciones_talent_pool
+#: model_terms:ir.ui.view,arch_db:ideaciones_talent_pool.template_cliente_details
+msgid "Área de Interés"
+msgstr ""

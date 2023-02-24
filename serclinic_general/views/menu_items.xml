@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<odoo>
+   <data>
+      <!-- Menu items -->
+      <menuitem id="menu_home" name="Servicios Clinicos" sequence="1"/>
+      <!--Nomencladores solo administradores-->
+      <menuitem id="menu_admin" name="Clínica"
+                parent="serclinic_general.menu_home" sequence="10" />
+      <menuitem id="menu_nomencladores" name="Nomencladores"
+                parent="serclinic_general.menu_admin"
+                sequence="12"/>
+      <menuitem id="serclinic_contactos" name="Pacientes"
+                parent="serclinic_general.menu_nomencladores"
+                sequence="13" action="contacts.action_contacts"/>
+      <menuitem id="serclinic_locales" name="Locales"
+                parent="serclinic_general.menu_nomencladores"
+                sequence="14" action="serclinic_general.locales_action_all"/>
+      <menuitem id="serclinic_equipos" name="Equipos"
+                parent="serclinic_general.menu_nomencladores"
+                sequence="15" action="serclinic_general.equipos_action_all"/>
+      <menuitem id="serclinic_tipo_estudio" name="Tipo Estudio Médico"
+                parent="serclinic_general.menu_nomencladores"
+                sequence="16" action="serclinic_general.study_types_action_all"/>
+   </data>
+</odoo>

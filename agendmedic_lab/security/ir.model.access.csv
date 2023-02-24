@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_agend_medical_lab_exam,agend_medical_lab_exam,model_agend_medical_lab_exam,,1,1,1,1
+access_agend_name_lab_exam,name_lab_exam,model_agend_name_lab_exam,,1,1,1,1
+access_agend_cat_lab_exam,agend_cat_lab_exam,model_agend_cat_lab_exam,,1,1,1,1
+access_agend_lab_test_param,agend_lab_test_param,model_agend_lab_test_param,,1,1,1,1
+access_agend_type_lab_exam,agend_type_lab_exam,model_agend_type_lab_exam,,1,1,1,1
+access_order_exams_lab,order_exams_lab,model_order_exams_lab,,1,1,1,1
+access_order_param_value_exams,order_param_value_exams,model_order_param_value_exams,,1,1,1,1
+access_whatsapp_message,whatsapp_lab_message_wizard,model_whatsapp_lab_message_wizard,,1,1,1,1

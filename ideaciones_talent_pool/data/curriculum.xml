@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="experience_category_telefono" model="cv.experience.category">
+            <field name="name">EXPERIENCIA PROFESIONAL</field>
+        </record>
+        <record id="experience_category_correo" model="cv.experience.category">
+            <field name="name">EXPERIENCIA PROFESIONAL POR MEMBRESÍAS</field>
+        </record>
+        <record id="experience_category_telegram" model="cv.experience.category">
+            <field name="name">FORMACIÓN ACADÉMICA PRINCIPAL</field>
+        </record>
+        <record id="experience_category_linkedin" model="cv.experience.category">
+            <field name="name">FORMACIÓN ACADÉMICA COMPLEMENTARIA</field>
+        </record>
+        <record id="experience_category_academy" model="cv.experience.category">
+            <field name="name">PUBLICACIÓN ACADÉMICA</field>
+        </record>
+        <record id="experience_category_cientify" model="cv.experience.category">
+            <field name="name">PUBLICACIÓN CIENTÍFICAS</field>
+        </record>
+        <record id="experience_category_events" model="cv.experience.category">
+            <field name="name">EVENTOS CIENTÍFICOS</field>
+        </record>
+        <record id="experience_category_projects" model="cv.experience.category">
+            <field name="name">PROYECTOS</field>
+        </record>
+        <record id="experience_category_courses" model="cv.experience.category">
+            <field name="name">CURSOS</field>
+        </record>
+        <record id="experience_category_certify" model="cv.experience.category">
+            <field name="name">CERTIFICADOS</field>
+        </record>
+        <record id="experience_category_international" model="cv.experience.category">
+            <field name="name">EXPERIENCIA INTERNACIONAL DE TRABAJO</field>
+        </record>
+        <record id="experience_category_consult" model="cv.experience.category">
+            <field name="name">EXPERIENCIA EN CONSULTORÍAS</field>
+        </record>
+    </data>
+</odoo>

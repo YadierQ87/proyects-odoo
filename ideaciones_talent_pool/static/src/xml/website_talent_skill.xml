@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+
+    <t t-name="website.talent.skill.add">
+        <div class="form-group">
+            <form>
+                <!--<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>-->
+                <div class="form-group">
+                    <label for="tag_id" class="col-form-label">Especialidad</label>
+                    <input class="form-control" name="tag_id" id="tag_id" required="required" t-attf-value="{{(widget.mode == 'update') ? widget.specialty : ''}}"/>
+                </div>
+                <div class="form-group">
+                    <label id="tag_group_label" for="tag_group_id" class="col-form-label">
+                        Grupo de Competencias <br/>
+                        (para más de una separe por comas)
+                    </label>
+                    <input class="form-control" name="tag_group_id" id="tag_group_id" t-attf-value="{{(widget.mode == 'update') ? widget.skills_ids : ''}}"/>
+                </div>
+            </form>
+        </div>
+    </t>
+
+    <t t-name="add_skill_to_cv">
+        <table class="table table-hover ">
+            <h6>COMPETENCIAS</h6>
+            <thead>
+                <tr class="">
+                    <td>Especialidad</td>
+                    <td>Competencias</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </t>
+
+    <t t-name="skill_row">
+         <tr t-att-competence-id="widget.competence_id">
+            <td>
+                <span t-esc="widget.specialty"></span>
+            </td>
+            <td>
+                <span t-esc="widget.skill"></span>
+            </td>
+            <td>
+                <a class="btn btn-default">
+                    <i class="fa fa-edit update-skill"/>
+                </a>
+                <a class="btn btn-default">
+                    <i class="fa fa-trash delete-skill"/>
+                </a>
+            </td>
+        </tr>
+    </t>
+
+</templates>

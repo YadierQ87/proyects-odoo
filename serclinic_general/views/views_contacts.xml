@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <!-- override res.partner base.view_partner_form-->
+        <record id="view_partner_form_serclinic_inherited" model="ir.ui.view">
+            <field name="name">Vista Contactos</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <!--<field name="inherit_id" ref="base.view_partner_form"/>
+            TODO poner x default un filtro o contexto
+            para pacientes , para doctores , para hospitales
+            -->
+            <field name="arch" type="xml">
+                <!-- ...match and extend elements here! ... -->
+                <xpath expr="//field[@name='function']" position="before">
+                    <field name="hospital_contact_type" />
+                </xpath>
+                <xpath expr="//div[hasclass('o_address_format')]" position="after">
+                    <field name="province_id" />
+                    <field name="municipality_id" />
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Datos Clinicos">
+                        <group string="Clinica" name="sale" priority="1" col="4">
+                            <field name="data_ci" />
+                            <field name="sex" />
+                            <field name="date_of_birth" />
+                            <field name="age" />
+                            <field name="age_int" />
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

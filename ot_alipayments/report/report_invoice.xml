@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+      <template id="alipayments_report_invoice" inherit_id="account.report_invoice_document">
+            <xpath expr="//h2/span[1]" position="replace">
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'posted'">Cobro de Alicuota</span>
+            </xpath>
+           <xpath expr="//h2/span[2]" position="replace">
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'draft'">Cobro de Alicuota</span>
+            </xpath>
+      </template>
+
+    </data>
+</odoo>

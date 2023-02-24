@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+
+        <record id='demanda_producto_vestuario_logistica_view_list' model='ir.ui.view'>
+            <field name="name">demanda.producto.vestuario.logistica.list</field>
+            <field name="model">demanda.producto.vestuario.logistica</field>
+            <field name="arch" type="xml">
+                <tree string="Piezas de Vestuario">
+                    <field name="name" />
+                    <field name="tipo_modulo_solicitud" />
+                    <field name="sexo_ropa" />
+                    <field name="talla_nacional" />
+                    <field name="talla_extranjera" />
+                    <field name="talla_especial" />
+                    <field name="tengo_talla" />
+                    <field name="necesito_talla" />
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

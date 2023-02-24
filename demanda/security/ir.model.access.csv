@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_demanda_producto_plantilla_logistica,demanda.producto.plantilla.logistica,model_demanda_producto_plantilla_logistica,,1,1,1,1
+access_demanda_atributo_plantilla_logistica,demanda.atributo.plantilla.logistica,model_demanda_atributo_plantilla_logistica,,1,1,1,1
+access_demanda_plantilla_logistica,demanda.plantilla.logistica,model_demanda_plantilla_logistica,,1,1,1,1
+access_demanda_producto_generico_logistica,demanda.producto.generico.logistica,model_demanda_producto_generico_logistica,,1,1,1,1
+access_demanda_solicitud_generica,demanda.solicitud.generica,model_demanda_solicitud_generica,,1,1,1,1
+access_demanda_producto_vestuario_logistica,demanda.producto.vestuario.logistica,model_demanda_producto_vestuario_logistica,,1,1,1,1
+access_demanda_solicitud_vestuario,demanda.solicitud.vestuario,model_demanda_solicitud_vestuario,,1,1,1,1
+access_demanda_talla_vestuario,demanda.talla.vestuario,model_demanda_talla_vestuario,,1,1,1,1
+access_demanda_listado_tallas_vestuario,demanda.listado.tallas.vestuario,model_demanda_listado_tallas_vestuario,,1,1,1,1
+access_demanda_solicitud_vestuario_division,demanda.solicitud.vestuario.division,model_demanda_solicitud_vestuario_division,,1,1,1,1
+access_demanda_solicitud_vestuario_departamento,demanda.solicitud.vestuario.departamento,model_demanda_solicitud_vestuario_departamento,,1,1,1,1
+
+
+

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<!-- TYPE agend.type.lab.exam -->
+		<record id="type_lab_1" model="agend.type.lab.exam">
+			<field name="name">T-ROJO</field>
+		</record>
+		<record id="type_lab_2" model="agend.type.lab.exam">
+			<field name="name">M-ORINA</field>
+		</record>
+		<record id="type_lab_3" model="agend.type.lab.exam">
+			<field name="name">M-HECES</field>
+		</record>
+
+		<!-- Category  agend.type.lab.exam -->
+		<record id="cat_lab_1" model="agend.cat.lab.exam">
+			<field name="name">BIOQUIMICA</field>
+		</record>
+		<record id="cat_lab_2" model="agend.cat.lab.exam">
+			<field name="name">SEROLOGIA</field>
+		</record>
+		<record id="cat_lab_3" model="agend.cat.lab.exam">
+			<field name="name">ENZIMAS</field>
+		</record>
+
+		<!-- Nombre Examen  agend.name.lab.exam -->
+		<record id="name_exam_lab_1" model="agend.name.lab.exam">
+			<field name="name">EXAMEN DE SANGRE</field>
+		</record>
+		<record id="name_exam_lab_2" model="agend.name.lab.exam">
+			<field name="name">EXAMEN DE ORINA</field>
+		</record>
+		<record id="name_exam_lab_3" model="agend.name.lab.exam">
+			<field name="name">EXAMEN DE HECES</field>
+		</record>
+
+		<!-- lab test param  agend.lab.test.param -->
+		<record id="name_param_lab_1" model="agend.lab.test.param">
+			<field name="name">GLUCOSA</field>
+			<field name="param_uom">mg/dl</field>
+			<field name="ref_value">70 - 105</field>
+		</record>
+		<record id="name_param_lab_2" model="agend.lab.test.param">
+			<field name="name">UREA</field>
+			<field name="param_uom">mg/dl</field>
+			<field name="ref_value">15 - 45</field>
+		</record>
+		<record id="name_param_lab_3" model="agend.lab.test.param">
+			<field name="name">CREATININA</field>
+			<field name="param_uom">mg/dl</field>
+			<field name="ref_value">MUJERES: 0.6 - 1.1 HOMBRES: 0.7 - 1.4</field>
+		</record>
+
+		<record id="name_param_lab_4" model="agend.lab.test.param">
+			<field name="name">ACIDO URICO</field>
+			<field name="param_uom">mg/dl</field>
+			<field name="ref_value">MUJERES:2.4 - 6.8 HOMBRES: 3.1 - 7.7</field>
+		</record>
+		<record id="name_param_lab_5" model="agend.lab.test.param">
+			<field name="name">COLESTEROL</field>
+			<field name="param_uom">mg/dl</field>
+			<field name="ref_value">MENOR  A 200</field>
+		</record>
+		<record id="name_param_lab_5a" model="agend.lab.test.param">
+			<field name="name">COLESTEROL HDL</field>
+			<field name="param_uom">mg/dl</field>
+			<field name="ref_value">35-60</field>
+		</record>
+		<record id="name_param_lab_5b" model="agend.lab.test.param">
+			<field name="name">COLESTEROL LDL</field>
+			<field name="param_uom">mg/dl</field>
+			<field name="ref_value">HASTA 130 mg/dl</field>
+		</record>
+
+		<record id="name_param_lab_5c" model="agend.lab.test.param">
+			<field name="name">TRIGLICERIDOS</field>
+			<field name="param_uom">mg/dl</field>
+			<field name="ref_value">MUJERES:35-135 HOMBRES:40-160</field>
+		</record>
+
+		<record id="name_param_lab_6" model="agend.lab.test.param">
+			<field name="name">SODIO</field>
+			<field name="param_uom">MEQ/L</field>
+			<field name="ref_value">135 - 145</field>
+		</record>
+		<record id="name_param_lab_7" model="agend.lab.test.param">
+			<field name="name">POTASIO</field>
+			<field name="param_uom">MEQ/L</field>
+			<field name="ref_value">3.5 - 5.5</field>
+		</record>
+		<record id="name_param_lab_8" model="agend.lab.test.param">
+			<field name="name">CLORO</field>
+			<field name="param_uom">MEQ/L</field>
+			<field name="ref_value">95 - 110</field>
+		</record>
+		<record id="name_param_lab_9" model="agend.lab.test.param">
+			<field name="name">MAGNESIO</field>
+			<field name="param_uom">mg/dl</field>
+			<field name="ref_value">1.6 - 2.5</field>
+		</record>
+		<record id="name_param_lab_10" model="agend.lab.test.param">
+			<field name="name">CALCIO</field>
+			<field name="param_uom">mg/dl</field>
+			<field name="ref_value">8.8 - 10.5</field>
+		</record>
+		<record id="name_param_lab_11" model="agend.lab.test.param">
+			<field name="name">FOSFORO</field>
+			<field name="param_uom">mg/dl</field>
+			<field name="ref_value">2.5 - 5.0</field>
+		</record>
+
+	</data>
+</odoo>

@@ -1,0 +1,113 @@
+<odoo>
+    <data>
+        <!-- Demandas de Solicitudes x Departamento -->
+        <record id="demanda_vestuario_depto_action_all" model="ir.actions.act_window">
+            <field name="name">Demanda Vestuario Departamento </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">demanda.solicitud.vestuario.departamento</field>
+            <field name="view_mode">kanban,form,tree</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="demanda_vestuario_departamento_form" model="ir.ui.view">
+            <field name="name">Demanda Vestuario Departamento</field>
+            <field name="model">demanda.solicitud.vestuario.departamento</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <header>
+                        <button name="do_create_table_total" type="object"
+                                class="oe_stat_button btn-gamma"
+                                icon="fa-file-pdf-o"
+                                string=" Ver Modelo Total "/>
+                    </header>
+                    <sheet string="Demanda de Vestuario por Depto." modifiers="{}">
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                            </button>
+                        </div>
+                        <group col="4" string="Información Demanda"  >
+                            <field name='name' />
+                            <field name='departamento_id' />
+                            <field name='jefe_depto' />
+                            <field name='demanda_division_id' />
+                            <field name='observaciones' />
+                        </group>
+                        <group col="4" colspan="4">
+                            <field name="solicitudes_ids" readonly="True"
+                                   options="{'no_open': True, 'no_create': True}"
+                                   attrs="{'no_open': True, 'no_create': True}"
+                                   colspan="6"
+                            />
+                        </group>
+                        <group col="4" colspan="4">
+                            <field name='totales' colspan="6" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Demandas de Solicitudes x Departamento -->
+        <record id="demanda_vestuario_division_action_all" model="ir.actions.act_window">
+            <field name="name">Demanda Vestuario Division </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">demanda.solicitud.vestuario.division</field>
+            <field name="view_mode">kanban,form,tree</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="demanda_vestuario_anual_division_form" model="ir.ui.view">
+            <field name="name">Demanda Vestuario Division</field>
+            <field name="model">demanda.solicitud.vestuario.division</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet string="Demanda de Vestuario por Depto." modifiers="{}">
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                            </button>
+                        </div>
+                        <group col="4" string="Información Demanda"  >
+                            <field name='name' />
+                            <field name='nombre_division' />
+                            <field name='periodo_solicitado' />
+                            <field name='fecha_inicio' />
+                            <field name='fecha_cierre' />
+                            <field name='director_encargado' />
+                            <field name='doc_aprobado' />
+                            <field name='observaciones' />
+                        </group>
+                        <group col="4" colspan="4">
+                            <field name="departamento_ids" readonly="True"
+                                   options="{'no_open': True, 'no_create': True}"
+                                   attrs="{'no_open': True, 'no_create': True}"
+                                   colspan="6">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="departamento_id"/>
+                                </tree>
+                            </field>
+                            <separator/>
+                        </group>
+                        <group col="2">
+                            <field name='totales'/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_partner_agend_medic_form" model="ir.ui.view">
+            <field name="name">res.partner.agend.medic.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//h1" position="replace">
+                    <h1>
+                        <div class="o_row">
+                            <field name="name" placeholder="Name"/>
+                            <field name="last_name" placeholder="Last Name" invisible="1"/>
+                        </div>
+                    </h1>
+                </xpath>
+                <xpath expr="//notebook" position="before">
+                    <group col="4">
+                        <field name="type_of_professional" attrs="{'invisible': [('patient_prof', '=', 'patient')]}"/>
+                        <field name="area_id" attrs="{'invisible': [('patient_prof', '=', 'patient')]}"/>
+                        <field name="hospital_id" attrs="{'invisible': [('patient_prof', '=', 'patient')]}"/>
+                        <field name="floor_id" attrs="{'invisible': [('patient_prof', '=', 'patient')]}"/>
+                        <field name="logo_doctor"  />
+                        <field name="gender" attrs="{'invisible': [('patient_prof', '=', 'profe')]}" widget="radio"/>
+                        <field name="type_patient" attrs="{'invisible': [('patient_prof', '=', 'profe')]}"/>
+                        <field name="type_insurance" attrs="{'invisible': [('patient_prof', '=', 'profe')]}"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="patient_prof" groups="base.group_erp_manager" />
+                    <field name="date_birth" attrs="{'invisible': [('patient_prof', '=', 'profe')]}"/>
+                    <field name="age" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='vat']" position="before">
+                    <label for="price" string="Price" attrs="{'invisible': [('patient_prof', '=', 'patient')]}"/>
+                    <div class="o_row">
+                        <field name="price" attrs="{'invisible': [('patient_prof', '=', 'patient')]}"/>
+                        <field name="currency_id" attrs="{'invisible': [('patient_prof', '=', 'patient')]}"/>
+                    </div>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Academic data" name="academic_data" attrs="{'invisible': [('patient_prof', '=', 'patient')]}">
+                        <field name="academic_data_ids">
+                            <tree>
+                                <field name="institution"/>
+                                <field name="title"/>
+                                <field name="date_admission"/>
+                                <field name="date_egress"/>
+                                <field name="studying"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <group>
+                                        <field name="institution"/>
+                                        <field name="date_admission"/>
+                                    </group>
+                                    <group>
+                                        <field name="title"/>
+                                        <field name="date_egress"/>
+                                        <field name="studying"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="description"/>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                    <page string="Planificacion de Turnos" name="appointment_time" attrs="{'invisible': [('patient_prof', '=', 'patient')]}">
+                        <field name="schedule_ids">
+                            <tree>
+                                <field name="weekdays"/>
+                                <field name="start_time_1" />
+                                <field name="end_time_1" />
+                                <field name="start_time_2"/>
+                                <field name="end_time_2" />
+                                <field name="duration"/>
+                            </tree>
+                            <form>
+                                <group col="4">
+                                    <field name="weekdays"/>
+                                    <field name="hospital_id"/>
+                                </group>
+                                <group>
+                                    <group>
+                                        <label for="start1_hour" class="o_form_label" string="Horario de inicio 1"/>
+                                        <div class="o_row" name="">
+                                            <field name="start1_hour"/>
+                                            :
+                                            <field name="start1_min"/>
+                                            <field name="start1_zm" />
+                                        </div>
+                                        <label for="start2_hour" class="o_form_label" string="Horario de inicio 2"/>
+                                        <div class="o_row">
+                                            <field name="start2_hour"/>
+                                            :
+                                            <field name="start2_min"/>
+                                            <field name="start2_zm"/>
+                                        </div>
+                                        <label for="duration" string="Tiempo de los Turnos"/>
+                                        <div class="o_row">
+                                            <field name="duration"/>en minutos
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <label for="start2_hour" class="o_form_label" string="Horario de Fin 1"/>
+                                        <div class="o_row">
+                                            <field name="end1_hour"/>
+                                            :
+                                            <field name="end1_min"/>
+                                            <field name="end1_zm"/>
+                                        </div>
+                                        <label for="start2_hour" class="o_form_label" string="Horario de Fin 2"/>
+                                        <div class="o_row">
+                                            <field name="end2_hour"/>
+                                            :
+                                            <field name="end2_min"/>
+                                            <field name="end2_zm"/>
+                                        </div>
+                                    </group>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                    <page string="Medical record" name="medical_record"
+                          groups="agendmedic.agendmedic_doctor"
+                          attrs="{'invisible': [('patient_prof', '=', 'profe')]}">
+                        <field name="medical_record_ids"
+                          options="{'no_create': True, 'no_create_edit': True}"/>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='property_account_receivable_id']" position="attributes">
+                    <attribute name="required">0</attribute>
+                </xpath>
+                <xpath expr="//field[@name='property_account_payable_id']" position="attributes">
+                    <attribute name="required">0</attribute>
+                </xpath>
+                <xpath expr="//field[@name='email']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='function']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='title']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='mobile']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='company_type']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='type']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='contact_addresses']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='accounting']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_view_partner_invoices']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object"
+                            groups="agendmedic.agendmedic_doctor"
+                            attrs="{'invisible': [('patient_prof', '=', 'profe')]}"
+                            name="return_action_view_records"
+                            icon="fa-edit">
+                        <field string="Medical Records" name="record_count" widget="statinfo"/>
+                    </button>
+                </div>
+                <xpath expr="//notebook" position="inside">
+                    <page name="Contabilidad" string="Contabilidad"
+                          attrs="{'invisible': [('patient_prof', '=', 'patient')]}">
+                        <button class="oe_stat_button" type="object" icon="fa-tasks"
+                                attrs="{'invisible': [('account_journal_id', '!=', False)]}"
+                                name="action_generate_journal" string="Generate Journal" />
+                        <group string="Diario Contable" col="4"
+                               attrs="{'invisible': [('account_journal_id', '=', False)]}">
+                            <field name="account_journal_id" readonly="1"/>
+                            <field name="code_journal"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_partner_agend_medic_tree" model="ir.ui.view">
+            <field name="name">res.partner.agend.medic.tree.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="replace">
+                    <tree string="Contacts">
+                        <field name="patient_prof" invisible="1"/>
+                        <field name="image_1920" widget="image" class="oe_avatar"/>
+                        <field name="display_name"/>
+                    </tree>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_res_partner_agend_medic_filter" model="ir.ui.view">
+            <field name="name">res.partner.agend.medic.filter.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='type_person']" position="after">
+                    <filter string="Patient" name="patient" domain="[('patient_prof', '=', 'patient')]"/>
+                    <filter string="Professionals" name="profe" domain="[('patient_prof', '=', 'profe')]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_agend_medic_patient" model="ir.actions.act_window">
+            <field name="name">Patient</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form,activity</field>
+            <field name="search_view_id" ref="base.view_res_partner_filter"/>
+            <field name="domain">[('patient_prof', '=', 'patient')]</field>
+            <field name="context">{'default_patient_prof': 'patient', 'default_is_company': False}</field>
+        </record>
+
+        <record id="action_agend_medic_professionals" model="ir.actions.act_window">
+            <field name="name">Professionals</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form,activity</field>
+            <field name="search_view_id" ref="base.view_res_partner_filter"/>
+            <field name="domain">[('patient_prof', '=', 'profe')]</field>
+            <field name="context">{'default_patient_prof': 'profe', 'default_is_company': False}</field>
+        </record>
+
+    </data>
+</odoo>

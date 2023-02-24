@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="document_control_partner_inherit_form" model="ir.ui.view">
+            <field name="name">document_control_ids</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" type="object"
+                            name="return_action_view_records"
+                            icon="fa-edit">
+                        <field string="Documents" name="docs_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+
+                <xpath expr="//notebook" position="before">
+                    <group>
+                        <field name="template_id"/>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_res_partner_document_control_filter" model="ir.ui.view">
+            <field name="name">res.partner.document.control.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='type_person']" position="after">
+                    <filter string="Contacts with Documents" name="documents" domain="[('document_ids', '!=', False)]"/>
+                    <filter string="Contacts with Template" name="template" domain="[('template_id', '!=', False)]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Add action entry in the Action Menu for Partners -->
+        <record id="res_partner_act_window_add_template" model="ir.actions.act_window">
+            <field name="name">Apply document template</field>
+            <field name="res_model">document.control.template</field>
+            <field name="view_mode">tree</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="base.model_res_partner"/>
+            <field name="binding_view_types">form</field>
+        </record>
+
+    </data>
+</odoo>

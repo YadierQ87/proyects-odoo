@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="gitlab_group_profile_form_view" model="ir.ui.view">
+            <field name="name">ae.gitlab.group.profile.form</field>
+            <field name="model">gitlab.group.profile</field>
+            <field name="arch" type="xml">
+                <form string="Gitlab Group">
+                    <sheet>
+                        <div name="button_box" class="oe_button_box">
+                            <button id="git_sync_issues_button" class="oe_stat_button"
+                                    type="object" name="action_sync_group_gitlab"
+                                    string="Sync Group"
+                                    icon="fa-refresh"
+                            />
+                        </div>
+                        <group col="2">
+                            <field name="name" readonly="1"/>
+                            <newline/>
+                            <field name="git_id"/>
+                        </group>
+                        <group col="4">
+                            <field name="description"/>
+                            <field name="web_url"/>
+                            <field name="avatar_url"/>
+                            <field name="sync_last_date"/>
+                        </group>
+                        <group>
+                            <field name="project_git_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="gitlab_group_profile_tree_view" model="ir.ui.view">
+            <field name="name">ae.gitlab.group.profile.tree</field>
+            <field name="model">gitlab.group.profile</field>
+            <field name="arch" type="xml">
+                <tree string="Gitlab Group" default_order="name">
+                    <field name="name"/>
+                    <field name="git_id"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="gitlab_group_profile_act_window" model="ir.actions.act_window">
+            <field name="name">Gitlab Group</field>
+            <field name="res_model">gitlab.group.profile</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Gitlab Group.
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu items -->
+        <menuitem name="Gitlab Sync Project" id="ae_project_gitlab_root" sequence="1"/>
+        <!-- gitlab.group.profile -->
+        <menuitem id="ae_project_gitlab_groups" name="Gitlab Groups"
+                  parent="ae_project_gitlab.ae_project_gitlab_root"
+                  sequence="4" action="ae_project_gitlab.gitlab_group_profile_act_window"/>
+    </data>
+</odoo>

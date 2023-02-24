@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_anexo_unico_combustible">
+            <t t-call="web.basic_layout">
+                <style>
+                    .table > tbody > tr > td{
+                        padding: 4px;
+                    }
+                    .oe-avatar{
+                     margin-right: 40px;
+                    }
+                    .resumen{
+                        text-transform: uppercase;   -moz-transform: rotate(-90deg);    -webkit-transform: rotate(-90deg);
+                        margin-top: 50px;     font-size: medium;   font-weight: bold;
+                    }
+                </style>
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="">
+                            <table class="table table-bordered table-striped">
+                                <tr class="success">
+                                    <td colspan="7">
+                                        <strong class="text-center">
+                                            <img class="oe-avatar" t-att-src="image_data_uri(res_company.logo)" height="50px" />
+                                            ANEXO UNICO   REPORTE DE COMBUSTIBLE HABILITADO Y KILOMETROS RECORRIDOS
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="7" >No:  </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="7" class="text-center success">I- Datos Generales  </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center" colspan="2"><strong>OACE: </strong> </td>
+                                    <td colspan="2" class="text-center"><strong>Entidad:</strong></td>
+                                    <td colspan="3" class="text-center"><strong>Chapa:</strong></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><span t-field="o.oace"/></td>
+                                    <td colspan="2"><span t-field="o.entidad"/></td>
+                                    <td colspan="3"><span t-field="o.chapa"/></td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2" class="text-center"><strong>Datos Cierre del Mes:</strong>  </td>
+                                    <td colspan="2" class="text-center"><strong>Próximo Mantenimiento:</strong></td>
+                                    <td colspan="3" class="text-center"><strong>Habilitado por:</strong>	</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Kilometraje Inicial</strong></td>
+                                    <td><span t-field="o.km_inicial"/></td>
+                                    <td class="text-center"><strong>Km próximo Mtto</strong></td>
+                                    <td><span t-field="o.km_prox_mtto"/></td>
+                                    <td colspan="3"> <span t-field="o.habilitado_por.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td ><strong>Combustible estimado en tanque</strong></td>
+                                    <td><span t-field="o.comb_estimado_tanq"/></td>
+                                    <td><strong>Índice de consumo</strong></td>
+                                    <td><span t-field="o.indice_consumo"/></td>
+                                    <td><strong>Firma y Cuño</strong></td>
+                                    <td colspan="2"><strong>Fecha:</strong> <span t-field="o.create_date"/> </td>
+                                </tr>
+                                <tr class="bg-success">
+                                    <td colspan="7" class="text-center"><strong >II- Combustible y Kilómetros (Para ser llenado por personal autorizado a abastecer)</strong>   </td>
+                                </tr>
+                                <tr class="info text-center">
+                                    <td >Fecha</td>
+                                    <td colspan="2">Número de Tarjeta</td>
+                                    <td>Kilometraje</td>
+                                    <td>Combustible Abastecido</td>
+                                    <td>Combustible en Tanque</td>
+                                    <td>Firma</td>
+                                </tr>
+                                <t t-if="o.servicio_combustible_id">
+                                    <t t-foreach="o.servicio_combustible_id" t-as="service">
+                                        <tr class="info">
+                                            <td > <span t-field="service.date"/> </td>
+                                            <td colspan="2"> <span t-field="service.tarjeta_id"/> </td>
+                                            <td> <span t-field="service.odometer"/> </td>
+                                            <td> <span t-field="service.liter"/> </td>
+                                            <td> <span t-field="service.combustible_en_tanque"/> </td>
+                                            <td> </td>
+                                        </tr>
+                                    </t>
+                                </t>
+                                <tr class="bg-success">
+                                    <td >  </td>
+                                    <td colspan="2"> </td>
+                                    <td>  </td>
+                                    <td>  </td>
+                                    <td>  </td>
+                                    <td>  </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="6"><div class="resumen">III-Resumen</div></td>
+                                    <td colspan="4">Datos del cierre del mes</td>
+                                    <td colspan="2">Índice de consumo Real Km/Lts</td>
+                                </tr>
+                                <tr class="">
+                                    <td>Kilometraje final</td>
+                                    <td>Combustible en tanque</td>
+                                    <td>Kilometraje total recorrido</td>
+                                    <td>Combustible total consumido</td>
+                                    <td>Plan</td>
+                                    <td>Real/Plan    %</td>
+                                </tr>
+                                <tr class="">
+                                    <td> <span t-field="o.km_final"/> </td>
+                                    <td> <span t-field="o.comb_tanque"/> </td>
+                                    <td> <span t-field="o.km_total_recorrido"/> </td>
+                                    <td> <span t-field="o.comb_total_consumido"/> </td>
+                                    <td> <span t-field="o.plan_comb"/> </td>
+                                    <td> <span t-field="o.percent_plan_real"/> </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-center"><strong>Mantenimiento</strong></td>
+                                    <td colspan="3" class="text-center"><strong>Observaciones:</strong></td>
+                                </tr>
+                                <tr>
+                                    <td ><strong>Tipo</strong></td>
+                                    <td >Kilometraje real</td>
+                                    <td>Variación</td>
+                                    <td  colspan="3" rowspan="2"> <span t-field="o.observaciones"/> </td>
+                                </tr>
+                                <tr class="">
+                                    <td> <span t-field="o.tipo_mtto"/> </td>
+                                    <td> <span t-field="o.km_real_mtto"/> </td>
+                                    <td> <span t-field="o.variacion"/> </td>
+                                </tr>
+                            </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

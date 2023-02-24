@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gitlab_group_profile,gitlab.group.profile,model_gitlab_group_profile,,1,1,1,1

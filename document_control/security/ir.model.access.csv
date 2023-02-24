@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_document_control_category,document.control.category,model_document_control_category,base.group_user,1,1,1,1
+access_document_control,document.control,model_document_control,base.group_user,1,1,1,1
+access_line_control_template,line.control.template,model_line_control_template,base.group_user,1,1,1,1
+access_document_control_template,document.control.template,model_document_control_template,base.group_user,1,1,1,1

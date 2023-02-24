@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="gitlab_res_partner_inherit_form_view" model="ir.ui.view">
+            <field name="name">gitlab.res_partner_inherit.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string='Gitlab Account'>
+                        <button id="git_sync_user_button" class="btn btn-warning"
+                                type="object" name="action_sync_user_data"
+                                string="Sync Gitlab"
+                                icon="fa-gitlab"
+                        />
+                        <group col="4">
+                            <field name="username"/>
+                            <field name="git_id"/>
+                            <field name="name"/>
+                            <field name="sync_last_date"/>
+                            <field name="web_url"/>
+                            <field name="avatar_url"/>
+                            <field name="state_git"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

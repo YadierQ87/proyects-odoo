@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="ae_project_gitlab_project_form_inherit" model="ir.ui.view">
+            <field name="name">ae_project.project.inherit.form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="priority" eval="5"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Gitlab">
+                        <button id="git_sync_project_button" class="btn btn-info"
+                                type="object" name="action_sync_project_data"
+                                string="Sync Gitlab"
+                                icon="fa-gitlab"
+                        />
+                        <group col="4">
+                            <field name="git_id"/>
+                            <field name="created_in_gitlab"/>
+                            <field name="is_sync"/>
+                            <field name="path"/>
+                            <field name="name_with_namespace"/>
+                            <field name="sync_last_date"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

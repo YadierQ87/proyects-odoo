@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="new_user" model="res.users">
+            <field name="name">Mitchell Admin</field>
+            <field name="login">usernameT87</field>
+            <field name="partner_id" eval="ref('base.main_partner')"/>
+            <field name="comment">User for my website interface</field>
+        </record>
+    </data>
+</odoo>

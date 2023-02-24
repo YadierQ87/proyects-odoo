@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="qweb_report_demanda_vestuario_depto">
+            <t t-call="web.basic_layout">
+                <style>
+                    .table > tbody > tr > td { padding: 4px;  font-size:12px;   letter-spacing: 1px;   }
+                    .oe-avatar{  margin-right: 40px;   }
+                </style>
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="">
+                        <strong class="text-center">
+                            <img class="oe-avatar" t-att-src="image_data_uri(res_company.logo)" height="50px" />
+                            VESTUARIO TOTAL DEPTO
+                        </strong>
+                        <p>Información Demanda <span>Numero de la Solicitud: <span t-field="o.name"/></span></p>
+                        <span>Responsable: <span t-field="o.jefe_depto"/></span>
+                        <p>Observaciones: <span t-field="o.observaciones"/></p>
+                        <div>Listado de Solicitudes x Usuarios<span t-field="o.departamento_id"/> </div>
+                        <ul>
+                            <t t-foreach="o.solicitudes_ids" t-as="solicitud">
+                                <li t-esc="solicitud.name"></li>
+                            </t>
+                        </ul>
+                        <h4>Tabla de Totales</h4>
+                        <div t-field="o.totales"/>
+                        <p> Firma de Quien Autoriza o Aprueba _______________ </p>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+
+        <template id="qweb_report_demanda_vestuario_division">
+            <t t-call="web.basic_layout">
+                <style>
+                    .table > tbody > tr > td { padding: 4px;  font-size:12px;   letter-spacing: 1px;   }
+                    .oe-avatar{  margin-right: 40px;   }
+                </style>
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="">
+                        <strong class="text-center">
+                            <img class="oe-avatar" t-att-src="image_data_uri(res_company.logo)" height="50px" />
+                            VESTUARIO TOTAL DIRECCION <span t-field="o.nombre_division"/> <br/>
+                            Periodo Solicitado: <span t-field="o.periodo_solicitado"/><br/>
+                            Fecha Inicio: <span t-field="o.fecha_inicio"/> - Fecha Fin: <span t-field="o.fecha_cierre"/><br/>
+                        </strong>
+                        <p> <span>Numero de la Solicitud: <span t-field="o.name"/></span></p>
+                        <div>Listado de Solicitudes x Depto <span t-field="o.nombre_division"/> </div>
+                        <ul>
+                            <t t-foreach="o.departamento_ids" t-as="depto">
+                                <li t-esc="depto.name"></li>
+                            </t>
+                        </ul>
+                        <h4>Tabla de Totales</h4>
+                        <div t-field="o.totales"/>
+                        <p>Director: <span t-field="o.director_encargado"/></p>
+                        <p>Observaciones: <span t-field="o.observaciones"/></p>
+                        <p> Firma de Quien Autoriza o Aprueba _______________ </p>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

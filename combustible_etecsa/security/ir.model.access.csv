@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_comb_etecsa_recorridos_combustible,comb.etecsa.recorridos.combustible,model_comb_etecsa_recorridos_combustible,,1,1,1,1
+access_comb_etecsa_demanda_combustible,comb.etecsa.demanda.combustible,model_comb_etecsa_demanda_combustible,,1,1,0,1
+access_comb_etecsa_demanda_departamento,comb.etecsa.demanda.departamento,model_comb_etecsa_demanda_departamento,,1,1,1,1
+access_comb_etecsa_distribucion,comb.etecsa.distribucion,model_comb_etecsa_distribucion,,1,1,1,1
+access_comb_etecsa_tabla_distancia,comb.etecsa.tabla.distancia,model_comb_etecsa_tabla_distancia,,1,1,1,1
+access_comb_costo_litro,comb.costo.litro,model_comb_costo_litro,,1,1,1,1
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- mailer template for notify user registry -->
+    <record id="ideaciones_mail_template_register" model="mail.template">
+        <field name="name">Email Registro</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="email_from">soporte.ideaciones@rimed.cu</field>
+        <field name="subject">Bienvenido a iDeaciones</field>
+        <field name="body_html" type="html">
+            <div>
+                <p t-if="object.type_partner == 'colaborador'">
+                    Hola ${object.name}, bienvenido al equipo de iDeaciones, estamos analizando sus habilidades, le
+                    avisaremos cuando encontremos un proyecto
+                    para usted.
+                    <br/>
+                    Saludos del equipo de iDeaciones
+                    <br/>
+                    +57882393 | soporte.ideaciones@rimed.cu
+                </p>
+                <p t-if="object.type_partner == 'cliente'">
+                    Hola ${object.name}, nos entusiasma trabajar con usted, el equipo de iDeaciones ya se encuentra
+                    analizando su área de interés, ¿está listo
+                    para comentarnos su reto?
+                    <br/>
+                    <button type="button" class="btn btn-primary">
+                        <a href="https://ideaciones.ice.rimed.cu">
+                            IR AL SITIO
+                        </a>
+                    </button>
+                    <br/>
+                    Saludos del equipo de iDeaciones
+                    <br/>
+                    +57882393 | soporte.ideaciones@rimed.cu
+                </p>
+            </div>
+        </field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+    <!-- mailer template for notify to the admins -->
+    <record id="ideaciones_mail_admin_notification" model="mail.template">
+        <field name="name">Notificacion de Nuevo Registro</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="email_from">soporte.ideaciones@rimed.cu</field>
+        <field name="email_to">soporte.ideaciones@rimed.cu</field>
+        <field name="subject">Nuevo ${object.type_partner}</field>
+        <field name="body_html" type="html">
+            <div>
+                <p t-if="object.type_partner == 'colaborador'">
+                    El colaborador ${object.name} se ha registrado con éxito en la plataforma
+                    <br/>
+                    Saludos del equipo de iDeaciones
+                    <br/>
+                    +57882393 | soporte.ideaciones@rimed.cu
+                </p>
+                <p t-if="object.type_partner == 'cliente'">
+                    El cliente ${object.name} se ha
+                    registrado con éxito en la plataforma y se encuentra interesado en ${object.interested}
+                    <br/>
+                    Saludos del equipo de iDeaciones
+                    <br/>
+                    +57882393 | soporte.ideaciones@rimed.cu
+                </p>
+            </div>
+        </field>
+    </record>
+</odoo>

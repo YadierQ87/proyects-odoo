@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Menu for reports -->
+        <report string="Notificacion de Alicuota"
+                id="action_report_order_consumption"
+                model="account.move"
+                report_type="qweb-pdf"
+                name="ot_alipayments.invoice_report_consumption"
+                file="ot_alipayments.invoice_report_consumption"
+                attachment_use="True"
+                print_report_name="'Notificacion de Alicuota - %s ' % object.name"
+                menu="True"
+        />
+
+    </data>
+</odoo>

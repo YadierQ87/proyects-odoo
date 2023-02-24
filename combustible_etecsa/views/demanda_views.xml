@@ -1,0 +1,436 @@
+<odoo>
+    <data>
+        <!--FORM VIEW DEMANDA COMBUSTIBLE X VEHICULO-->
+        <record id="demanda_combustible_action_all" model="ir.actions.act_window">
+            <field name="name"> Demanda de Combustible por Vehículo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">comb.etecsa.demanda.combustible</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <record id="demanda_combustible_view_list" model="ir.ui.view">
+            <field name="name">Demanda de Combustible por Vehículo</field>
+            <field name="model">comb.etecsa.demanda.combustible</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="vehicle_id"/>
+                    <field name="mes_demanda" />
+                    <field name="departamento"/>
+                    <field name="estado_demanda"/>
+                    <field name="tipo_combustible"/>
+                    <field name="prioridad" />
+                    <field name="combustible_demandado"/>
+                    <field name="combustible_real"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="demanda_combustible_form" model="ir.ui.view">
+            <field name="name">Demanda de Combustible por Vehículo</field>
+            <field name="model">comb.etecsa.demanda.combustible</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <header>
+                        <field name="estado_demanda" widget="statusbar"/>
+                    </header>
+                    <sheet string="Demanda de Combustible por Vehículo" modifiers="{}">
+                        <div class="oe_button_box" name="button_box" modifiers="{}">
+                            <button name="do_presentar_demanda" type="object"
+                                    attrs="{'invisible':[('estado_demanda','!=','borrador'),]}"
+                                    string="Solicitar"
+                                    help="Para cambiar el estado a 'Demandado'"
+                                    class="oe_stat_button" icon="fa-list" modifiers="{}" options="{}"/>
+                            <button name="do_rectificar_demanda" type="object"
+                                    icon="fa-repeat"
+                                    attrs="{'invisible':[('estado_demanda','!=','rechazado'),]}"
+                                    string="Rectificar Demanda"
+                                    help="Para cambiar el estado a 'Demandado'"
+                                    class="oe_highlight" />
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive" modifiers="{}" options="{}">
+                                <field name="active" widget="boolean_button" options="{'terminology': 'archive'}" on_change="1" modifiers="{}"/>
+                            </button>
+                        </div>
+                        <group col="4" string="Demanda de Combustible">
+                            <field name="name"/>
+                            <field name="vehicle_id" readonly="1"/>
+                            <field name="chapa"/>
+                            <field name="mes_demanda" readonly="1" />
+                            <field name="u_organizativa" readonly="1"/>
+                            <field name="departamento"/>
+                            <field name="asignado_a"/>
+                            <field name="tipo_combustible"/>
+                            <field name="estado_chapisteria"/>
+                            <field name="prioridad" />
+                            <field name="combustible_tanque"/>
+                            <field name="indice_consumo"/>
+                            <field name="combustible_real" attrs="{'invisible':[('estado_demanda','!=','asignado')]}"/>
+                            <field name="total_km"/>
+                            <field name="total_demanda"/>
+                        </group>
+                        <group col="2" string="Listado de Recorridos">
+                            <field name="demanda_recorridos_ids" attrs="{'invisible':[('vehicle_id','=','False')]}">
+                                <tree editable = "bottom">
+                                    <field name="actividad"/>
+                                    <field name="recorrido"/>
+                                    <field name="dias_mes"/>
+                                    <field name="km_x_tabla"/>
+                                    <field name="km_total_recorrido"/>
+                                    <field name="cantd_litros"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group col="2">
+                            <field name="observaciones" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--sobreescribir vista fleet.vehicle Form   -->
+        <record id="combustible_etecsa_flota_form" model="ir.ui.view">
+            <field name="name">fleet_vehicle_etecsa_form</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='seats']" position="before">
+                    <field name="indice_consumo"/>
+                    <field name="tarjeta"/>
+                    <field name="prioridad"/>
+                </xpath>
+
+                <xpath expr="//field[@name='driver_id']" position="after">
+                    <field name="depto_propietario"/>
+                </xpath>
+
+            </field>
+        </record>
+
+
+
+        <!--FORM VIEW DEMANDA COMBUSTIBLE x Dpto.-->
+        <record id="demanda_departamento_action_all" model="ir.actions.act_window">
+            <field name="name">Demanda de Combustible por Departamento</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">comb.etecsa.demanda.departamento</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{"search_default_groupby_vehicle" : True}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Demanda de Combustible por Dpto.
+                </p>
+            </field>
+        </record>
+
+        <record id="demanda_combustible_departamento_view_list" model="ir.ui.view">
+            <field name="name">Demanda de Combustible por Departamento</field>
+            <field name="model">comb.etecsa.demanda.departamento</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="departamento_id"/>
+                    <field name="mes_demanda" />
+                    <field name="tipo_combustible" />
+                    <field name="estado"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="demanda_departamento_form" model="ir.ui.view">
+            <field name="name">Demanda de Combustible por Dpto.</field>
+            <field name="model">comb.etecsa.demanda.departamento</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <header>
+                        <field name="estado" widget="statusbar"/>
+
+                    </header>
+                    <sheet string="Demanda de Combustible por Dpto." modifiers="{}">
+                        <div class="oe_button_box" name="button_box" modifiers="{}">
+                            <button name="do_listar_demandas_depto" type="object"
+                                    attrs="{'invisible':[('estado','=','aprobado'),]}"
+                                    icon="fa-book"
+                                    string="Ver Demandas"
+                                    class="oe_highlight" />
+                            <button name="do_aprobar_demanda" type="object"
+                                    icon="fa-check-circle-o"
+                                    attrs="{'invisible':[('estado','=','aprobado'),]}"
+                                    help="Para cambiar el estado a 'aprobado' por el Responsable"
+                                    string="Aprobar "
+                                    class="oe_highlight" />
+                            <button name="do_rectificar_demanda" type="object"
+                                    icon="fa-repeat"
+                                    attrs="{'invisible':[('estado','!=','rechazado'),]}"
+                                    help="Para cambiar el estado a 'demandado'"
+                                    string="Rectificar"
+                                    class="oe_highlight" />
+                            <button name="toggle_active" type="object"
+                                    class="oe_stat_button" icon="fa-archive" modifiers="{}" options="{}">
+                                <field name="active" widget="boolean_button"
+                                       options="{'terminology': 'archive'}" on_change="1" modifiers="{}"/>
+                            </button>
+                        </div>
+                        <group col="4" string="Detalles Demanda Dpto.">
+                            <field name="name" readonly="1"/>
+                            <field name="departamento_id"/>
+                            <field name="nombre_jefe"/>
+                            <field name="tipo_combustible"/>
+                            <field name="mes_demanda"/>
+                            <field name="tipo_demanda"/>
+                        </group>
+                        <group col="2" string="Listado de Demandas">
+                            <field name="demanda_combt_ids" attrs="{'invisible': [('departamento_id','=','False'),
+                                ('tipo_combustible','=','False'),
+                                ('mes_demanda','=','False')
+                            ]}">
+                                <tree editable = "bottom" create="false" delete="false" edit="true">
+                                    <field name="vehicle_id" readonly="1"/>
+                                    <field name="mes_demanda" readonly="1"/>
+                                    <field name="tipo_combustible"/>
+                                    <field name="total_demanda" />
+                                    <field name="combustible_demandado" />
+                                    <field name="estado_demanda" readonly="1"/>
+                                    <button name="do_check"
+                                            string="Aceptar" type="object"
+                                            class="btn fa fa-check text-success"/>
+                                    <button name="do_failed"
+                                            string="Rechazar" type="object"
+                                            class="btn fa fa-times-circle text-danger"
+                                    />
+                                </tree>
+                            </field>
+                        </group>
+                        <group col="2">
+                            <field name="observaciones" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <!--FORM VIEW DEMANDA Distribución-->
+        <record id="distribucion_combustible_action_all" model="ir.actions.act_window">
+            <field name="name">Distribución de Combustible</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">comb.etecsa.distribucion</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Distribución de Combustible
+                </p>
+            </field>
+        </record>
+
+        <record id="distribucion_combustible_view_list" model="ir.ui.view">
+            <field name="name">Distribución de Combustible</field>
+            <field name="model">comb.etecsa.distribucion</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="mes_consumo" />
+                    <field name="estado" />
+                    <field name="tipo_combustible" />
+                    <field name="litros_asignados"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="distribucion_combustible_form" model="ir.ui.view">
+            <field name="name">Distribución de Combustible</field>
+            <field name="model">comb.etecsa.distribucion</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <header>
+                        <field name="estado" widget="statusbar"/>
+                    </header>
+                    <sheet string="Distribución de Combustible" modifiers="{}">
+                        <div class="oe_button_box" name="button_box" modifiers="{}">
+                            <button name="do_listar_demandas_depto" type="object"
+                                    attrs="{'invisible':[('estado','=','aprobado'),]}"
+                                    icon="fa-book"
+                                    string="Ver Demandas"
+                                    class="oe_highlight" />
+                            <button name="do_asignar_combustible" type="object"
+                                    icon="fa-gear"
+                                    attrs="{'invisible':[('estado','=','aprobado'),]}"
+                                    help="Para asignar combustible x prioridad"
+                                    string="Asignar Automatico"
+                                    class="oe_highlight" />
+                            <button name="do_aprobar_demanda" type="object"
+                                    icon="fa-check-circle-o"
+                                    attrs="{'invisible':[('estado','=','aprobado'),]}"
+                                    help="Para cambiar el estado a 'aprobado' por el Responsable"
+                                    string=" Aprobar "
+                                    class="oe_highlight" />
+                            <button name="do_rectificar_demanda" type="object"
+                                    icon="fa-repeat"
+                                    attrs="{'invisible':[('estado','!=','aprobado'),]}"
+                                    help="Para cambiar el estado a 'demandado'"
+                                    string=" Rectificar"
+                                    class="oe_highlight" />
+                            <button name="toggle_active" type="object"
+                                    class="oe_stat_button" icon="fa-archive" modifiers="{}" options="{}">
+                                <field name="active" widget="boolean_button"
+                                       options="{'terminology': 'archive'}" on_change="1" modifiers="{}"/>
+                            </button>
+                        </div>
+                        <group col="4" string="Detalles Distribución">
+                            <field name="organismo" />
+                            <field name="entidad"/>
+                            <field name="u_organizativa"/>
+                            <field name="area_trabajo"/>
+                            <field name="numero_consecutivo_plan"/>
+                            <field name="aprobado_por" />
+                            <field name="mes_consumo" />
+                            <field name="tipo_combustible"/>
+                            <field name="concepto_emision"/>
+                            <field name="costo_litro"/>
+                            <field name="litros_asignados"/>
+                        </group>
+                        <group col="2" string="Demandas de combustible">
+                            <field name="demanda_combt_ids" attrs="{'no_open':True,'no_create':True}" options="{'no_open':True,'no_create':True}">
+                                <tree editable = "bottom" create="false" edit="true">
+                                    <field name="departamento" readonly="1"/><!-- Area de trabajo -->
+                                    <field name="chapa" readonly="1"/><!-- Chapa-->
+                                    <field name="tarjeta" readonly="1"/><!-- No. tarjeta -->
+                                    <field name="combustible_demandado" readonly="1"/><!-- Plan Demandado -->
+                                    <field name="combustible_real"/><!-- Plan asignado -->
+                                    <field name="importe" readonly="1"/><!-- Importe -->
+                                    <field name="estado_demanda" readonly="1"/><!-- estado_demanda -->
+                                    <button name="do_check"
+                                            string=" Aceptar" type="object"
+                                            class="btn fa fa-check text-success"/>
+                                    <button name="do_failed"
+                                            string=" Rechazar" type="object"
+                                            class="btn fa fa-times-circle text-danger"
+                                    />
+                                </tree>
+                            </field>
+                        </group>
+                        <group col="4">
+                            <field name="descontar_saldo_existencia"/>
+                            <field name="total_litros"/>
+                            <field name="total_lts_demandado"/>
+                            <field name="total_lts_asignado"/>
+                            <field name="total_importe"/>
+                            <field name="emergencias"/>
+                        </group>
+                        <group col="4">
+                            <field name="nombre_entrega_modelo"/>
+                            <field name="nombre_recibe_modelo"/>
+                            <field name="nombre_jefe_revisado_modelo"/>
+                            <field name="nombre_direc_revisado_modelo"/>
+                            <field name="observaciones" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--FORM VIEW DEMANDA COMBUSTIBLE X VEHICULO-->
+        <record id="tablas_distancia_action_all" model="ir.actions.act_window">
+            <field name="name"> Tabla de Distancia </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">comb.etecsa.tabla.distancia</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <record id="tabla_distancia_form" model="ir.ui.view">
+            <field name="name">tabla_distancia_etecsa_form</field>
+            <field name="model">comb.etecsa.tabla.distancia</field>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="origen"/>
+                            <field name="destino"/>
+                            <field name="vias_utilizar"/>
+                            <field name="distancia_km"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tabla_distancia_view_list" model="ir.ui.view">
+            <field name="name">Tabla de distancia</field>
+            <field name="model">comb.etecsa.tabla.distancia</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="vias_utilizar" />
+                    <field name="distancia_km" />
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Precio del combustible -->
+        <record id="precio_combustible_action_all" model="ir.actions.act_window">
+            <field name="name"> Precio del Combustible  </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">comb.costo.litro</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         <record id="precio_combustible_form" model="ir.ui.view">
+            <field name="name">precio_combustible_litro</field>
+            <field name="model">comb.costo.litro</field>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="tipo_combustible"/>
+                            <field name="costo"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="precio_combustible_view_list" model="ir.ui.view">
+            <field name="name">Precio del Combustible List</field>
+            <field name="model">comb.costo.litro</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="tipo_combustible" />
+                    <field name="costo" />
+                </tree>
+            </field>
+        </record>
+
+
+
+    </data>
+</odoo>
+
+

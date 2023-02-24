@@ -1,0 +1,1081 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Customize Landing Home Page  -->
+        <template name="Custom Landing ideaciones" t-name="ideaciones_talent_pool.custom_landing_ideaciones">
+            <!-- Extra  Landing Home Page-->
+            <t t-call="website.layout">
+                <div id="wrap" data-spy="scroll" data-target="#top_menu_container">
+                    <!-- section del header -->
+                    <!-- botones flotantes -->
+                    <a href="/add/client" class="control-button" >
+                        <span>Solucionar reto</span>
+                    </a>
+                    <a href="/add/talent" class="control-button-2" >
+                        <span>Colaborar</span>
+                    </a>
+
+                    <section
+                            class="s_cover bg-black-50 o_colored_level pt48  o_visible pb40 parallax s_parallax_is_fixed s_parallax_no_overflow_hidden"
+                            id="home-section" data-scroll-background-ratio="1"
+                            data-snippet="s_cover" data-name="Cover" style="" data-original-id="911"
+                            data-mimetype="image/png" data-resize-width="1920">
+                        <span class="s_parallax_bg oe_img_bg"
+                              style="background-image: url(&quot;/ideaciones_theme/static/src/img/bg-web-ice.png&quot;);"/>
+                        <div class="s_allow_columns o_container_small">
+                            <div class="row">
+                                <div class="o_colored_level col-lg-12" style="">
+                                    <h1 style="text-align: center;">
+                                        <font style="font-size: 36px;">Nos importa que
+                                            <br/>
+                                        </font>
+                                        <font class="text-shadow" style="font-size: 48px; font-weight: bold;">sea uno
+                                            de
+                                        </font>
+                                        <font style="font-size: 48px; font-weight: bold;"
+                                              class="text-o-color-1 text-shadow">nosotros
+                                        </font>
+                                    </h1>
+                                    <p class="lead" style="text-align: center;">
+                                        <font style="color: rgb(226, 224, 255); font-size: 14px;">Por favor, seleccione
+                                            una de las siguientes
+                                        </font>
+                                        <font style="color: rgb(226, 224, 255); font-size: 14px;">opciones y permítanos
+                                            conocer cómo desea
+                                        </font>
+                                        <font style="color: rgb(226, 224, 255); font-size: 14px;">continuar
+                                            explorando.
+                                        </font>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1 o_colored_level pt24 col-lg-1"/>
+                                <div class="col-md-5 o_colored_level pt24 col-lg-5 col-sm-12 col-md-12 col-xs-12">
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <font style="color: rgba(255, 255, 255, 0.7);">Me motiva
+                                                    <strong style="color: rgba(255, 255, 255, 1); !important;">
+                                                        formar parte del equipo
+                                                    </strong>
+                                                    iDeaciones
+                                                </font>
+                                            </div>
+                                            <a class="flip-card-back" href="/add/talent" role="button">
+                                                <span>
+                                                    Registrarme de esta forma
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 o_colored_level pt24 col-lg-5 col-sm-12 col-md-12 col-xs-12">
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <font style="color: rgba(255, 255, 255, 0.7);">Deseo
+                                                    <strong style="color: rgba(255, 255, 255, 1); !important;">
+                                                        solucionar un reto
+                                                    </strong>
+                                                    educativo
+                                                </font>
+                                            </div>
+                                            <a class="flip-card-back" href="/add/client" role="button">
+                                                <span>
+                                                    Registrarme de esta forma
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 o_colored_level pt24 col-lg-1"/>
+                            </div>
+                        </div>
+                        <a class="o_scroll_button mb-1 align-items-center  justify-content-center mx-auto text-o-color-3"
+                           role="button"
+                           href="#" title="Scroll down to next section">
+                            <p>Seguir Explorando</p>
+                            <i class="fa fa-angle-double-down" style="position: absolute;bottom: 5px;"/>
+                        </a>
+                    </section>
+
+                    <div class="oe_structure oe_empty"/>
+
+                    <p class="alert alert-danger" t-if="error" role="alert">
+                        <t t-esc="error"/>
+                    </p>
+
+                    <!-- section del carrousel -->
+                    <section class="s_carousel_wrapper o_animate o_anim_fade_in o_visible"
+                             data-vxml="001" data-snippet="s_carousel"
+                             data-name="Carousel" style="">
+                        <div id="myCarousel1639671275113"
+                             class="s_carousel s_carousel_default carousel slide s_parallax_no_overflow_hidden"
+                             data-interval="4000"
+                             style="position: relative; background-color: rgb(255, 255, 255) !important;"
+                             data-scroll-background-ratio="0">
+                            <ol class="carousel-indicators o_we_no_overlay">
+                                <li data-target="#myCarousel1639671275113" data-slide-to="0" class="active"/>
+                                <li data-target="#myCarousel1639671275113" data-slide-to="1"/>
+                                <li data-target="#myCarousel1639671275113" data-slide-to="2"/>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item o_colored_level undefined oe_img_bg active"
+                                     style="position: relative;
+                                     background-image: url(&quot;/ideaciones_theme/static/src/img/que-es-ideaciones.png&quot;);"
+                                     data-name="Slide" data-original-id="1334"
+                                     data-original-src="/ideaciones_theme/static/src/img/que-es-ideaciones.png"
+                                     data-mimetype="image/png" data-resize-width="1920">
+                                    <div class="container">
+                                        <div class="row content">
+                                            <div class="carousel-content o_colored_level undefined col-lg-4 offset-lg-1 col-sm-12 col-md-12 col-xs-12">
+                                                <h4 class="lead header-carousel">
+                                                    ¿QUÉ ES iDeaciones?
+                                                </h4>
+                                            </div>
+                                            <div class="carousel-content o_colored_level undefined col-lg-7 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="text-caption text-left text-carousel">
+                                                    iDeaciones es un servicio de codiseño de soluciones y oportunidades
+                                                    disruptivas en el campo educativo; basadas en prototipos ágiles; adaptadas al
+                                                    medio cultural para el que se desarrollan; y ejecutadas a partir de presupuestos
+                                                    solidarios.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item pb96 o_colored_level undefined pt0 oe_img_bg"
+                                     style="position: relative;
+                                     background-image: url(&quot;/ideaciones_theme/static/src/img/quienes-somos.png&quot;);"
+                                     data-name="Slide"
+                                     data-original-src="/ideaciones_theme/static/src/img/quienes-somos.png"
+                                     data-mimetype="image/png" data-resize-width="1920">
+                                    <div class="container">
+                                        <div class="row content">
+                                            <div class="carousel-content o_colored_level undefined col-lg-4 offset-lg-1 col-sm-12 col-md-12 col-xs-12">
+                                                <h4 class="lead header-carousel">
+                                                    ¿QUIÉNES SOMOS<br/>EN iDeaciones?
+                                                </h4>
+                                            </div>
+                                            <div class="carousel-content o_colored_level undefined col-lg-7 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="lead text-caption text-left text-carousel">
+                                                    Somos una amplia red de profesionales cubanos de las más variadas
+                                                    disciplinas científicas, artísticas y tecnológicas, comprometidos
+                                                    con la idea de convertir en oportunidades cualquier reto educativo, más
+                                                    allá  de barreras geográficas o culturales. Nos distinguimos por ser
+                                                    comprometidos, ágiles, disruptivos y solidarios.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item pb96 o_colored_level undefined pt0 oe_img_bg"
+                                     style="position: relative;
+                                     background-image: url(&quot;/ideaciones_theme/static/src/img/con-quien-trab.png&quot;);"
+                                     data-name="Slide"
+                                     data-original-src="/ideaciones_theme/static/src/img/con-quien-trab.png"
+                                     data-mimetype="image/png" data-resize-width="1920">
+                                    <div class="container">
+                                        <div class="row content">
+                                            <div class="carousel-content o_colored_level undefined col-lg-4 offset-lg-1 col-sm-12 col-md-12 col-xs-12">
+                                                <h4 class="lead header-carousel">¿CON QUIÉNES TRABAJAMOS?</h4>
+                                            </div>
+                                            <div class="carousel-content o_colored_level undefined col-lg-7 col-sm-12 col-md-12 col-xs-12">
+                                                <p class="text-caption text-left text-carousel">Trabajamos de modo
+                                                    híbrido con organismos
+                                                    multilaterales, organizaciones no gubernamentales, gobiernos,
+                                                    instituciones educativas y empresas de todo el mundo.
+                                                </p>
+                                                <p class="text-caption text-left text-carousel">
+                                                    Lo hacemos a través de estructuras fluidas, adaptadas a las
+                                                    necesidades
+                                                    del reto al que nos enfrentemos.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev o_not_editable o_we_no_overlay"
+                               href="#myCarousel1639671275113" data-slide="prev" role="img"
+                               aria-label="Previous" title="Previous">
+                                <span class="carousel-control-prev-icon prev-icon-1"/>
+                                <span class="sr-only o_default_snippet_text">Previous</span>
+                            </a>
+                            <a class="carousel-control-next o_not_editable o_we_no_overlay"
+                               href="#myCarousel1639671275113" data-slide="next" role="img"
+                               aria-label="Next" title="Next">
+                                <span class="carousel-control-next-icon"/>
+                                <span class="sr-only o_default_snippet_text">Next</span>
+                            </a>
+                        </div>
+                        <div class="hidden" id="section-carousel"/>
+                    </section>
+                    <section
+                            class="s_text_block o_colored_level undefined pt40 pb0 o_animate o_anim_fade_in_right o_visible"
+                            data-snippet="s_text_block" data-name="Text" id="section-services"
+                            style="background-color: rgb(251, 251, 251) !important; position: relative; animation-duration: 0.4s !important;">
+                        <div class="s_allow_columns container">
+                            <h4 class="text-o-color-1 header-carousel" style="font-size: 24px;">¿QUÉ PODEMOS HACER?</h4>
+                            <div class="text-caption text-carousel">Nuestras
+                                posibilidades de generar soluciones para entornos virtuales,
+                                presenciales o híbridos, son extremadamente amplias y se encuentran en
+                                constante expansión, porque además de que nos apasionan los retos y
+                                superar situaciones límites, podemos poner a disposición de cada
+                                proyecto la infraestructura y el capital humano del Ministerio de
+                                Educación de la República de Cuba. Algunos ejemplos de lo que podemos
+                                hacer
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- section gallery for services -->
+                    <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel"
+                             style="">
+                        <div id="mySlideServices" class="s_carousel carousel s_carousel_bordered slide"
+                             data-interval="0">
+                            <ol class="carousel-indicators o_we_no_overlay">
+                                <li data-target="#mySlideServices" data-slide-to="0" class="active">1</li>
+                                <li data-target="#mySlideServices" data-slide-to="1" class="">2</li>
+                                <li data-target="#mySlideServices" data-slide-to="2" class="">3</li>
+                                <li data-target="#mySlideServices" data-slide-to="3" class="">4</li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item pt32 pb32 o_colored_level active"
+                                     style="min-height: 420px;" data-name="Slide">
+                                    <section id="demo">
+                                        <div class="container">
+                                            <div class="row d-flex align-items-stretch">
+                                                <!-- carousel-content -->
+                                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                                    <a href="/ideaciones_theme/static/src/img/services/s-1.png"
+                                                       class="fancybox" rel="ligthbox" data-fancybox="gallery">
+                                                        <div class="card box-services">
+                                                            <h5 class="numb-title">01</h5>
+                                                            <div class="card-body">
+                                                                <h3 class="card-title">
+                                                                    Diseños curriculares para
+                                                                    cualquier nivel educativo y
+                                                                    pensados para entornos
+                                                                    virtuales, presenciales o
+                                                                    híbridos.
+                                                                </h3>
+                                                                <p class="card-text mt-5 d-none d-lg-block">
+                                                                    Contamos con especialistas
+                                                                    experimentados en el desarrollo de
+                                                                    diseños curriculares en todos los
+                                                                    niveles educativos
+                                                                </p>
+                                                            </div>
+                                                            <div class="th-footer">+ VER MÁS</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                                    <a href="/ideaciones_theme/static/src/img/services/s-2.png"
+                                                       class="fancybox" rel="ligthbox" data-fancybox="gallery">
+                                                        <div class="card box-services">
+                                                            <h5 class="numb-title">02</h5>
+                                                            <div class="card-body">
+                                                                <h3 class="card-title">
+                                                                    Diseño de programas educativos
+                                                                    para cualquier materia y nivel
+                                                                </h3>
+                                                                <p class="card-text mt-5 d-none d-lg-block">
+                                                                    A partir de procesos grupales de diagnóstico y
+                                                                    codiseño, podemos lograr programas docentes
+                                                                    para cualquier materia y nivel.Podemos hacerlo
+                                                                    gracias a la comunidad de doctores
+                                                                    en ciencias con la que trabajamos.
+                                                                </p>
+                                                            </div>
+                                                            <div class="th-footer">+ VER MÁS</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                                    <a href="/ideaciones_theme/static/src/img/services/s-3.png"
+                                                       class="fancybox" rel="ligthbox" data-fancybox="gallery">
+                                                        <div class="card box-services">
+                                                            <h5 class="numb-title">03</h5>
+                                                            <div class="card-body">
+                                                                <h3 class="card-title">
+                                                                    Diseño, desarrollo e implementación
+                                                                    de soluciones digitales variadas
+                                                                </h3>
+                                                                <p class="card-text mt-5 d-none d-lg-block">
+                                                                    En todos los casos
+                                                                    nuestros especialistas aportan como valor
+                                                                    agregado el desarrollo de procesos de
+                                                                    capacitación y las metodologías o procedimientos
+                                                                    para su implementación.
+                                                                </p>
+                                                            </div>
+                                                            <div class="th-footer">+ VER MÁS</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="carousel-item pt32 pb32 o_colored_level"
+                                     style="min-height: 420px;" data-name="Slide">
+                                    <section id="demo">
+                                        <div class="container">
+                                            <div class="row d-flex align-items-stretch">
+                                                <!-- carousel-content -->
+                                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                                    <a href="/ideaciones_theme/static/src/img/services/s-4.png"
+                                                       class="fancybox" rel="ligthbox" data-fancybox="gallery">
+                                                        <div class="card box-services">
+                                                            <h5 class="numb-title">04</h5>
+                                                            <div class="card-body">
+                                                                <h3 class="card-title">
+                                                                    Codiseño de instituciones educativas desde 0
+                                                                </h3>
+                                                                <p class="card-text mt-5 d-none d-lg-block">
+                                                                    Podemos codiseñar, con nuestros adoptadores,
+                                                                    instituciones educativas desde 0. Desde los
+                                                                    espacios arquitectónicos, los diseños de interiores
+                                                                    y el
+                                                                    mobiliario, hasta los diseños curriculares o
+                                                                    los sistemas de gestión digital.
+                                                                </p>
+                                                            </div>
+                                                            <div class="th-footer">+ VER MÁS</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                                    <a href="/ideaciones_theme/static/src/img/services/s-5.png"
+                                                       class="fancybox" rel="ligthbox" data-fancybox="gallery">
+                                                        <div class="card box-services">
+                                                            <h5 class="numb-title">05</h5>
+                                                            <div class="card-body">
+                                                                <h3 class="card-title">
+                                                                    Creación de plataformas para el
+                                                                    desarrollo de diferentes competencias
+                                                                    profesionales de docentes en ejercicio
+                                                                </h3>
+                                                                <p class="card-text mt-5 d-none d-lg-block">
+                                                                    Podemos crear las plataformas digitales para el
+                                                                    desarrollo de competencias profesionales y en
+                                                                    correspondencia con las necesidades de nuestros
+                                                                    adoptadores.
+                                                                </p>
+                                                            </div>
+                                                            <div class="th-footer">+ VER MÁS</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                                    <a href="/ideaciones_theme/static/src/img/services/s-6.png"
+                                                       class="fancybox" rel="ligthbox" data-fancybox="gallery">
+                                                        <div class="card box-services">
+                                                            <h5 class="numb-title">06</h5>
+                                                            <div class="card-body">
+                                                                <h3 class="card-title">
+                                                                    Producción de recursos educativos abiertos y objetos
+                                                                    de aprendizaje de
+                                                                    acuerdo con los stándares
+                                                                    internacionales
+                                                                </h3>
+                                                                <p class="card-text mt-5 d-none d-lg-block">
+                                                                    Podemos adaptar o crear desde 0 los más variados
+                                                                    recursos educativos abiertos y objetos de
+                                                                    aprendizaje.
+                                                                </p>
+                                                            </div>
+                                                            <div class="th-footer">+ VER MÁS</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="carousel-item pt32 pb32 o_colored_level"
+                                     style="min-height: 420px;" data-name="Slide">
+                                    <section id="demo">
+                                        <div class="container">
+                                            <div class="row d-flex align-items-stretch">
+                                                <!-- carousel-content -->
+                                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                                    <a href="/ideaciones_theme/static/src/img/services/s-7.png"
+                                                       class="fancybox" rel="ligthbox" data-fancybox="gallery">
+                                                        <div class="card box-services">
+                                                            <h5 class="numb-title">07</h5>
+                                                            <div class="card-body">
+                                                                <h3 class="card-title">
+                                                                    Codiseño de proyectos de
+                                                                    innovación educativa.
+                                                                </h3>
+                                                                <p class="card-text mt-5 d-none d-lg-block">
+                                                                    Codiseño de proyectos de
+                                                                    innovación educativa
+                                                                </p>
+                                                            </div>
+                                                            <div class="th-footer">+ VER MÁS</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                                    <a href="/ideaciones_theme/static/src/img/services/s-8.png"
+                                                       class="fancybox" rel="ligthbox" data-fancybox="gallery">
+                                                        <div class="card box-services">
+                                                            <h5 class="numb-title">08</h5>
+                                                            <div class="card-body">
+                                                                <h3 class="card-title">
+                                                                    Codiseño de sistemas digitales para la gestión
+                                                                    integral de instituciones
+                                                                </h3>
+                                                                <p class="card-text mt-5 d-none d-lg-block">
+                                                                    Creamos sistemas basados en software libre para
+                                                                    automatizar actividades en las
+                                                                    instituciones, gestión de la calidad y procesos
+                                                                    educativos en entornos virtuales,
+                                                                    codiseñado con nuestros adoptadores
+                                                                </p>
+                                                            </div>
+                                                            <div class="th-footer">+ VER MÁS</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                                    <a href="/ideaciones_theme/static/src/img/services/s-9.png"
+                                                       class="fancybox" rel="ligthbox" data-fancybox="gallery">
+                                                        <div class="card box-services">
+                                                            <h5 class="numb-title">09</h5>
+                                                            <div class="card-body">
+                                                                <h3 class="card-title">
+                                                                    Entrenamientos y aplicaciones para el desarrollo del
+                                                                    pensamiento
+                                                                    computacional y la Robótica Educativa
+                                                                </h3>
+                                                                <p class="card-text mt-5 d-none d-lg-block">
+                                                                    Favorecemos la incersión de la enseñanza de la
+                                                                    robótica
+                                                                    educativa, mediante una metodología STEAM combinada
+                                                                    con elementos de programación.
+                                                                </p>
+                                                            </div>
+                                                            <div class="th-footer">+ VER MÁS</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="carousel-item pt32 pb32 o_colored_level"
+                                     style="min-height: 420px;" data-name="Slide">
+                                    <section id="demo">
+                                        <div class="container">
+                                            <div class="row d-flex align-items-stretch">
+                                                <!-- carousel-content -->
+                                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                                    <a href="/ideaciones_theme/static/src/img/services/s-10.png"
+                                                       class="fancybox" rel="ligthbox" data-fancybox="gallery">
+                                                        <div class="card box-services">
+                                                            <h5 class="numb-title">10</h5>
+                                                            <div class="card-body">
+                                                                <h3 class="card-title">
+                                                                    Desarrollo y montaje de
+                                                                    infraestructuras de redes
+                                                                    telemáticas para instituciones educativas sobre
+                                                                    Software Libre (SL).
+                                                                </h3>
+                                                                <p class="card-text mt-5 d-none d-lg-block">
+                                                                    Brindamos asesorías y realizamos despliegues en
+                                                                    infraestructuras de redes.
+                                                                </p>
+                                                            </div>
+                                                            <div class="th-footer">+ VER MÁS</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                                    <a href="/ideaciones_theme/static/src/img/services/s-11.png"
+                                                       class="fancybox" rel="ligthbox" data-fancybox="gallery">
+                                                        <div class="card box-services">
+                                                            <h5 class="numb-title">11</h5>
+                                                            <div class="card-body">
+                                                                <h3 class="card-title">
+                                                                    Desarrollo de estrategias y
+                                                                    soluciones variadas que contribuyan al logro de los
+                                                                    objetivos de la Agenda
+                                                                    2030
+                                                                </h3>
+                                                                <p class="card-text mt-5 d-none d-lg-block">
+                                                                    Podemos diseñar múltiples variantes de estrategias y
+                                                                    soluciones de acuerdo con las particularidades de
+                                                                    cada
+                                                                    contexto.
+                                                                </p>
+                                                            </div>
+                                                            <div class="th-footer">+ VER MÁS</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                                    <a href="/ideaciones_theme/static/src/img/services/s-12.png"
+                                                       class="fancybox" rel="ligthbox" data-fancybox="gallery">
+                                                        <div class="card box-services">
+                                                            <h5 class="numb-title">12</h5>
+                                                            <div class="card-body">
+                                                                <h3 class="card-title">
+                                                                    Diseño, desarrollo e implementación
+                                                                    de soluciones digitales variadas
+                                                                </h3>
+                                                                <p class="card-text mt-5 d-none d-lg-block">
+                                                                    En todos los casos
+                                                                    nuestros especialistas aportan como valor
+                                                                    agregado el desarrollo de procesos de
+                                                                    capacitación y las metodologías o procedimientos
+                                                                    para su implementación.
+                                                                </p>
+                                                            </div>
+                                                            <div class="th-footer">+ VER MÁS</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev o_not_editable o_we_no_overlay"
+                               href="#mySlideServices" data-slide="prev" role="img" aria-label="Previous"
+                               title="Previous">
+                                <span class="carousel-control-prev-icon prev-2"/>
+                                <span class="sr-only o_default_snippet_text">Previous</span>
+                            </a>
+                            <a class="carousel-control-next o_not_editable o_we_no_overlay"
+                               href="#mySlideServices" data-slide="next" role="img" aria-label="Next" title="Next">
+                                <span class="carousel-control-next-icon"/>
+                                <span class="sr-only o_default_snippet_text">Next</span>
+                            </a>
+                        </div>
+
+                        <div class="o_container_small mt-1 mb-1">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a class="align-items-center text-center justify-content-center mx-auto text-o-color-2"
+                                       role="button" target="_blank"
+                                       href="/ideaciones_theme/static/src/img/iDeaciones_ICE_V8.pdf"
+                                       title="Descargar Cartera">
+                                        <p>Descargar Cartera Completa
+                                            <br/>
+                                            <i class="fa fa-download" style=""/>
+                                        </p>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- end section gallery for services -->
+
+                    <!-- section 3 etapas de ideaciones -->
+                    <section
+                            class="s_text_block pb32 pt64 o_colored_level undefined o_animate o_anim_fade_in o_visible pb40"
+                            data-snippet="s_text_block" data-name="Text"
+                            style="position: relative; background-color: rgb(226, 224, 255) !important; animation-duration: 0.4s !important;"
+                            id="section-como-trabajamos">
+                        <div class="s_allow_columns container">
+                            <p style="text-align: center;">
+                                <font class="text-header-left header-carousel">
+                                    ¿EN QUÉ CONSISTE NUESTRO MÉTODO DE TRABAJO.?
+                                </font>
+                            </p>
+                            <font class="text-caption text-carousel">
+                                Trabajamos mediante procesos de codiseño parcial o total con los beneficiarios
+                                o adoptadores de las ideas y soluciones frente a los retos identificados.
+                                Nuestro método se basa en 15 fases organizadas en
+                            </font>
+                            <font style="font-size: 24px;" class="text-o-color-1">tres etapas:</font>
+                        </div>
+                    </section>
+                    <section class="s_three_columns o_colored_level undefined pb8 o_visible pt0"
+                             data-vcss="001" data-snippet="s_three_columns"
+                             data-name="Columns"
+                             style="background-color: rgb(226, 224, 255) !important; animation-duration: 0.4s !important;">
+                        <div class="colorlib">
+                            <div class="container ">
+                                <div class="row d-flex align-items-stretch o_animate_both_scroll o_animate o_anim_fade_in_right"
+                                     style=" animation-duration: 0.7s !important;" id="first-step">
+                                    <div class="s_col_no_bgcolor pt16 pb0 d-block d-lg-none col-md-12 col-xs-12 col-sm-12">
+                                        <div class=" intermedium-bg">
+                                            Exploración
+                                        </div>
+                                    </div>
+                                    <div class="s_col_no_bgcolor pt16 pb16 col-lg-5 col-md-12 col-xs-12 col-sm-12">
+                                        <div class="card bg-white h-100" style="">
+                                            <div class="card-body">
+                                                <h3 class="card-title">
+                                                    <b>
+                                                        <font style="font-size: 62px;">.01</font>
+                                                    </b>
+                                                </h3>
+                                                <p class="card-text">La primera etapa del método se desarrolla a
+                                                    través de uno de nuestros equipos de exploradores, que
+                                                    se integra a los beneficiarios o adoptadores para
+                                                    identificar los retos a afrontar y las primeras ideas de solución.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="s_col_no_bgcolor pt16 pb0 col-lg-1 d-none d-lg-block">
+                                        <div class="card">
+                                            <img class=""
+                                                 style="height: 300px;"
+                                                 src="/ideaciones_theme/static/src/img/exploracion.png"/>
+                                        </div>
+                                    </div>
+                                    <div class="s_col_no_bgcolor pt16 pb16 col-lg-5 col-md-12 col-xs-12 col-sm-12">
+                                        <div class="card bg-white h-100">
+                                            <div class="card-body">
+                                                <div style="text-align: left;">
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                1.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">
+                                                            EXPLORACIÓN  DE CONTACTOS CON BENEFICIARIOS POTENCIALES.
+                                                        </font>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                2.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">
+                                                            TOMA DE CONTACTO CON BENEFICIARIOS POTENCIALES.
+                                                        </font>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                3.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">
+                                                            IDENTIFICACIÓN DE RETOS Y ACUERDOS INICIALES.
+                                                        </font>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex align-items-stretch o_animate_both_scroll o_animate o_anim_fade_in_left"
+                                     style=" animation-duration: 0.7s !important;" id="second-step">
+                                    <div class="s_col_no_bgcolor pt16 pb0 d-block d-lg-none col-md-12 col-xs-12 col-sm-12">
+                                        <div class="d-block d-lg-none intermedium-bg">
+                                            iDeación
+                                        </div>
+                                    </div>
+                                    <div class="s_col_no_bgcolor pt16 pb16 col-lg-6 col-md-12 col-xs-12 col-sm-12">
+                                        <div class="card bg-white h-100">
+                                            <div class="card-body">
+                                                <div style="text-align: left;">
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                4.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">
+                                                            ACOPLAMIENTO.
+                                                        </font>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                5.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">MAPEO DE
+                                                            SOLUCIONES EXISTENTES.
+                                                        </font>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                6.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">
+                                                            iDeaciones DISRUPTIVAS.
+                                                        </font>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                7.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">
+                                                            DISEÑO DE PROTOTIPO.
+                                                        </font>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                8.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">
+                                                            PRESENTACIÓN DE PROTOTIPO Y ACUERDOS DE DESARROLLO.
+                                                        </font>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                9.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">
+                                                            EVALUACIÓN Y AJUSTES DEL PROTOTIPO.
+                                                        </font>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="s_col_no_bgcolor pt16 pb0 col-lg-1 d-none d-lg-block">
+                                        <img style="height: 360px;"
+                                             src="/ideaciones_theme/static/src/img/ideacion.png"/>
+                                    </div>
+                                    <div class="s_col_no_bgcolor pt16 pb16 col-lg-5 col-md-12 col-xs-12 col-sm-12">
+                                        <div class="card bg-white h-100" style="">
+                                            <div class="card-body">
+                                                <h3 class="card-title">
+                                                    <b>
+                                                        <font style="font-size: 62px;">.02</font>
+                                                    </b>
+                                                </h3>
+                                                <p class="card-text">
+                                                    Una vez adoptados acuerdos iniciales que permitan pasar
+                                                    a la etapa de Ideación, se constituye un equipo de desarrolladores
+                                                    en correspondencia con las características del reto y las
+                                                    exigencias o necesidades de los potenciales
+                                                    beneficiarios o adoptadores.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex align-items-stretch o_animate_both_scroll o_animate o_anim_fade_in_right"
+                                     style="animation-duration: 0.7s !important;" id="third-step">
+                                    <div class="s_col_no_bgcolor pt16 pb0 d-block d-lg-none">
+                                        <div class="d-block d-lg-none intermedium-bg">
+                                            Desarrollo
+                                        </div>
+                                    </div>
+                                    <div class="s_col_no_bgcolor pt16 pb16 col-lg-5 col-md-12 col-xs-12 col-sm-12">
+                                        <div class="card bg-white h-100" style="">
+                                            <div class="card-body">
+                                                <h3 class="card-title">
+                                                    <b>
+                                                        <font style="font-size: 62px;">.03</font>
+                                                    </b>
+                                                </h3>
+                                                <p class="card-text">Durante todo el proceso trabajamos inspirados
+                                                    por las más actuales tendencias del pensamiento de diseño,
+                                                    las metodologías ágiles, las experiencias de usuario (UX),
+                                                    las experiencias conectivistas, las redes líquidas,
+                                                    metodologías de trabajo grupal, entre una larga serie
+                                                    de experiencias, movimientos y metodologías de innovación
+                                                    disruptiva que se encuentran en permanente cambio y adaptación.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="s_col_no_bgcolor pt16 pb0 col-lg-1 d-none d-lg-block">
+                                        <div class="card">
+                                            <img class="d-none d-lg-block"
+                                                 style="height: 370px;"
+                                                 src="/ideaciones_theme/static/src/img/desarrollo.png"/>
+                                        </div>
+                                    </div>
+                                    <div class="s_col_no_bgcolor pt16 pb16 col-lg-6 col-md-12 col-xs-12 col-sm-12">
+                                        <div class="card bg-white h-100">
+                                            <div class="card-body">
+                                                <div style="text-align: left;">
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                10.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">
+                                                            ANÁLISIS DE PROTOTIPO AJUSTADO.
+                                                        </font>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                11.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">
+                                                            DESARROLLO.
+                                                        </font>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                12.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">
+                                                            IMPLEMENTACIÓN.
+                                                        </font>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                13.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">
+                                                            EVALUACIÓN.
+                                                        </font>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                14.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">AJUSTES
+                                                            FINALES.
+                                                        </font>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <b>
+                                                            <font style="color: rgb(214, 128, 14); font-size: 24px;">
+                                                                15.
+                                                            </font>
+                                                        </b>
+                                                        <font style="font-size: 18px;" class="text-o-color-2">ENTREGA.
+                                                        </font>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+        <!-- template for register -->
+        <template id="page_for_register" name="Custom register page">
+            <t t-call="website.layout">
+                <div class="oe_structure oe_empty"/>
+                <p class="alert alert-danger alert-dismissible fade show" t-if="error" role="alert">
+                    <t t-esc="error"/>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="fa fa-close"/>
+                    </button>
+                </p>
+                <t t-call="ideaciones_talent_pool.section_for_register">
+                    <t t-set="titles" t-value="titles"/>
+                </t>
+            </t>
+        </template>
+        <!-- section for register -->
+        <template id="section_for_register" name="Custom register section">
+            <section class="s_three_columns o_colored_level o_cc o_cc3 pt32
+                    pb32 o_visible o_animate o_anim_bounce_in"
+                     data-vcss="001" data-snippet="s_three_columns"
+                     data-name="Columns" style="" id="section-register">
+                <div class="s_allow_columns mt-5 pb32 o_container_small">
+                    <div class="row row d-flex align-items-stretch">
+                        <div class="col-md-12">
+                            <h1 class="text-center">
+                                <p style="font-size:30px">¡Dé el próximo paso...
+                                    <span class="text-o-color-1">regístrese...</span>
+                                </p>
+                                <p style="font-size:30px">Trabajar con usted nos importa!</p>
+                            </h1>
+                        </div>
+                        <div class="col-md-1 o_colored_level pt24 col-lg-1 col-sm-1"/>
+                        <div class="col-md-5 o_colored_level pt24 col-lg-5 col-sm-11">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <font style="color: rgba(255, 255, 255, 0.7);">Me motiva
+                                            <strong style="color: rgba(255, 255, 255, 1); !important;">
+                                                formar parte del equipo
+                                            </strong>
+                                            iDeaciones
+                                        </font>
+                                    </div>
+                                    <a class="flip-card-back" href="/add/talent" role="button">
+                                        <span>
+                                            Registrarme de esta forma
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 o_colored_level pt24 col-lg-5 col-sm-11">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <font style="color: rgba(255, 255, 255, 0.7);">Deseo
+                                            <strong style="color: rgba(255, 255, 255, 1); !important;">
+                                                solucionar un reto
+                                            </strong>
+                                            educativo
+                                        </font>
+                                    </div>
+                                    <a class="flip-card-back" href="/add/client" role="button">
+                                        <span>
+                                            Registrarme de esta forma
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 o_colored_level pt24 col-lg-1 col-sm-1"/>
+                    </div>
+                </div>
+            </section>
+        </template>
+        <!-- customize footer -->
+        <template id="new_footer" inherit_id="website.layout">
+            <xpath expr="//footer" position="replace">
+                <footer>
+                    <div class="mynewdiv">
+                        <div id="footer_container">
+                            <section class="s_text_block pt40 oe_img_bg" data-snippet="s_text_block"
+                                     data-name="Text" data-original-id="610"
+                                     data-original-src="/ideaciones_theme/static/src/img/bg-web-ice.png"
+                                     style="background-image: url('/ideaciones_theme/static/src/img/bg-web-ice.png');"
+                                     data-mimetype="image/png" data-resize-width="1920">
+                                <div class="o_we_bg_filter"
+                                     style="background-color: rgba(18, 17, 17, 0.54) !important;"/>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="o_colored_level pb0 col-lg-12">
+                                            <p class="lead">
+                                                <img class="img-fluid o_we_custom_image d-block mx-auto"
+                                                     src="/ideaciones_theme/static/src/img/ideaciones_2.png"
+                                                     style="height: 50px;"
+                                                     alt="" data-original-id="1436"
+                                                     data-original-src="/ideaciones_theme/static/src/img/ideaciones_2.png"
+                                                     data-mimetype="image/png"
+                                                     data-original-title="" title=""
+                                                     aria-describedby="tooltip538573" loading="lazy"/>
+                                                <br/>
+                                            </p>
+                                        </div>
+                                        <div class="o_colored_level pb0 col-lg-7">
+                                            <p class="lead text-white">Sobre Nosotros</p>
+                                            <h4>
+                                                <b>
+                                                    <font style="font-size: 13px;opacity: .5;" class="text-white">
+                                                        iDeaciones es un servicio de codiseño de
+                                                        soluciones y oportunidades disruptivas en el campo educativo;
+                                                        basadas en prototipos ágiles, adaptadas al medio cultural para
+                                                        el que se desarrollan; y ejecutadas a partir de presupuestos
+                                                        solidarios.
+                                                        <br/>
+                                                    </font>
+                                                </b>
+                                            </h4>
+                                            <h4>
+                                                <b>
+                                                    <font style="font-size: 13px;opacity: .5;" class="text-white">
+                                                        Somos una amplia red de profesionales cubanos de las más
+                                                        variadas disciplinas científicas, artísticas y tecnológicas,
+                                                        comprometidos con la idea de convertir en oportunidades
+                                                        cualquier reto educativo, más allá de barreras geográficas
+                                                        o culturales. Nos distinguimos por ser comprometidos,
+                                                        ágiles, disruptivos y solidarios.
+                                                    </font>
+                                                </b>
+                                            </h4>
+                                        </div>
+                                        <div class="o_colored_level pb0 col-lg-4 offset-lg-1">
+                                            <p class="lead text-white">Contáctenos</p>
+                                            <ul class="text-white"
+                                                style="list-style: none;opacity: .5;padding-left: 0px;">
+                                                <li>
+                                                    <p class="lead">
+                                                        <span class="fa fa-map-marker"/>
+                                                        <font style="font-size: 14px;">
+                                                            Calle 24 No.116 entre 1era y 3ra Miramar, Playa, La Habana
+                                                        </font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="lead">
+                                                        <span class="fa fa-envelope" style="font-size: 14px;"/>
+                                                        <font style="font-size: 14px;">ideaciones@ice.rimed.cu</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="lead">
+                                                        <span class="fa fa-phone" style="font-size: 14px;"/>
+                                                        <font style="font-size: 14px;">+5352163321</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="lead">
+                                                        <span class="fa fa-whatsapp" style="font-size: 14px;"/>
+                                                        <font style="font-size: 14px;">+5352163321</font>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="o_colored_level pb0 col-lg-6">
+                                            <p class="lead text-white text-left mt-3" style="font-size:13.5px;">
+                                                © 2022 copyright Todos los derechos reservados por Intercambio Científico Educacional, ICE.
+                                            </p>
+                                        </div>
+                                        <div class="o_colored_level pb0 col-lg-6">
+                                            <div data-snippet="s_share"
+                                                 class="s_share text-right no_icon_color" data-name="Share">
+                                                <a href="https://cu.linkedin.com/company/empresa-intercambio-cient%C3%ADfico-educacional"
+                                                   target="_blank"
+                                                   class="social-items ">
+                                                    <i class="fa fa-linkedin m-1 "/>
+                                                </a>
+                                                <a href="https://www.facebook.com/profile.php?id=100075133307857"
+                                                   target="_blank" class="social-items">
+                                                    <i class="fa fa-facebook m-1 "
+                                                       data-original-title="facebook" title="facebook"/>
+                                                </a>
+                                                <a href="https://twitter.com/ICE24802426?" target="_blank"
+                                                   class="social-items ">
+                                                    <i class="fa fa-twitter m-1 "/>
+                                                </a>
+
+                                                <a href="https://www.instagram.com/empresa.ice/" target="_blank"
+                                                   class="social-items ">
+                                                    <i class="fa fa-instagram m-1 "/>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </footer>
+            </xpath>
+        </template>
+    </data>
+</odoo>

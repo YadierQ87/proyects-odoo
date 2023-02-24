@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- template for details client update -->
+    <template id="template_cliente_forms_input">
+        <section class="row" id="section-user-login" data-oe-model="ir.ui.view"
+                 data-oe-id="1813" data-oe-field="arch" >
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="title">¿Cómo desea ser llamado?</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <select class="form-control s_website_form_input" name="title" id="title" style="">
+                    <option value="" >Seleccione</option>
+                    <t t-foreach="titles or []" t-as="title">
+                        <option t-att-value="title.id"
+                                t-att-selected="'selected' if int(title.id) == partner.title.id else None">
+                            <t t-esc="title.shortcut" />
+                        </option>
+                    </t>
+                </select>
+            </div>
+
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="profile_pic">Foto de perfil</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input type="file" name="profile_pic" id="upload"
+                       accept=".jpg, .jpeg, .png"/>
+            </div>
+
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="title">Nombre(s) *</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input id="name" name="name" class="form-control check_keys_input"
+                       t-att-value="partner.name"
+                       type="text" placeholder="Ej: Juan A." required="required"/>
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="title">Apellidos *</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input id="lastname" name="lastname" class="form-control check_keys_input"
+                       t-att-value="partner.lastname"
+                       type="text" placeholder="Ej: Pereira Mora" required="required"/>
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="title">Su correo *</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input id="email" name="email"
+                       class="form-control check_keys_input"
+                       t-att-value="partner.email"
+                       type="email"
+                       placeholder="email@com.ex" required="required"/>
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="title">Usuario *</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input id="login" name="login"
+                       class="form-control check_keys_input"
+                       type="text"
+                       t-att-value="user.login"
+                       placeholder="user_name" required="required"/>
+            </div>
+            <div data-oe-model="ir.ui.view" data-oe-id="1813" data-oe-field="arch"
+                 class="form-group text-right s_website_form_field col-md-2">
+                <label for="job_title">¿Qué lo describe mejor?</label>
+            </div>
+            <div data-oe-model="ir.ui.view" data-oe-id="1813" data-oe-field="arch"
+                 class="form-group s_website_form_field col-md-4">
+                <select class="form-control s_website_form_input"
+                        name="job_title" id="job_title"
+                        style="">
+                    <option value="">Seleccione</option>
+                    <option value="Decisor político"
+                            t-att-selected="'selected' if partner.job_title == 'Decisor político' else None">
+                        Decisor político</option>
+                    <option value="Administrativo"
+                            t-att-selected="'selected' if partner.job_title == 'Administrativo' else None">
+                        Administrativo</option>
+                    <option value="Académico"
+                            t-att-selected="'selected' if partner.job_title == 'Académico' else None">
+                        Académico</option>
+                    <option value="Otros"
+                            t-att-selected="'selected' if partner.job_title == 'Otros' else None">
+                        Otros</option>
+                </select>
+            </div>
+            <div data-oe-model="ir.ui.view" data-oe-id="1813" data-oe-field="arch"
+                 class="form-group text-right s_website_form_field col-md-2">
+                <label for="type_contact">Representante de</label>
+            </div>
+            <div data-oe-model="ir.ui.view" data-oe-id="1813" data-oe-field="arch"
+                 class="form-group s_website_form_field col-md-4">
+                <select class="form-control s_website_form_input"
+                        name="type_contact" id="type_contact" style="">
+                    <option value="">Seleccione</option>
+                    <option value="Organismo multilateral"
+                            t-att-selected="'selected' if partner.type_contact == 'Organismo multilateral' else None">
+                        Organismo multilateral
+                    </option>
+                    <option value="Gobierno"  t-att-selected="'selected' if partner.type_contact == 'Gobierno' else None">
+                        Gobierno
+                    </option>
+                    <option value="ONG" t-att-selected="'selected' if partner.type_contact == 'ONG' else None">
+                        ONG
+                    </option>
+                    <option value="Universidad" t-att-selected="'selected' if partner.type_contact == 'Universidad' else None">
+                        Universidad
+                    </option>
+                    <option value="Instituciones educativas" t-att-selected="'selected' if partner.type_contact == 'Instituciones educativas' else None">
+                        Instituciones educativas
+                    </option>
+                    <option value="Otras Instituciones" t-att-selected="'selected' if partner.type_contact == 'Otras Instituciones' else None">
+                        Otras Instituciones
+                    </option>
+                </select>
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="interested">Área de Interés</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <select class="form-control s_website_form_input" name="interested" id="interested">
+                    <option value="">Seleccione</option>
+                    <option t-att-selected="'selected' if partner.interested == 'Diseños curriculares' else None">
+                        Diseños curriculares
+                    </option>
+                    <option t-att-selected="'selected' if partner.interested == 'Diseño de programas educativos' else None">
+                        Diseño de programas educativos
+                    </option>
+                    <option t-att-selected="'selected' if partner.interested == 'Implementación de soluciones digitales' else None">
+                        Implementación de soluciones digitales
+                    </option>
+                    <option t-att-selected="'selected' if partner.interested == 'Codiseño de instituciones educativas' else None">
+                        Codiseño de instituciones educativas
+                    </option>
+                    <option t-att-selected="'selected' if partner.interested == 'Diseño y desarrollo de plataformas' else None">
+                        Diseño y desarrollo de plataformas
+                    </option>
+                    <option t-att-selected="'selected' if partner.interested == 'Producción de recursos educativos' else None">
+                        Producción de recursos educativos
+                    </option>
+                    <option t-att-selected="'selected' if partner.interested == 'Codiseño de proyectos de innovación educativa' else None">
+                        Codiseño de proyectos de innovación educativa
+                    </option>
+                    <option t-att-selected="'selected' if partner.interested == 'Codiseño de sistemas digitales' else None">
+                        Codiseño de sistemas digitales
+                    </option>
+                    <option t-att-selected="'selected' if partner.interested == 'Otros' else None">
+                        Otros
+                    </option>
+                </select>
+            </div>
+            <div data-oe-model="ir.ui.view" data-oe-id="1813" data-oe-field="arch"
+                 data-oe-xpath="/t[1]/t[1]/section[1]/div[1]/div[1]/form[1]/div[1]/section[2]/div[5]"
+                 class="form-group text-right s_website_form_field col-md-2">
+                <label for="country_id">Su país</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <select name="country_id" t-attf-class="form-control">
+                    <option value="">Países</option>
+                    <t t-foreach="countries or []" t-as="country">
+                        <option t-att-value="country.id"
+                                t-att-selected="country.id == int(country_id) if country_id else country.id == partner.country_id.id">
+                            <t t-esc="country.name" />
+                        </option>
+                    </t>
+                </select>
+            </div>
+        </section>
+        <section class="row" data-name="social-network" id="social-network"
+                 data-oe-model="ir.ui.view" data-oe-id="1813" data-oe-field="arch"
+                 data-oe-xpath="/t[1]/t[1]/section[1]/div[1]/div[1]/form[1]/div[1]/section[3]">
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="work_email">Correo(institucional)</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input id="work_email" name="work_email" class="form-control check_keys_input"
+                       type="email"
+                       t-att-value="partner.work_email"
+                       placeholder="Ej: micorreo@dominio.ministerio"/>
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-2">
+                <label for="phone">Teléfono de contacto *</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-4">
+                <input id="phone" name="phone" class="form-control check_keys_input"
+                       type="text"
+                       t-att-value="partner.phone"
+                       placeholder="+538899974" required="required"/>
+            </div>
+            <div class="form-group text-right s_website_form_field col-md-4">
+                <label for="preference">Seleccione medio preferido de contacto</label>
+            </div>
+            <div class="form-group s_website_form_field col-md-8">
+                <div class="col-sm">
+                    <div class="row s_col_no_resize s_col_no_bgcolor s_website_form_multiple"
+                         data-name="preference" data-display="horizontal">
+                        <t t-foreach="contacts or []" t-as="pref">
+                            <div class="checkbox col-12 col-lg-4 col-md-6">
+                                <div class="form-check">
+                                    <input id="contacts" multiple="multiple" name="contacts" type="checkbox" class="s_website_form_input form-check-input"
+                                           t-att-checked="'checked' if pref.id in partner.pref_contact_ids.ids else None"
+                                           t-att-name="pref.name"/>
+                                    <label id="contacts" class="form-check-label s_website_form_check_label"
+                                           t-esc="pref.name"  />
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+</odoo>

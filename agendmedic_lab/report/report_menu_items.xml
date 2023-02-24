@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="paper_format_a5_portrait"  model="report.paperformat">
+            <field name="name">Receta Medica Vertical</field>
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="margin_top">15</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">10</field>
+            <field name="dpi">100</field>
+        </record>
+
+        <record id="ticket_format_2_5cm"  model="report.paperformat">
+            <field name="name">ticket medico orden</field>
+            <field name="page_height">40</field>
+            <field name="page_width">60</field>
+            <field name="orientation">Portrait</field>
+            <field name="format">custom</field>
+            <field name="margin_top">3</field>
+            <field name="margin_bottom">3</field>
+            <field name="margin_left">3</field>
+            <field name="margin_right">3</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">5</field>
+            <field name="dpi">120</field>
+        </record>
+
+        <!-- Menu for reports -->
+        <report string="REPORTE DE EXAMEN"
+                id="action_report_order_exams_lab"
+                model="order.exams.lab"
+                report_type="qweb-pdf"
+                name="agendmedic_lab.report_order_exams_laboratory"
+                file="agendmedic_lab.report_order_exams_laboratory"
+                attachment_use="True"
+                print_report_name="'Examen de Laboratorio- %s ' % object.name"
+                menu="True"
+                paperformat="paper_format_a5_portrait"
+        />
+
+        <report string="REPORTE DE EXAMEN SIN FORMATO"
+                id="action_clean_report_order_exams_lab"
+                model="order.exams.lab"
+                report_type="qweb-pdf"
+                name="agendmedic_lab.clean_report_order_exams_laboratory"
+                file="agendmedic_lab.clean_report_order_exams_laboratory"
+                attachment_use="True"
+                print_report_name="'Examen de Laboratorio- %s ' % object.name"
+                menu="True"
+                paperformat="paper_format_a5_portrait"
+        />
+
+        <report string="IMPRIMIR ETIQUETA"
+                id="action_print_tags_order_lab"
+                model="order.exams.lab"
+                report_type="qweb-pdf"
+                name="agendmedic_lab.report_print_tags_order_lab"
+                file="agendmedic_lab.report_print_tags_order_lab"
+                attachment_use="True"
+                print_report_name="'ETIQUETA DE LA ORDEN- %s ' % object.name"
+                paperformat="ticket_format_2_5cm"
+                menu="True"
+        />
+
+    </data>
+</odoo>

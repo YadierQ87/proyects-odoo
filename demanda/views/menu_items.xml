@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <!--MENUS-->
+        <menuitem id="demanda_menu_root" name="Demanda Logistica" sequence="1"/>
+        <!-- demanda.solicitud.uniforme Planilla de Captación de las Tallas del Módulo de Vestuario-->
+        <menuitem id="demanda_menu_etecsa_solicitudes" name="Solicitudes Logistica" sequence="2"
+                  parent="demanda.demanda_menu_root"
+                  action="demanda_solicitud_generica_action_all"/>
+        <!-- parent root -->
+        <menuitem id="demanda_menu_solicitudes_vestuario" name="Solicitudes Vestuario" sequence="2"
+                  parent="demanda.demanda_menu_root"/>
+        <menuitem id="demanda_menu_vestuario_vicepresidencia" name="Demanda Vestuario x Vicepresidencia" sequence="1"
+                  parent="demanda.demanda_menu_solicitudes_vestuario"
+                  action="demanda_vestuario_division_action_all"/>
+        <menuitem id="demanda_menu_vestuario_depto" name="Demanda Vestuario x Depto" sequence="3"
+                  parent="demanda.demanda_menu_solicitudes_vestuario"
+                  action="demanda_vestuario_depto_action_all"/>
+        <menuitem id="demanda_menu_vestuario_usuario" name="Solicitudes Vestuario x Usuario" sequence="6"
+                  parent="demanda.demanda_menu_solicitudes_vestuario"
+                  action="demanda_solicitud_vestuario_action_all"/>
+
+        <menuitem id="demanda_etecsa_menu_informe" name="Informe" sequence="5"
+                  parent="demanda.demanda_menu_root" action="demanda_producto_vestuario_action_all"/>
+
+        <menuitem id="demanda_menu_solicitudes_configuracion" name="Configuracion" sequence="2"
+                  parent="demanda.demanda_menu_root"/>
+        <menuitem id="demanda_menu_etecsa_plantillas" name="Plantillas de Demanda" sequence="4"
+                  parent="demanda.demanda_menu_solicitudes_configuracion"
+                  action="demanda_etecsa_plantilla_action_all"/>
+        <!-- TODO menu configuracion de tallas -->
+        <menuitem id="demanda_menu_etecsa_config_tallas" name="Config de Tallas" sequence="6"
+                  parent="demanda.demanda_menu_solicitudes_configuracion"
+                  action="demanda_producto_tallas_vestuario_action_all"
+        />
+    </data>
+</odoo>

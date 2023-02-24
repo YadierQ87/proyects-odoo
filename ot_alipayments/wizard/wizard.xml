@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="whatsapp_send_lab_order_wizard" model="ir.ui.view">
+            <field name="name">whatsapp.send.message.lab.order.form</field>
+            <field name="model">whatsapp.lab.message.wizard</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Enviar Alicuota via Whatsapp Message">
+                    <group col="4">
+                        <field name="user_id"/>
+                        <field name="mobile"/>
+                        <field name="message" colspan="4"/>
+                    </group>
+                    <footer>
+                        <button name="send_whatsapp_message" string="Send" type="object"/>
+                        <button name="cancel" string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- # Tipo de Renta  -->
+        <record id="rent_type1" model="house.rental.type">
+            <field name="name">Renta</field>
+        </record>
+        <record id="rent_type2" model="house.rental.type">
+            <field name="name">Inmobiliaria</field>
+        </record>
+        <record id="rent_type3" model="house.rental.type">
+            <field name="name">Alquiler</field>
+        </record>
+        <record id="rent_type4" model="house.rental.type">
+            <field name="name">Reservacion Hotel</field>
+        </record>
+
+        <!-- # PropertyType  -->
+        <record id="property_type1" model="house.property.type">
+            <field name="name">Hotel</field>
+        </record>
+        <record id="property_type1" model="house.property.type">
+            <field name="name">Edificio</field>
+        </record>
+        <record id="property_type2" model="house.property.type">
+            <field name="name">Piso</field>
+        </record>
+        <record id="property_type3" model="house.property.type">
+            <field name="name">Habitacion</field>
+        </record>
+        <record id="property_type4" model="house.property.type">
+            <field name="name">Casa</field>
+        </record>
+        <record id="property_type5" model="house.property.type">
+            <field name="name">Departamento</field>
+        </record>
+
+        <!-- house.location.inside -->
+        <record id="location_inside1" model="house.location.inside">
+            <field name="name">Habitacion</field>
+        </record>
+        <record id="location_inside2" model="house.location.inside">
+            <field name="name">Sala</field>
+        </record>
+        <record id="location_inside3" model="house.location.inside">
+            <field name="name">Baño</field>
+        </record>
+        <record id="location_inside4" model="house.location.inside">
+            <field name="name">Comedor</field>
+        </record>
+
+        <!-- house.amenities -->
+        <record id="amenity1" model="house.amenities">
+            <field name="name">Aire Acondicionado</field>
+        </record>
+        <record id="amenity2" model="house.amenities">
+            <field name="name">Wifi</field>
+        </record>
+        <record id="amenity3" model="house.amenities">
+            <field name="name">Free Internet</field>
+        </record>
+        <record id="amenity4" model="house.amenities">
+            <field name="name">Agua Caliente</field>
+        </record>
+        <record id="amenity5" model="house.amenities">
+            <field name="name">Telefono</field>
+        </record>
+        <record id="amenity6" model="house.amenities">
+            <field name="name">Gas</field>
+        </record>
+
+        <!-- house.fee.type -->
+        <record id="fee_type1" model="house.fee.type">
+            <field name="name">AliCuota</field>
+        </record>
+        <record id="fee_type2" model="house.fee.type">
+            <field name="name">Agua Caliente</field>
+        </record>
+        <record id="fee_type3" model="house.fee.type">
+            <field name="name">Varios</field>
+        </record>
+
+    </data>
+</odoo>

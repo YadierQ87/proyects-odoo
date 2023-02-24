@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+
+        <menuitem id="menu_combustible" name="Demanda Combustible" parent="fleet.menu_root" sequence="12"/>
+
+        <!--menuitem id="menu_acciones_tickets" name="Acciones sobre tickets" parent="fleet_etecsa.menu_tickets_fleet" sequence="2" action="acciones_tickets_action_all"/-->
+        <menuitem id="menu_demanda_personal" name="Demanda de Combustible x Vehículo"
+                  parent="combustible_etecsa.menu_combustible"
+                  sequence="3" action="demanda_combustible_action_all"/>
+        <menuitem id="menu_demanda_departamento" name="Demanda de Combustible por Dpto."
+                  parent="combustible_etecsa.menu_combustible"
+                  sequence="4" action="demanda_departamento_action_all"/>
+        <menuitem id="menu_distribucion_direccion" name="Distribucion de Combustible"
+                  parent="combustible_etecsa.menu_combustible"
+                  sequence="4" action="distribucion_combustible_action_all"/>
+
+        <menuitem id="menu_tabla_distancia_etecsa" name="Tablas de Distancia"
+                  parent="fleet.fleet_configuration"
+                  sequence="8" action="tablas_distancia_action_all"/>
+        <menuitem id="menu_precio_combustible" name="Precio del Combustible"
+                  parent="fleet.fleet_configuration"
+                  sequence="10" action="precio_combustible_action_all"/>
+    </data>
+</odoo>

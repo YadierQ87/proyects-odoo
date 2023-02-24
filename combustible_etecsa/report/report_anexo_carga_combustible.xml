@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_asignacion_combustible_direccion">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+                        <div class="container">
+                            <table class="table table-md table-bordered table-striped" >
+                                <tbody>
+                                    <tr >
+                                        <th colspan="2">ANEXO 1: PLAN DE DISTRIBUCIÓN DE COMBUSTIBLE POR VEHICULOS</th>
+                                    </tr>
+                                    <tr >
+                                        <td>Organismo:  <span t-field="o.organismo"/>      Entidad:  <span t-field="o.entidad"/> 	  	</td>
+                                        <td> Mes consumo:  <span t-field="o.mes_consumo"/>  Año:  2021 </td>
+                                    </tr>
+                                    <tr >
+                                        <td>U/O: <span t-field="o.u_organizativa"/> </td>
+                                        <td>Tipo de combustible: <span t-field="o.tipo_combustible"/></td>
+                                    </tr>
+                                    <tr >
+                                        <td>Aprobado Por: <span t-field="o.aprobado_por"/></td>
+                                        <td>No. consecutivo del Plan: <span t-field="o.id"/> </td>
+                                    </tr>
+                                    <tr >
+                                        <td colspan="2"> Vicepresidente <span t-field="o.u_organizativa"/> </td>
+                                    </tr>
+                                    <tr >
+                                        <td colspan="2"> Concepto de emisión:  Plan Opert ____  Aver____   Perd____    Asignación Adicional_____   Reserva:____ </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table class="table table-sm table-bordered table-striped" >
+                                <tbody>
+                                    <tr >
+                                        <th >Area de trabajo</th>
+                                        <th>Chapa</th>
+                                        <th>Conductor</th>
+                                        <th>No. tarjeta.</th>
+                                        <th>Plan asignado</th>
+                                        <th>Descontar saldo en existencia</th>
+                                    </tr>
+                                    <t t-foreach="o.demanda_combt_ids" t-as="demanda">
+                                        <tr>
+                                            <td><span  t-field="demanda.departamento" /></td>
+                                            <td ><span  t-field="demanda.chapa" /></td>
+                                            <td ><span  t-field="demanda.asignado_a" /></td>
+                                            <td ><span  t-field="demanda.tarjeta" /></td>
+                                            <td ><span  t-esc="'%.2f'%(demanda.combustible_real)" /></td>
+                                            <td >Si</td>
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td>Total general del Plan de dist.</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><span t-esc="'%.2f'%(o.total_lts_asignado)" /></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Observaciones:        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-md table-bordered table-striped" >
+                                <tbody>
+                                    <tr >
+                                        <td>Nombre, apellidos y firma de quien entrega: <span t-field="o.nombre_entrega_modelo"/></td>
+                                        <td colspan="2"></td>
+                                        <td>Fecha:</td>
+                                    </tr>
+                                    <tr >
+                                        <td> Nombre, apellidos y firma de quien recibe:	<span t-field="o.nombre_recibe_modelo"/>  	</td>
+                                        <td colspan="2"></td>
+                                        <td> </td>
+                                    </tr>
+                                    <tr >
+                                        <td> Revisado por:	<span t-field="o.nombre_jefe_revisado_modelo"/>  	</td>
+                                        <td colspan="2"> Visto Bueno :	 <span t-field="o.nombre_direc_revisado_modelo"/> 	</td>
+                                        <td> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

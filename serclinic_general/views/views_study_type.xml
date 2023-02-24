@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <!-- tipo estudio form -->
+        <record id="serclinic_tipo_estudio_form" model="ir.ui.view">
+            <field name="name">Tipo Estudio Médico</field>
+            <field name="model">serclinic.medical.study.type</field>
+            <field eval="18" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet string="Tipo Estudio Médico" modifiers="{}">
+                        <div class="oe_button_box" name="button_box" modifiers="{}">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive" modifiers="{}" options="{}">
+                                <field name="active" widget="boolean_button" options="{'terminology': 'archive'}" on_change="1" modifiers="{}"/>
+                            </button>
+                        </div>
+                        <group col="2" string="Detalles del Estudio" modifiers="{}">
+                            <group>
+                                <field name="name" modifiers="{'required':true}"/>
+                                <field name="price" modifiers="{}"/>
+                                <field name="money" modifiers="{}"/>
+                                <field name="is_dinamic" modifiers="{}"/>
+                                <field name="dosis_suggest" modifiers="{}"/>
+                            </group>
+                            <group>                               
+                                <field name="zones_administracion_ids" widget="many2many_tags" modifiers="{}"/>
+                                <field name="steps_study_medical_id" widget="many2many_tags"  modifiers="{}"/>
+                            </group>
+                            <group>
+                                <field name="description"  modifiers="{'required':true}"/>
+                            </group>
+                            <group>
+                                <field name="observations"  modifiers="{}"/>
+                            </group>
+                        </group>
+                        <group col="2" modifiers="{}" string="Información Adicional">
+                            <group>
+                                <field name="plan_week_id" on_change="1" modifiers="{'required':true}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="serclinic_tipos_estudio_list_view" model="ir.ui.view">
+            <field name="name">Tipos de Estudio</field>
+            <field name="model">serclinic.medical.study.type</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <tree string="Tipos de Estudio">
+                    <field name="name" />
+                    <field name="description" />
+                    <field name="price" />
+                    <field name="money" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,315 @@
+<odoo>
+    <data>
+
+        <!-- Demandas de Solicitudes Logisticas -->
+        <record id="demanda_solicitud_generica_action_all" model="ir.actions.act_window">
+            <field name="name">Demanda Solicitud Logistica </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">demanda.solicitud.generica</field>
+            <field name="view_mode">kanban,form,tree</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="demanda_solicitud_generica_form" model="ir.ui.view">
+            <field name="name">Planilla de Captación Datos</field>
+            <field name="model">demanda.solicitud.generica</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet string=" Planilla de Captación Datos" modifiers="{}">
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                            </button>
+                        </div>
+                        <group col="2" string="ANEXO DE SOLICITUD">
+                            <field name="name"/>
+                        </group>
+                        <group col="2" string="Información Trabajador">
+                            <group>
+                                <field name="trabajador_id"/>
+                                <field name="sexo_worker"/>
+                            </group>
+                            <group>
+                                <field name="depto_worker"/>
+                                <field name="jefe_worker"/>
+                            </group>
+                        </group>
+                        <group col="2" string="Información Solicitud"  >
+                            <field name='producto_generico_ids' />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="demanda_solicitud_vestuario_action_all" model="ir.actions.act_window">
+            <field name="name">Demanda Anexo 4 Vestuario </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">demanda.solicitud.vestuario</field>
+            <field name="view_mode">kanban,form,tree</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="demanda_solicitud_vestuario_form" model="ir.ui.view">
+            <field name="name">Planilla de Captación de las Tallas del Módulo de Vestuario</field>
+            <field name="model">demanda.solicitud.vestuario</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet string=" Planilla de Captación de las Tallas del Módulo de Vestuario" modifiers="{}">
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                            </button>
+                            <button name="action_automatic_assign" type="object"
+                                    attrs="{'invisible': [('plantilla_logistica','=',False)]}"
+                                    string="Ver planilla"
+                                    class="oe_stat_button" icon="fa-pencil-square-o">
+                            </button>
+                        </div>
+                        <group col="4" string="Planilla de Captación de las Tallas del Módulo de Vestuario">
+                            <field name="name"/>
+                            <field name="depto_solicitud_id"/>
+                            <field name="plantilla_logistica"/>
+                            <field name="tipo_modulo"/>
+                            <field name="sexo_modulo"/>
+                            <field name="create_uid"/>
+                            <field name="validacion"/>
+
+                        </group>
+                        <group col="2" string="Información Trabajador">
+                            <group>
+                                <field name="trabajador_id"/>
+                                <field name="sexo_worker"/>
+                            </group>
+                            <group>
+                                <field name="depto_worker"/>
+                                <field name="jefe_worker"/>
+                                <field name="nivel_satisfaccion" attrs="{'invisible': [('state','!=','despachada')]}" />
+                                <field name="lleva_talla_especial"/>
+                            </group>
+                            <group string="Para Tallas Especiales" attrs="{'invisible': [('lleva_talla_especial','=',False)]}" col="4">
+                                <field name="cuello_cm"/>
+                                <field name="busto_pecho_cm"/>
+                                <field name="cintura_cm"/>
+                                <field name="cadera_cm"/>
+                                <field name="ancho_brazo_cm"/>
+                                <field name="ancho_espalda_cm"/>
+                                <field name="largo_pierna_cm"/>
+                                <field name="largo_torso_cm"/>
+                            </group>
+                        </group>
+                        <group col="2" string="Información Anexo" attrs="{'invisible': [('validacion','=',True)]}" >
+
+                            <field name='producto_vestuario_ids'
+                                   options="{'no_open': True, 'no_create': True}"
+                                   attrs="{'no_open': True, 'no_create': True}"
+                            >
+                                <tree string='List' editable='bottom' options="{'no_open': True, 'no_create': True}"
+                                      attrs="{'no_open': True, 'no_create': True}" create="false" edit="true">
+                                    <field name="name" context="{'solicitud_id': parent.id}" readonly="1"/>
+                                    <field name="categoria_talla"/>
+                                    <field name="norma_talla"/>
+                                    <field name="talla_nacional"
+                                           attrs="{'invisible': [('categoria_talla','!=','vestuario')]}"
+                                           options="{ 'no_create': True}"
+                                    />
+                                    <field name="talla_extranjera"
+                                           attrs="{'invisible': [('categoria_talla','!=','vestuario')]}"
+                                           options="{ 'no_create': True}"
+                                    />
+                                    <field name="lleva_talla_especial"/>
+                                    <field name="talla_especial"
+                                           attrs="{'invisible': [('lleva_talla_especial','=',False)]}"
+                                           options="{'no_create': True}"
+                                    />
+
+                                    <field name="necesito_cambio"/>
+                                    <field name="tengo_talla"
+                                           attrs="{'invisible': [('necesito_cambio','=',False)]}"
+                                           options="{'no_create': True}"
+                                    />
+                                    <field name="necesito_talla"
+                                           attrs="{'invisible': [('necesito_cambio','=',False)]}"
+                                           options="{'no_create': True}"
+                                    />
+                                </tree>
+                                <form string=''>
+                                    <group>
+                                        <field name="name" context="{'solicitud_id': parent.id}" readonly="1"/>
+                                        <field name="categoria_talla"/>
+                                        <field name="norma_talla"/>
+                                        <field name="talla_nacional"
+                                               attrs="{'invisible': [('categoria_talla','!=','vestuario')]}"
+                                               options="{'no_create': True}"
+                                        />
+                                        <field name="talla_extranjera"
+                                               attrs="{'invisible': [('categoria_talla','!=','vestuario')]}"
+                                               options="{ 'no_create': True}"
+                                        />
+                                        <field name="talla_especial"
+                                               attrs="{'invisible': [('categoria_talla','!=','especial')]}"
+                                               options="{'no_create': True}"
+                                        />
+                                    </group>
+                                </form>
+                            </field>
+
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Demanda plantilla Logistica-->
+        <!-- Demandas de Solicitudes Logisticas -->
+        <record id="demanda_etecsa_plantilla_action_all" model="ir.actions.act_window">
+            <field name="name">Plantillas de Demanda Logistica </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">demanda.plantilla.logistica</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="demanda_etecsa_plantilla_form" model="ir.ui.view">
+            <field name="name">Plantillas de Anexo Logistica</field>
+            <field name="model">demanda.plantilla.logistica</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet string=" Plantilla de Captación" modifiers="{}">
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                            </button>
+                        </div>
+                        <group col="4" string="Información Relevante">
+                            <field name="name"/>
+                            <field name="categoria_id"/>
+                            <field name="tipo_modulo"/>
+                            <field name="atributo_modulo"/>
+                        </group>
+
+                        <group col="2">
+                            <field name='producto_ids'>
+                                <tree string='List' editable='bottom'>
+                                    <field name="name" />
+                                    <field name="categoria"/>
+                                    <field name="tipo_vestuario" attrs="{'invisible': [('categoria','!=','vestuario')]}" />
+                                </tree>
+                                <form string='Insertar'>
+                                    <group>
+                                        <field name="name" />
+                                        <field name="categoria"/>
+                                        <field name="tipo_vestuario" attrs="{'invisible': [('categoria','!=','vestuario')]}" />
+                                        <field name="plantilla_id" />
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+
+                        <group col="2">
+                            <field name='attrs_ids'/>
+                        </group>
+                        <group col="2">
+                            <field name='encabezado'/>
+                            <field name='pie_pagina'/>
+                        </group>
+                        <group col="2" string="Vista Previa HTML">
+                            <field name="vista_previa"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="demanda_producto_vestuario_action_all" model="ir.actions.act_window">
+            <field name="name">Producto Vestuario </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">demanda.producto.vestuario.logistica</field>
+            <field name="view_mode">kanban,form,tree,graph,pivot</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="demanda_etecsa_producto_vestuario_form" model="ir.ui.view">
+            <field name="name">Producto Vestuario</field>
+            <field name="model">demanda.producto.vestuario.logistica</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet string=" Producto Vestuario" modifiers="{}">
+                        <group col="4" string="Información Relevante">
+                            <field name="name"/>
+                            <field name="talla_nacional"/>
+                            <field name="talla_extranjera" />
+                            <field name="sexo_ropa" />
+                            <field name="talla_especial" />
+                            <field name="norma_talla" />
+                            <field name="descripcion" />
+                            <field name="categoria_talla" />
+                            <field name="solicitud_id" />
+                            <field name="tipo_modulo_solicitud" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tallas -->
+        <record id="demanda_producto_tallas_vestuario_action_all" model="ir.actions.act_window">
+            <field name="name"> Tallas del Vestuario </field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">demanda.listado.tallas.vestuario</field>
+            <field name="view_mode">kanban,form,tree</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="demanda_etecsa_producto_vestuario_form" model="ir.ui.view">
+            <field name="name">Tallas del Vestuario</field>
+            <field name="model">demanda.listado.tallas.vestuario</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form modifiers="{}">
+                    <sheet string=" Tallas Vestuario" modifiers="{}">
+                        <group col="4" string="">
+                            <field name="name"/>
+                            <field name="tallas_ids">
+                                <tree string='List' editable='bottom'>
+                                        <field name="name" />
+                                        <field name="metrica" />
+                                        <field name="correspondencia" />
+                                </tree>
+                                <form string='Insertar'>
+                                    <group>
+                                        <field name="name" />
+                                        <field name="metrica" />
+                                        <field name="correspondencia" />
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

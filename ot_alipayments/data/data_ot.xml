@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="product_category_all" model="product.category">
+            <field name="name">All</field>
+        </record>
+        <record id="product_category_1" model="product.category">
+            <field name="parent_id" ref="product_category_all"/>
+            <field name="name">Saleable</field>
+        </record>
+
+        <record id="product_category_3" model="product.category">
+            <field name="parent_id" ref="product_category_1"/>
+            <field name="name">Services</field>
+        </record>
+
+        <!-- # Alicuota como producto  -->
+        <record id="product_alicuota" model="product.product">
+            <field name="name">Alicuota</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <record id="product_balance" model="product.product">
+            <field name="name">Balance Check</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <record id="product_electrico" model="product.product">
+            <field name="name">Empresa Electrica</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <record id="product_seguro" model="product.product">
+            <field name="name">Seguro Edificio</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <record id="product_limpieza" model="product.product">
+            <field name="name">Insumos de limpieza</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <record id="product_agua" model="product.product">
+            <field name="name">Etapa - agua</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <record id="product_guardia" model="product.product">
+            <field name="name">Guardias</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <record id="product_oficina" model="product.product">
+            <field name="name">Insumos de oficina</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <record id="product_mtto_ascensor" model="product.product">
+            <field name="name">Mantenimiento de ascensor</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <record id="product_mtto_jardin" model="product.product">
+            <field name="name">Mantenimiento de jardines</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <record id="product_mtto_edificio" model="product.product">
+            <field name="name">Mantenimiento de edificio</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <record id="product_mtto_cisterna" model="product.product">
+            <field name="name">Mantenimiento de cisterna</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <record id="product_mtto_admin" model="product.product">
+            <field name="name">Administracion</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <record id="product_internet_cam" model="product.product">
+            <field name="name">Internet camaras</field>
+            <field name="categ_id" ref="product_category_3"/>
+            <field name="standard_price">0.00</field>
+            <field name="list_price">0.00</field>
+            <field name="detailed_type">service</field>
+        </record>
+
+        <!-- Journal ID -->
+        <record id="account_alicuota_journal_item" model="account.journal">
+            <field name="name">Cobro de Alicuotas</field>
+            <field name="type">sale</field>
+            <field name="code">ALI</field>
+        </record>
+
+    </data>
+</odoo>

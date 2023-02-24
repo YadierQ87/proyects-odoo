@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<odoo>
+        <record id="module_fleet_etecsa_category" model="ir.module.category">
+            <field name="name">Ticket Flota ETECSA</field>
+            <field name="sequence">20</field>
+        </record>
+    <!-- new Add by Yadier -->
+        <record id="fleet_ticket_chofer" model="res.groups">
+            <field name="name">Chofer</field>
+            <field name="category_id" ref="module_fleet_etecsa_category"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="fleet_ticket_tecnico_transporte" model="res.groups">
+            <field name="name">Tecnico de Transporte</field>
+            <field name="category_id" ref="module_fleet_etecsa_category"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+    <!-- new Add by Yadier -->
+</odoo>

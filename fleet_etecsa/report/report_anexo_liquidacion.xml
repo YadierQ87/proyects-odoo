@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_anexo_liquidacion_combustible">
+            <t t-call="web.basic_layout">
+                <style>
+                    .table > tbody > tr > td{
+                        padding: 4px;
+                        font-size:12px;
+                        letter-spacing: 1px;
+                    }
+                    .oe-avatar{
+                     margin-right: 40px;
+                    }
+                </style>
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="">
+                        <table class="table table-bordered table-striped">
+                            <tr class="success">
+                                <td colspan="5">
+                                    <strong class="text-center">
+                                        <img class="oe-avatar" t-att-src="image_data_uri(res_company.logo)" height="50px" />
+                                        ANEXO 5 de la IC-026-2012- Modelos Modificados
+                                    </strong>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td colspan="5" class="text-center">DIVISION DE SERVICIOS FIJOS  </td>
+                            </tr>
+                            <tr >
+                                <td colspan="5" class="text-center">ANEXO 5-LIQUIDACIÓN DEL CONSUMO DE COMBUSTIBLE POR TARJETAS PREPAGADAS  </td>
+                            </tr>
+                            <tr >
+                                <td>Organismo:  </td>
+                                <td>  <span t-field="o.organismo"/> </td>
+                                <td colspan="2" rowspan="2" class="text-center">Centro de Costo (2):  </td>
+                                <td rowspan="2"><span t-field="o.centro_costo"/>  </td>
+                            </tr>
+                            <tr >
+                                <td>Entidad:</td>
+                                <td><span t-field="o.entidad"/>  </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Área de  Trabajo (1):  </td>
+                                <td colspan="3" class="text-center"><span t-field="o.depto_propietario"/>  </td>
+                            </tr>
+                            <tr >
+                                <td >Chapa del  Vehículo:  </td>
+                                <td >  <span t-field="o.chapa"/>  </td>
+                                <td  >No. de la Tarjeta (4):  </td>
+                                <td >Tipo de combustible(5):  </td>
+                                <td >Fecha de emitido el modelo (6):  </td>
+                            </tr>
+                            <tr >
+                                <td>Grupo  Electrógeno:  </td>
+                                <td > <span t-field="o.tool_id"/>   </td>
+                                <td rowspan="4"><span t-field="o.tarjeta_id"/>  </td>
+                                <td rowspan="4"> <span t-field="o.tipo_combustible"/>   </td>
+                                <td rowspan="4"><span t-field="o.create_date"/>  </td>
+                            </tr>
+                            <tr >
+                                <td >Chapa  Camión Cisterna:  </td>
+                                <td > -   </td>
+
+                            </tr>
+                            <tr >
+                                <td > Equipo  especial construcción:  </td>
+                                <td > -   </td>
+                            </tr>
+                            <tr >
+                                <td> Otros: (3)  </td>
+                                <td >  -   </td>
+
+                            </tr>
+                            <tr class="info">
+                                <td colspan="2"> -   </td>
+                                <td> Importe  </td>
+                                <td> Moneda  </td>
+                                <td> Cantidad en Lts  </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"> Saldo  inicial de la tarjeta (7):  </td>
+                                <td  ><span t-field="o.saldo_ini_importe" widget="monetary"/> </td>
+                                <td  ><span t-field="o.saldo_ini_moneda" /> </td>
+                                <td  ><span t-field="o.saldo_ini_cantdlts" /> </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Combustible  consumido de la tarjeta (8):
+                                </td>
+                                <td><span t-field="o.comb_consumido_importe" widget="monetary"/></td>
+                                <td><span t-field="o.comb_consumido_moneda" /> </td>
+                                <td><span t-field="o.comb_consumido_cantdlts" /> </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Saldo  final de la tarjeta (9):  </td>
+                                <td><span t-field="o.saldo_final_importe" widget="monetary"/> </td>
+                                <td><span t-field="o.saldo_final_moneda" /> </td>
+                                <td><span t-field="o.saldo_final_cantdlts" /> </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Cantidad  de Comprobantes (10):  </td>
+                                <td><span t-field="o.cantd_comprobantes"/>  </td>
+                                <td> -   </td>
+                                <td> -   </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">  Desglose  del consumo de la tarjeta (11):  </td>
+                                <td><span t-field="o.desglose"/>  </td>
+                                <td> -   </td>
+                                <td> -   </td>
+                            </tr>
+                            <tr class="bg-primary">
+                                <td colspan="5" class="bg-primary" >    </td>
+                            </tr>
+                            <tr class="info">
+                                <td colspan="2"> -  </td>
+                                <td>Importe  </td>
+                                <td>Moneda  </td>
+                                <td >Cantidad en Lts  </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Gastos de la Operación:  </td>
+                                <td><span t-field="o.gastos_oper_importe" widget="monetary"/> </td>
+                                <td><span t-field="o.gastos_oper_moneda" /> </td>
+                                <td><span t-field="o.gastos_oper_cantdlts" /> </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Gastos por eventos del Seguro:  </td>
+                                <td><span t-field="o.gastos_eventos_importe" widget="monetary"/> </td>
+                                <td><span t-field="o.gastos_eventos_moneda" /> </td>
+                                <td><span t-field="o.gastos_eventos_cantdlts" /> </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Gastos de Inversiones:  </td>
+                                <td><span t-field="o.gastos_inversiones_importe" widget="monetary"/> </td>
+                                <td><span t-field="o.gastos_inversiones_moneda" /> </td>
+                                <td><span t-field="o.gastos_inversiones_cantdlts" /> </td>
+                            </tr>
+                            <tr class="bg-primary">
+                                <td colspan="5" >   </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">No. Elemento PEP: <span t-field="o.no_elem_pep" />  </td>
+                                <td >Importe:  <span t-field="o.importe_elem_pep" /> </td>
+                                <td colspan="2">Componentes: Const. y Montaje: <span t-field="o.const_montaje" />  </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Proyecto:  </td>
+                                <td > <span t-field="o.project" />   </td>
+                                <td >Otros Gastos:  </td>
+                                <td > <span t-field="o.otros_gastos" />   </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">No. Orden de Trabajo:  </td>
+                                <td colspan="3"> <span t-field="o.no_orden_trabajo" />    </td>
+                            </tr>
+                            <tr class="bg-primary">
+                                <td colspan="5">     </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Nombre y Firma de quien elabora el modelo de Liquidación (12):  </td>
+                                <td><span t-field="o.nombre_elabora_modelo" /></td>
+                                <td colspan="2">Firma:  </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Nombre y Firma del Jefe administrativo que aprueba la liquidación (13):</td>
+                                <td><span t-field="o.nombre_jefe_aprueba" /></td>
+                                <td colspan="2">Firma:  </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Nombre y Firma de quien liquida la tarjeta enla Caja (14):  </td>
+                                <td><span t-field="o.nombre_quien_liquida" /></td>
+                                <td colspan="2">Firma:  </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Nombre y Firma del cajero que recibe la liquidación (15):  </td>
+                                <td><span t-field="o.nombre_cajero_recibe_liq" /></td>
+                                <td colspan="2">Firma:  </td>
+                            </tr>
+                            <tr >
+                                <td colspan="3">No. (16):  </td>
+                                <td colspan="2">   -   </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Fecha en  que se ejecuta la liquidación en la Caja (17):</td>
+                                <td><span t-field="o.fecha_liquidacion_caja" /></td>
+                                <td colspan="2">   -   </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">Nombre y firma del Contador que registra la liquidación (18):  </td>
+                                <td><span t-field="o.nombre_contador_registra_liq" /></td>
+                                <td colspan="2">   -   </td>
+                            </tr>
+                            <tr >
+                                <td colspan="2">No. Comp.  (19): </td>
+                                <td><span t-field="o.no_orden_trabajo" /></td>
+                                <td colspan="2"> -  </td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,100 @@
+[
+  {
+    "id": 900,
+    "iid": 370,
+    "project_id": 101,
+    "title": "Solve threads in the code review",
+    "description": "Solve the threads opened by Master",
+    "state": "opened",
+    "created_at": "2021-11-04T01:40:03.020Z",
+    "updated_at": "2021-11-04T16:51:44.853Z",
+    "closed_at": null,
+    "closed_by": null,
+    "labels": [],
+    "milestone": null,
+    "assignees": [
+      {
+        "id": 125,
+        "name": "Mitchell",
+        "username": "Mitchell87",
+        "state": "active",
+        "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/125/avatar.png",
+        "web_url": "https://gitlab.com/Mitchell87"
+      }
+    ],
+    "author": {
+      "id": 125,
+      "name": "Mitchell",
+      "username": "Mitchell87"
+    },
+    "type": "ISSUE",
+    "assignee": {
+      "id": 125,
+      "name": "Mitchell",
+      "username": "Mitchell87"
+    },
+    "merge_requests_count": 0,
+    "due_date": "2021-11-04",
+    "confidential": false,
+    "issue_type": "issue",
+    "web_url": "https://gitlab.com/company/odoo-personalization/odoo-project/-/issues/370",
+    "time_stats": {
+      "time_estimate": 28800,
+      "total_time_spent": 14400,
+      "human_time_estimate": "8h",
+      "human_total_time_spent": "4h"
+    },
+    "weight": 30,
+    "blocking_issues_count": 0,
+    "has_tasks": false
+  },
+  {
+    "id": 909,
+    "iid": 379,
+    "project_id": 101,
+    "title": "Little changes to code",
+    "description": "Solve bugs",
+    "state": "opened",
+    "created_at": "2021-11-04T01:40:03.020Z",
+    "updated_at": "2021-11-04T16:51:44.853Z",
+    "closed_at": null,
+    "closed_by": null,
+    "labels": [],
+    "milestone": null,
+    "assignees": [
+      {
+        "id": 125,
+        "name": "Mitchell",
+        "username": "Mitchell87",
+        "state": "active",
+        "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/125/avatar.png",
+        "web_url": "https://gitlab.com/Mitchell87"
+      }
+    ],
+    "author": {
+      "id": 125,
+      "name": "Mitchell",
+      "username": "Mitchell87"
+    },
+    "type": "ISSUE",
+    "assignee": {
+      "id": 125,
+      "name": "Mitchell",
+      "username": "Mitchell87"
+    },
+    "merge_requests_count": 0,
+    "due_date": "2021-11-04",
+    "confidential": false,
+    "issue_type": "issue",
+    "web_url": "https://gitlab.com/company/odoo-personalization/odoo-project/-/issues/379",
+    "time_stats": {
+      "time_estimate": 28800,
+      "total_time_spent": 14400,
+      "human_time_estimate": "8h",
+      "human_total_time_spent": "4h"
+    },
+    "weight": 80,
+    "blocking_issues_count": 0,
+    "has_tasks": false
+  }
+]

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Ordenes FORM -->
+        <record id="order_exams_lab_form_view" model="ir.ui.view">
+            <field name="name">order.exams.lab.form</field>
+            <field name="model">order.exams.lab</field>
+            <field name="arch" type="xml">
+                <form string="Orden Examen">
+                    <header>
+                        <button name="action_sale_quotations_new"
+                                icon="fa-money"  type="object" string="Facturar"
+                                class="btn bg-danger btn-lg text-white">
+                        </button>
+                    </header>
+                    <sheet string="Orden de examenes al paciente" modifiers="{}">
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_ready_to_process" type="object"
+                                    class="oe_stat_button" icon="fa-edit"
+                                    string="Procesar"
+                                    help="Preparar los resultados"/>
+                            <button name="send_msg_patient" string="ENVIAR" type="object"
+                                    class="oe_stat_button text-success" icon="fa-whatsapp"/>
+                            <button name="send_msg_doctor" string="ENVIAR MED" type="object"
+                                    class="oe_stat_button text-success" icon="fa-whatsapp"/>
+                            <button icon="fa-usd"  help="Facturas" string="Facturas"
+                                    name="return_action_view_orders" type="object">
+                                <field string="Facturas" name="order_count" widget="stateinfo"/>
+                            </button>
+                        </div>
+                        <group col="4" modifiers="{}">
+                            <field name="name" modifiers="{}" id="name" readonly="1"/>
+                            <field name="for_process" modifiers="{}" id="for_process" readonly="1"/>
+                            <field name="patient_id" can_create="true"
+                                   can_write="true" modifiers="{}" id="patient_id"/>
+                            <field name="doctor_id" can_create="true"
+                                   can_write="true" modifiers="{}" id="doctor_id"/>
+                            <field name="order_company" />
+                        </group>
+                        <newline modifiers="{}"/>
+                        <separator/>
+                        <group col="4" modifiers="{}">
+                            <field name="lab_exam_ids" colspan="4" modifiers="{}"
+                                   options="{'no_open': True}"
+                                   id="lab_exam_ids">
+                                <tree editable="bottom">
+                                    <field name="exam_id"/>
+                                    <field name="category_id"/>
+                                    <field name="name"/>
+                                    <field name="cost"/>
+                                    <field name="type_id"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <newline modifiers="{}"/>
+                        <separator/>
+                        <group col="4" modifiers="{}">
+                            <field name="result_lines_ids" colspan="4"
+                                   attrs="{'invisible': [('for_process','=',False)]}"
+                                   options="{'no_open': True, 'no_create': True}"
+                                   modifiers="{'no_open': True, 'no_create': True}"
+                                   id="result_lines_ids">
+                                <tree editable="bottom">
+                                    <field name="exam_id"/>
+                                    <field name="param_value"/>
+                                    <field name="exam_uom"/>
+                                    <field name="exam_ref_value"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <newline modifiers="{}"/>
+                        <separator/>
+                        <group col="4" modifiers="{}">
+                            <field name="observations" colspan="4"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Ordenes Tree -->
+        <record id="order_exams_lab_tree_view" model="ir.ui.view">
+            <field name="name">order.exams.lab.tree</field>
+            <field name="model">order.exams.lab</field>
+            <field name="arch" type="xml">
+                <tree string="Orden Examen">
+                    <field name="name"/>
+                    <field name="patient_id"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Ordenes ACTION -->
+        <record id="order_exams_lab_act_window" model="ir.actions.act_window">
+            <field name="name">Orden Examenes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">order.exams.lab</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Crear nueva Orden Examen.
+                </p>
+            </field>
+        </record>
+        <!-- Ordenes MENU -->
+        <menuitem name="Ordenes" id="order_exams_lab_menu"
+                  web_icon="agendmedic_lab,static/description/icon.jpg"
+                  sequence="40"
+                  action="order_exams_lab_act_window"/>
+
+    </data>
+</odoo>

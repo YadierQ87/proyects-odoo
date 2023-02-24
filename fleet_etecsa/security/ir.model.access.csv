@@ -1,0 +1,28 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_fleet_etecsa_cat_licencia,fleet.etecsa.cat.licencia,model_fleet_etecsa_cat_licencia,,1,1,1,1
+access_fleet_etecsa_chofer,fleet.etecsa.chofer,model_fleet_etecsa_chofer,,1,1,1,1
+access_fleet_etecsa_licencia_circulacion,fleet.etecsa.licencia.circulacion,model_fleet_etecsa_licencia_circulacion,,1,1,1,1
+access_fleet_etecsa_carnet_revision_tecnica,fleet.etecsa.carnet.revision.tecnica,model_fleet_etecsa_carnet_revision_tecnica,,1,1,1,1
+
+access_fleet_etecsa_vehicle_asign_fuel,fleet.etecsa.vehicle.asign.fuel,model_fleet_etecsa_vehicle_asign_fuel,,1,1,1,1
+access_fleet_etecsa_tarjeta_combustible,fleet.etecsa.tarjeta.combustible,model_fleet_etecsa_tarjeta_combustible,,1,1,1,1
+access_fleet_etecsa_anexo_unico,fleet.etecsa.anexo.unico,model_fleet_etecsa_anexo_unico,,1,1,1,1
+access_fleet_etecsa_anexo_liquidacion,fleet.etecsa.anexo.liquidacion,model_fleet_etecsa_anexo_liquidacion,,1,1,1,1
+
+access_fleet_etecsa_ticket,fleet.etecsa.ticket,model_fleet_etecsa_ticket,fleet_ticket_tecnico_transporte,1,1,1,1
+access_fleet_etecsa_ticket,fleet.etecsa.ticket,model_fleet_etecsa_ticket,base.group_user,1,0,1,0
+access_fleet_etecsa_ticket_problems,fleet.etecsa.ticket.problems,model_fleet_etecsa_ticket_problems,fleet_ticket_tecnico_transporte,1,1,1,1
+access_fleet_etecsa_ticket_problems,fleet.etecsa.ticket.problems,model_fleet_etecsa_ticket_problems,base.group_user,1,0,0,0
+access_fleet_etecsa_ticket_categories,fleet.etecsa.ticket.categories,model_fleet_etecsa_ticket_categories,fleet_ticket_tecnico_transporte,1,1,1,1
+access_fleet_etecsa_ticket_categories,fleet.etecsa.ticket.categories,model_fleet_etecsa_ticket_categories,base.group_user,1,0,0,0
+access_fleet_etecsa_ticket_stage,fleet.etecsa.ticket.stage,model_fleet_etecsa_ticket_stage,fleet_ticket_tecnico_transporte,1,1,1,1
+access_fleet_etecsa_ticket_stage,fleet.etecsa.ticket.stage,model_fleet_etecsa_ticket_stage,base.group_user,1,0,0,0
+access_fleet_etecsa_actvds_ticket, fleet.etecsa.actvds.ticket,model_fleet_etecsa_actvds_ticket,fleet_ticket_tecnico_transporte,1,1,1,1
+access_fleet_etecsa_actvds_ticket, fleet.etecsa.actvds.ticket,model_fleet_etecsa_actvds_ticket,base.group_user,1,0,0,0
+
+access_fleet_etecsa_calculo_cdt, fleet.etecsa.calculo.cdt,model_fleet_etecsa_calculo_cdt,,1,0,0,1
+
+
+
+

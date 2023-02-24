@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="ideaciones_talent_pool_project_form_inherit" model="ir.ui.view">
+            <field name="name">ideaciones.talent_pool.projectProject.form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Project Members" name="internal_notes">
+                        <field name="team_partner_ids" >
+                            <tree string="Desarrolladores" editable="bottom">
+                                <field name="name" />
+                                <field name="lastname" />
+                                <field name="speciality" />
+                                <field name="work_email" />
+                                <field name="phone" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

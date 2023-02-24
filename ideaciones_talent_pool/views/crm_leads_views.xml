@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="crm_lead_talent_form_inherit" model="ir.ui.view">
+            <field name="name">talent_pool.crm_lead.form</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_button_box']" position="inside">
+                    <button name="suggest_talent"
+                            type="object" class="oe_stat_button"
+                            string="Sugerir Candidatos"
+                            icon="fa-users"
+                    />
+                    <button name="create_project_from_lead"
+                            type="object" class="oe_stat_button"
+                            string="Crear como Proyecto"
+                            icon="fa-tasks"
+                    />
+                </xpath>
+                <xpath expr="//group[@name='lead_info']" position="before">
+                    <group col="2">
+                        <field name="title_contact"/>
+                        <field name="lastname"/>
+                        <field name="job_title"/>
+                        <field name="interested"/>
+                        <field name="company_name"/>
+                        <field name="type_contact"/>
+                        <field name="preferences"/>
+                        <field name="country_id"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="partner_skill_ids" widget="many2many_tags"/>
+                    <field name="is_project"/>
+                    <field name="cost_invoice"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Team Members" name="team_members">
+                        <field name="team_members_ids" >
+                            <tree string="Candidatos" editable="bottom">
+                                <field name="points" />
+                                <field name="hr_partner_id" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Pre Invoice" name="pre_invoice">
+                        <field name="pre_invoice_line_ids" >
+                            <tree string="Invoice Lines" editable="bottom">
+                                <field name="name" />
+                                <field name="cost_value" widget="monetary"/>
+                            </tree>
+                        </field>
+                        <field name="cost_invoice" widget="monetary"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

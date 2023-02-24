@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+
+        <record id="object_contract" model="document.control.category">
+            <field name="name">CONTRATO</field>
+        </record>
+        <record id="object_cv" model="document.control.category">
+            <field name="name">CV</field>
+        </record>
+        <record id="object_form" model="document.control.category">
+            <field name="name">PROFORMA</field>
+        </record>
+
+    </data>
+</odoo>

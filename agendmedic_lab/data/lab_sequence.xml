@@ -1,0 +1,17 @@
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Sequences for order.exams.lab -->
+        <record id="seq_order_exams_lab" model="ir.sequence">
+            <field name="name">Order Lab</field>
+            <field name="code">order.exams.lab</field>
+            <field name="padding">0000</field>
+            <field name="number_next">0001</field>
+            <field name="number_increment">1</field>
+            <field name="prefix">BIOQ-</field>
+            <field name="suffix">-%(range_day)s-%(range_month)s-%(range_year)s</field>
+            <field name="company_id" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

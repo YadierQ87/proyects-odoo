@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="ae_project_gitlab_task_form_inherit" model="ir.ui.view">
+            <field name="name">ae_project.task.inherit.form</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Gitlab">
+                        <group col="4">
+                            <field name="created_in_gitlab"/>
+                            <field name="project_git_id"/>
+                            <field name="is_sync"/>
+                            <field name="sync_last_date"/>
+                            <field name="git_id"/>
+                            <field name="state"/>
+                            <field name="issue_type"/>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//notebook" position="before">
+                    <group invisible="1">
+                        <field name="labels"/>
+                        <field name="milestone"/>
+                        <field name="has_tasks"/>
+                    </group>
+                    <group string="Registro de horas" col="4">
+                        <field name="task_status"/>
+                        <field name="human_time_estimate"/>
+                        <field name="human_total_time_spent"/>
+                        <field name="weight"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

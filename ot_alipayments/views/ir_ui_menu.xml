@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!--AgendMedic App Menu-->
+    <menuitem id="alipayments_menu" name="Alipayments" web_icon="ot_alipayments,static/description/icon.png"/>
+    <!-- Dashboard Invoices -->
+    <menuitem id="invoices_alipayment_menu"
+              name="Dashboard Invoices"
+              parent="alipayments_menu"
+              action="ot_alipayments_accounts_act_window"
+              sequence="10"/>
+    <!-- Tenants -->
+    <menuitem id="patients_menu"
+              name="Tenants"
+              parent="alipayments_menu"
+              action="ot_alipayments_tenants_act_window"
+              sequence="20"/>
+    <!-- Balance -->
+    <menuitem id="balance_alipayment_menu"
+              name="Balance"
+              parent="alipayments_menu"
+              sequence="30"/>
+    <!-- Settings -->
+    <menuitem id="settings_alipayment_menu"
+              name="Settings"
+              parent="alipayments_menu"
+              sequence="40"/>
+
+    <menuitem id="building_alipayment_menu"
+              name="Buildings"
+              parent="settings_alipayment_menu"
+              action="property_act_window"
+              sequence="50"/>
+
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+<!--        <record id="account_move_comp_rule" model="ir.rule">-->
+<!--            <field name="name">Account Entry</field>-->
+<!--            <field name="model_id" ref="model_account_move"/>-->
+<!--            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>-->
+<!--        </record>-->
+
+
+        <record id = "alipayment_rule_property_building_record" model = "ir.rule">
+            <field name = "name">  Buildings in condominium </field>
+            <field name = "model_id" ref = "model_property_building" />
+            <field name = "groups" eval = "[(4, ref('base.group_user'))]" />
+            <field name = "domain_force">
+                [('company_id', 'in', company_ids)]
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_crm_team_member,crm.team.member,model_crm_team_member,,1,1,1,1
+access_line_invoice_crm_lead,line.invoice.crm.lead,model_line_invoice_crm_lead,,1,1,1,1
+access_cv_experience_category,cv.experience.category,model_cv_experience_category,,1,1,1,1
+access_res_partner_experience_line,res.partner.experience.line,model_res_partner_experience_line,,1,1,1,1
+access_res_partner_acknowledgments,res.partner.acknowledgments,model_res_partner_acknowledgments,,1,1,1,1
+access_res_partner_competences,res.partner.competences,model_res_partner_competences,,1,1,1,1
+access_res_partner_skill,res.partner.skill,model_res_partner_skill,,1,1,1,1
+access_res_partner_specialty,res.partner.specialty,model_res_partner_specialty,,1,1,1,1
+access_res_preference_contact,res.preference.contact,model_res_preference_contact,,1,1,1,1
