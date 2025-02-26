@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- views -->
+    <record id="account_move_opensur_inherit_form" model="ir.ui.view">
+        <field name="name">opensur_account_move_form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='ref']" position="after">
+                <field name="only_base_currency"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_move_line_tree_inherit" model="ir.ui.view">
+        <field name="name">account.move.line.tree.inherit.usd</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='debit']" position="after">
+                <field name="debit_usd" groups="account_opensur_test.group_edit_usd_amounts"/>
+                <field name="credit_usd" groups="account_opensur_test.group_edit_usd_amounts"/>
+                <field name="balance_usd"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_move_line_pivot_inherit" model="ir.ui.view">
+        <field name="name">account.move.line.pivot.inherit.usd</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_pivot"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='balance']" position="after">
+                <field name="debit_usd" groups="account_opensur_test.group_edit_usd_amounts"/>
+                <field name="credit_usd" groups="account_opensur_test.group_edit_usd_amounts"/>
+                <field name="balance_usd"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

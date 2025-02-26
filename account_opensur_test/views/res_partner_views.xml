@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_partner_form_inherit_currency_accounts" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.currency.accounts</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='accounting']/group" position="inside">
+                <group string="Currency Accounts" >
+                    <field name="currency_account_ids" nolabel="1" colspan="2">
+                        <tree editable="bottom">
+                            <field name="currency_id"/>
+                            <field name="receivable_account_id" />
+                            <field name="payable_account_id"/>
+                        </tree>
+                    </field>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

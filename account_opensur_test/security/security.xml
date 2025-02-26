@@ -1,0 +1,6 @@
+<odoo>
+    <record id="group_edit_usd_amounts" model="res.groups">
+        <field name="name">Modify Debit USD and Credit USD in Journal Items</field>
+        <field name="category_id" ref="base.module_category_accounting"/>
+    </record>
+</odoo>
